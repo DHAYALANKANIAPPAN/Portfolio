@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sh-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#16080e" />
+      <stop offset="50%" stop-color="#2c101c" />
+      <stop offset="100%" stop-color="#0e0409" />
+    </linearGradient>
+    <linearGradient id="rose-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5376" />
+      <stop offset="50%" stop-color="#FFB380" />
+      <stop offset="100%" stop-color="#FFD166" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#sh-bg)" />
+
+  <g opacity="0.1" stroke="#FF5376" stroke-width="1">
+    <circle cx="400" cy="250" r="160" fill="none" />
+    <circle cx="400" cy="250" r="260" fill="none" />
+    <path d="M0 70 H800 M0 150 H800 M0 230 H800 M0 310 H800 M0 390 H800" />
+  </g>
+
+  <!-- E-commerce Catalog Interface Window -->
+  <g transform="translate(60, 70)">
+    <rect width="680" height="360" rx="16" fill="#1c0a15" stroke="#FF5376" stroke-width="1.5" stroke-opacity="0.6" />
+    
+    <!-- Top Header -->
+    <rect width="680" height="42" rx="16" fill="#301124" />
+    <rect y="24" width="680" height="18" fill="#301124" />
+    <circle cx="24" cy="21" r="5" fill="#FF5F56" />
+    <circle cx="40" cy="21" r="5" fill="#FFBD2E" />
+    <circle cx="56" cy="21" r="5" fill="#27C93F" />
+    <text x="340" y="26" fill="#FFFFFF" font-family="system-ui" font-weight="bold" font-size="13" text-anchor="middle">Shahihennaholic — Bridal &amp; Organic Henna Storefront (cones.html)</text>
+
+    <!-- Product Grid -->
+    <g transform="translate(25, 58)">
+      <!-- Card 1 -->
+      <g transform="translate(0, 10)">
+        <rect width="195" height="260" rx="10" fill="#280e1e" stroke="#FF5376" stroke-width="1" stroke-opacity="0.3" />
+        <rect x="12" y="12" width="171" height="110" rx="8" fill="#3c162f" />
+        <text x="97" y="65" fill="#FFD166" font-family="system-ui" font-size="28" text-anchor="middle">🌿</text>
+        <text x="97" y="95" fill="#FFFFFF" font-family="system-ui" font-weight="bold" font-size="11" text-anchor="middle">Organic Henna Cones</text>
+        
+        <text x="16" y="145" fill="#FFFFFF" font-family="system-ui" font-weight="bold" font-size="12">Bridal Dark Stain Cones</text>
+        <text x="16" y="162" fill="#E5E7F5" opacity="0.6" font-family="system-ui" font-size="10">100% Herbal · Triple Filtered</text>
+        <text x="16" y="185" fill="#00FFB3" font-family="monospace" font-weight="bold" font-size="13">₹120 / pack</text>
+        
+        <rect x="16" y="205" width="163" height="32" rx="6" fill="#FF5376" />
+        <text x="97" y="225" fill="#FFFFFF" font-family="system-ui" font-weight="bold" font-size="11" text-anchor="middle">Add to Cart</text>
+      </g>
+
+      <!-- Card 2 -->
+      <g transform="translate(215, 10)">
+        <rect width="195" height="260" rx="10" fill="#280e1e" stroke="#FF5376" stroke-width="1" stroke-opacity="0.3" />
+        <rect x="12" y="12" width="171" height="110" rx="8" fill="#3c162f" />
+        <text x="97" y="65" fill="#FFD166" font-family="system-ui" font-size="28" text-anchor="middle">✨</text>
+        <text x="97" y="95" fill="#FFFFFF" font-family="system-ui" font-weight="bold" font-size="11" text-anchor="middle">Henna Aftercare Oil</text>
+        
+        <text x="16" y="145" fill="#FFFFFF" font-family="system-ui" font-weight="bold" font-size="12">Essential Herbal Oil 30ml</text>
+        <text x="16" y="162" fill="#E5E7F5" opacity="0.6" font-family="system-ui" font-size="10">Eucalyptus &amp; Clove Infused</text>
+        <text x="16" y="185" fill="#00FFB3" font-family="monospace" font-weight="bold" font-size="13">₹180 / bottle</text>
+
+        <rect x="16" y="205" width="163" height="32" rx="6" fill="#FF5376" />
+        <text x="97" y="225" fill="#FFFFFF" font-family="system-ui" font-weight="bold" font-size="11" text-anchor="middle">Add to Cart</text>
+      </g>
+
+      <!-- Card 3: Storage & Cart State -->
+      <g transform="translate(430, 10)">
+        <rect width="200" height="260" rx="10" fill="#280e1e" stroke="#ffffff" stroke-opacity="0.08" />
+        <text x="16" y="28" fill="#FFD166" font-family="system-ui" font-weight="bold" font-size="12">Cart &amp; Order Storage</text>
+
+        <g transform="translate(14, 42)" font-family="system-ui" font-size="11">
+          <rect width="172" height="36" rx="6" fill="#38152c" />
+          <text x="10" y="22" fill="#FFFFFF">3 items in bag</text>
+          <text x="120" y="22" fill="#00FFB3" font-family="monospace">₹420</text>
+
+          <rect y="44" width="172" height="50" rx="6" fill="#38152c" />
+          <text x="10" y="20" fill="#E5E7F5" font-size="10">Local Storage Caching</text>
+          <text x="10" y="36" fill="#00FFB3" font-family="monospace" font-size="9">Instant State Persistence</text>
+
+          <rect y="102" width="172" height="90" rx="6" fill="#3c132c" stroke="#FF5376" stroke-width="1" />
+          <text x="10" y="24" fill="#FFD166" font-weight="bold">Tech Stack:</text>
+          <text x="10" y="44" fill="#FFFFFF" font-size="10">HTML5 · CSS3 · JS</text>
+          <text x="10" y="60" fill="#E5E7F5" opacity="0.7" font-size="10">Responsive Mobile First</text>
+          <text x="10" y="76" fill="#00FFB3" font-size="10">WhatsApp Direct Order</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

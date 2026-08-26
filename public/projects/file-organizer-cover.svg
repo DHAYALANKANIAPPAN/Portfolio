@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06121f" />
+      <stop offset="50%" stop-color="#0c2438" />
+      <stop offset="100%" stop-color="#040a12" />
+    </linearGradient>
+    <linearGradient id="teal-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00FFB3" />
+      <stop offset="100%" stop-color="#00E5FF" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#fo-bg)" />
+
+  <g opacity="0.1" stroke="#00FFB3" stroke-width="1">
+    <path d="M0 60 H800 M0 140 H800 M0 220 H800 M0 300 H800 M0 380 H800 M0 460 H800" />
+    <path d="M60 0 V500 M160 0 V500 M260 0 V500 M360 0 V500 M460 0 V500 M560 0 V500 M660 0 V500 M760 0 V500" />
+  </g>
+
+  <!-- File Organizer Dashboard Window -->
+  <g transform="translate(60, 70)">
+    <rect width="680" height="360" rx="16" fill="#081826" stroke="#00FFB3" stroke-width="1.5" stroke-opacity="0.6" />
+    
+    <!-- Top Header -->
+    <rect width="680" height="42" rx="16" fill="#0f2e45" />
+    <rect y="24" width="680" height="18" fill="#0f2e45" />
+    <circle cx="24" cy="21" r="5" fill="#FF5F56" />
+    <circle cx="40" cy="21" r="5" fill="#FFBD2E" />
+    <circle cx="56" cy="21" r="5" fill="#27C93F" />
+    <text x="340" y="26" fill="#FFFFFF" font-family="monospace" font-size="12" font-weight="600" text-anchor="middle">Python Automated File Classification &amp; Organizer (main.py)</text>
+
+    <!-- Content Grid -->
+    <g transform="translate(25, 60)">
+      <!-- Left: File Ingestion Stream -->
+      <g>
+        <rect width="300" height="260" rx="12" fill="#05101a" stroke="#ffffff" stroke-opacity="0.06" />
+        <text x="16" y="24" fill="#00FFB3" font-family="monospace" font-size="11">INCOMING DIRECTORY STREAM</text>
+
+        <g transform="translate(14, 40)" font-family="monospace" font-size="10">
+          <rect width="272" height="34" rx="6" fill="#0d2638" />
+          <text x="10" y="21" fill="#E5E7F5">📄 report_q3_final.pdf</text>
+          <text x="210" y="21" fill="#00E5FF">→ /Documents</text>
+
+          <rect y="40" width="272" height="34" rx="6" fill="#0d2638" />
+          <text x="10" y="21" fill="#E5E7F5">📸 photo_raw_082.jpg</text>
+          <text x="210" y="21" fill="#00FFB3">→ /Images</text>
+
+          <rect y="80" width="272" height="34" rx="6" fill="#0d2638" />
+          <text x="10" y="21" fill="#E5E7F5">📦 dataset_v2.tar.gz</text>
+          <text x="210" y="21" fill="#FFBD2E">→ /Archives</text>
+
+          <rect y="120" width="272" height="34" rx="6" fill="#0d2638" />
+          <text x="10" y="21" fill="#E5E7F5">🎵 podcast_ep14.mp3</text>
+          <text x="210" y="21" fill="#7B61FF">→ /Audio</text>
+
+          <rect y="160" width="272" height="45" rx="6" fill="#133950" stroke="#00FFB3" stroke-width="1" />
+          <text x="10" y="18" fill="#00FFB3">✓ 142 Files Sorted</text>
+          <text x="10" y="34" fill="#E5E7F5" opacity="0.8">0 Collision Errors · Safe Hash Rename</text>
+        </g>
+      </g>
+
+      <!-- Right: Target Directory Categorization Matrix -->
+      <g transform="translate(325, 0)">
+        <rect width="305" height="260" rx="12" fill="#05101a" stroke="#ffffff" stroke-opacity="0.06" />
+        <text x="16" y="24" fill="#00E5FF" font-family="monospace" font-size="11">RULE ENGINE &amp; FILE ROUTING</text>
+
+        <g transform="translate(14, 40)" font-family="monospace" font-size="10">
+          <rect width="277" height="42" rx="6" fill="#0c2333" />
+          <text x="12" y="18" fill="#00E5FF">MIME Type Sniffing &amp; Magic Bytes</text>
+          <text x="12" y="32" fill="#E5E7F5" opacity="0.6">Prevents misnamed extensions</text>
+
+          <rect y="50" width="277" height="42" rx="6" fill="#0c2333" />
+          <text x="12" y="18" fill="#00FFB3">Watchdog Live Filesystem Hooks</text>
+          <text x="12" y="32" fill="#E5E7F5" opacity="0.6">Instant sort upon download completion</text>
+
+          <rect y="100" width="277" height="42" rx="6" fill="#0c2333" />
+          <text x="12" y="18" fill="#FFBD2E">Duplicate SHA-256 Deduplication</text>
+          <text x="12" y="32" fill="#E5E7F5" opacity="0.6">Recovers disk space automatically</text>
+
+          <rect y="150" width="277" height="55" rx="6" fill="#113347" stroke="#00E5FF" stroke-width="1" />
+          <text x="12" y="20" fill="#00E5FF">Execution: python main.py --watch</text>
+          <text x="12" y="36" fill="#00FFB3">OS: Linux / macOS / Windows</text>
+          <text x="12" y="48" fill="#E5E7F5" opacity="0.7">Status: Active Background Daemon</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

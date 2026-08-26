@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhayalan Kaniappan — DevOps Specialist · Python &amp; MERN Stack (The Code Whisperer)</title>
+  <meta name="description" content="Professional portfolio of Dhayalan Kaniappan — DevOps Specialist, Python developer, and Full-Stack MERN engineer. Explore projects, credentials, and automated infrastructure." />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <span class="logo-badge">DK</span>
+        <span>Dhayalan</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#resume" class="nav-link">Resume &amp; Certs</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Navbar Actions: Light / Dark Toggle & Direct CTAs -->
+      <div class="nav-actions">
+        <!-- Light / Dark Mode Toggle Switch Button -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Light and Dark Mode" title="Toggle Theme">
+          <span id="theme-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          </span>
+        </button>
+
+        <!-- Resume Modal Trigger -->
+        <button class="btn btn-secondary open-resume-modal-btn" style="padding: 0.5rem 1.1rem; font-size: 0.8rem;">
+          Resume &amp; Certs
+        </button>
+
+        <!-- Contact CTA -->
+        <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.8rem;">
+          Let's Talk
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Mobile Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#about" class="nav-link">About</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#resume" class="nav-link">Resume &amp; Certifications</a>
+    <a href="#contact" class="nav-link">Contact</a>
+    <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+      <button class="btn btn-secondary open-resume-modal-btn" style="flex: 1;">Full Resume</button>
+      <a href="#contact" class="btn btn-primary" style="flex: 1;">Get in Touch</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <canvas id="particle-canvas" style="position: absolute; inset: 0; pointer-events: none;"></canvas>
+
+      <div class="container" style="position: relative; z-index: 2; width: 100%;">
+        <div class="hero-status-pill">
+          <span class="status-dot"></span>
+          <span>DevOps Specialist · Python &amp; MERN · Coimbatore, India</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span>Dhayalan</span><br />
+          <span>Kaniappan</span>
+        </h1>
+
+        <div class="hero-typewriter-container">
+          <span style="font-weight: 800;">&gt;</span>
+          <span id="typewriter-text"></span>
+          <span class="typewriter-cursor"></span>
+        </div>
+
+        <p class="hero-description">
+          I build reliable cloud infrastructure, automate deployment pipelines with Ansible and Docker, and engineer robust Python systems and full-stack MERN applications.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            Explore Projects
+          </a>
+          <button class="btn btn-secondary open-resume-modal-btn">
+            Resume &amp; Certifications
+          </button>
+          <a href="https://github.com/DHAYALANKANIAPPAN" target="_blank" rel="noreferrer" class="btn-icon" aria-label="GitHub Profile" title="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn-icon" aria-label="LinkedIn Profile" title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Bento Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <div style="text-align: center; max-width: 680px; margin: 0 auto 3rem;">
+          <span class="eyebrow">About Me &amp; Backstory</span>
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem);">The builder behind the code</h2>
+          <p style="margin-top: 0.5rem;">Known as 'The Code Whisperer' — bridging Python &amp; Java software engineering with automated Linux server fleets.</p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Terminal Window (7 Columns) -->
+          <div class="terminal-card">
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="terminal-dot"></span>
+                  <span class="terminal-dot"></span>
+                  <span class="terminal-dot"></span>
+                  <span class="terminal-title" style="margin-left: 0.5rem;">dhaya@latitude-3410:~</span>
+                </div>
+                <span style="font-size: 0.65rem; color: #a1a1aa;">bash · interactive</span>
+              </div>
+              <div class="terminal-body" id="terminal-body">
+                <div class="terminal-history-item">
+                  <div class="terminal-output">
+                    <p style="color: #ffffff; font-weight: bold;">Dhayalan Kaniappan — DevOps &amp; Python Shell (The Code Whisperer)</p>
+                    <p style="color: #a1a1aa; font-size: 0.72rem;">Type <span style="color: #ffffff; font-weight: bold;">help</span> or click the quick commands below to interact.</p>
+                  </div>
+                </div>
+              </div>
+              <form class="terminal-input-form" id="terminal-form">
+                <span style="color: #ffffff; font-weight: bold;">dhaya@portfolio:~$</span>
+                <input type="text" id="terminal-input" class="terminal-input" placeholder="Type command here..." autocomplete="off" />
+              </form>
+              <div class="terminal-quick-bar">
+                <span style="font-size: 0.65rem; color: #a1a1aa; text-transform: uppercase;">Quick:</span>
+                <button type="button" class="quick-cmd-btn" data-cmd="whoami">whoami</button>
+                <button type="button" class="quick-cmd-btn" data-cmd="bio">bio</button>
+                <button type="button" class="quick-cmd-btn" data-cmd="projects">projects</button>
+                <button type="button" class="quick-cmd-btn" data-cmd="skills">skills</button>
+                <button type="button" class="quick-cmd-btn" data-cmd="certs">certs</button>
+                <button type="button" class="quick-cmd-btn" data-cmd="contact">contact</button>
+                <button type="button" class="quick-cmd-btn" data-cmd="matrix">matrix</button>
+                <button type="button" class="quick-cmd-btn" data-cmd="clear">clear</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Info Bento (5 Columns) -->
+          <div class="info-cards-column">
+            <!-- Academic Foundation Card -->
+            <div class="pro-card" style="padding: 1.5rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: var(--radius-sm); background: var(--accent-badge-bg); border: 1px solid var(--border-main); font-size: 1.1rem;">
+                  🎓
+                </div>
+                <div>
+                  <span class="eyebrow" style="margin-bottom: 0;">Academic Profile</span>
+                  <h4 style="font-size: 1.05rem;">Bachelor of Engineering (B.E.)</h4>
+                </div>
+              </div>
+              <p style="font-size: 0.88rem; margin-top: 0.75rem; color: var(--text-primary); font-weight: 600;">
+                Sri Shakthi Institute of Engineering and Technology
+              </p>
+              <p style="font-size: 0.78rem; color: var(--text-subtle); font-family: var(--font-mono); margin-top: 0.2rem;">
+                Coimbatore, Tamil Nadu · Computer Science &amp; Systems Focus
+              </p>
+            </div>
+
+            <!-- Live Clock Card -->
+            <div class="pro-card" style="padding: 1.5rem;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="font-size: 0.8rem; color: var(--text-subtle);">
+                  📍 Coimbatore, Tamil Nadu, India
+                </div>
+                <div style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.2rem 0.6rem; border-radius: var(--radius-full); background: var(--accent-badge-bg); border: 1px solid var(--border-main); font-family: var(--font-mono); font-size: 0.68rem; font-weight: 700; color: var(--text-primary);">
+                  <span class="status-dot" style="width: 6px; height: 6px;"></span>
+                  <span>Available for Hire</span>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-main);">
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-subtle);">Local Clock (IST)</span>
+                <span id="live-clock" style="font-family: var(--font-mono); font-size: 0.95rem; font-weight: 800; color: var(--text-primary);">--:--:--</span>
+              </div>
+            </div>
+
+            <!-- Core Pillars Card -->
+            <div class="pro-card" style="padding: 1.5rem;">
+              <span class="eyebrow" style="margin-bottom: 0.25rem;">Core Engineering Pillars</span>
+              <h4 style="font-size: 0.95rem;">Python Systems · Ansible Automation · MERN Stack</h4>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.75rem; font-size: 0.8rem; font-weight: 600; color: var(--text-primary);">
+                <div>• Python (Primary)</div>
+                <div>• Ansible Fleet</div>
+                <div>• MERN &amp; Java</div>
+                <div>• Docker &amp; CI/CD</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- From Code to DevOps Timeline -->
+        <div style="margin-top: 5rem;">
+          <div style="text-align: center; max-width: 720px; margin: 0 auto 3rem;">
+            <span class="eyebrow">The Evolution</span>
+            <h3 style="font-size: clamp(1.8rem, 3.5vw, 2.5rem);">From Code to DevOps</h3>
+            <p style="margin-top: 0.5rem;">How building software in Python, Java OOP, and MERN evolved into automating server fleets, engineering remote systems (ONey), and competing in national 24-hour CTFs.</p>
+          </div>
+
+          <div class="timeline-container">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="pro-card timeline-content">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="eyebrow" style="margin-bottom: 0;">Chapter 1</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-subtle);">01</span>
+                </div>
+                <h4 style="font-size: 1.25rem; margin-top: 0.4rem;">The Spark · From Code to DevOps</h4>
+                <p style="font-size: 0.88rem; margin-top: 0.5rem; line-height: 1.6;">
+                  Known as 'The Code Whisperer' — my journey began with deep curiosity for Python and Java. As my projects expanded, I realized that writing clean code is only half the craft — containerizing with Docker, automating servers with Ansible, and maintaining bulletproof infrastructure is where true engineering begins.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="pro-card timeline-content">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="eyebrow" style="margin-bottom: 0;">Chapter 2</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-subtle);">02</span>
+                </div>
+                <h4 style="font-size: 1.25rem; margin-top: 0.4rem;">The Craft · Full-Stack &amp; Tooling</h4>
+                <p style="font-size: 0.88rem; margin-top: 0.5rem; line-height: 1.6;">
+                  Built end-to-end full-stack applications with the MERN stack (MongoDB, Express, React, Node.js) along with practical Python and Java software: automated filesystem sorters, banking ATM systems, and customized community forum platforms like Flarum.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="pro-card timeline-content">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="eyebrow" style="margin-bottom: 0;">Chapter 3</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-subtle);">03</span>
+                </div>
+                <h4 style="font-size: 1.25rem; margin-top: 0.4rem;">The Wire · Remote Systems &amp; 24h CTFs</h4>
+                <p style="font-size: 0.88rem; margin-top: 0.5rem; line-height: 1.6;">
+                  Dove deep into network protocols and systems engineering. Developing ONey (a low-latency remote system control client) and Z-Protocol (raw socket transport), while sharpening problem-solving in national 24-hour CTFs including the Tamil Nadu Police Yukthi CTF, Amrita L3m0n CTF, and Rajalakshmi HackTiVate.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="pro-card timeline-content">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="eyebrow" style="margin-bottom: 0;">Chapter 4</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-subtle);">04</span>
+                </div>
+                <h4 style="font-size: 1.25rem; margin-top: 0.4rem;">The Horizon · Scalable Cloud Automation</h4>
+                <p style="font-size: 0.88rem; margin-top: 0.5rem; line-height: 1.6;">
+                  Focused on modern DevOps workflows: Infrastructure as Code with Ansible, containerized microservices, automated CI/CD pipelines, and high-performance web products.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1.5rem;">
+          <div>
+            <span class="eyebrow">Software &amp; Systems Showcase</span>
+            <h2 style="font-size: clamp(2rem, 4vw, 3rem);">Projects &amp; Codebases</h2>
+            <p style="margin-top: 0.5rem; max-width: 600px;">
+              All codebases from my official GitHub repository — featuring remote systems (ONey), DevOps automation, Java OOP systems, MERN full-stack apps, and Python tools.
+            </p>
+          </div>
+
+          <a href="https://github.com/DHAYALANKANIAPPAN/PROJECTS" target="_blank" rel="noreferrer" class="btn btn-secondary" style="font-family: var(--font-mono); font-size: 0.8rem;">
+            📁 View Full PROJECTS Monorepo ↗
+          </a>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div class="projects-header-actions">
+          <div class="filter-pill-group">
+            <button class="filter-btn active" data-filter="All">All</button>
+            <button class="filter-btn" data-filter="DevOps">DevOps</button>
+            <button class="filter-btn" data-filter="Full-Stack">Full-Stack</button>
+            <button class="filter-btn" data-filter="Python & Automation">Python &amp; Automation</button>
+            <button class="filter-btn" data-filter="Java & Systems">Java &amp; Systems</button>
+            <button class="filter-btn" data-filter="Security & Research">Security &amp; Research</button>
+          </div>
+
+          <div class="search-input-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="project-search" class="search-input" placeholder="Search Python, Docker, Java, Ansible..." />
+          </div>
+        </div>
+
+        <!-- Project Cards Grid -->
+        <div class="projects-grid">
+
+          <!-- 1. ONey Remote System -->
+          <article class="pro-card project-card" data-category="DevOps Python & Automation" data-tags="Python P2P Tunneling UDP Sockets Screen Streaming Cryptography">
+            <div class="project-preview">
+              <img src="./public/projects/oney-cover.svg" alt="ONey Remote System Control" loading="lazy" />
+              <div class="project-status-badges">
+                <span class="badge">In Progress</span>
+                <span class="badge">Featured</span>
+                <span class="badge">DevOps</span>
+              </div>
+              <div class="project-metrics-ribbon">
+                <div class="metric-box"><div class="metric-label">State</div><div class="metric-val">Active WIP</div></div>
+                <div class="metric-box"><div class="metric-label">Tunneling</div><div class="metric-val">P2P Direct</div></div>
+                <div class="metric-box"><div class="metric-label">Target Latency</div><div class="metric-val">&lt; 20ms</div></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 0.2rem;">DevOps / Remote Systems</span>
+                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">ONey Remote System Control</h3>
+                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
+                  Low-latency remote system management client with encrypted peer-to-peer UDP hole punching and zero-copy screen streaming.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-tag" data-tag="Python">Python</span>
+                  <span class="tech-tag" data-tag="P2P Tunneling">P2P Tunneling</span>
+                  <span class="tech-tag" data-tag="UDP Sockets">UDP Sockets</span>
+                  <span class="tech-tag" data-tag="Screen Streaming">Screen Streaming</span>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
+                <a href="https://github.com/DHAYALANKANIAPPAN/PROJECTS" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
+                  Source Repo ↗
+                </a>
+                <button class="btn btn-secondary toggle-case-study-btn" style="padding: 0.35rem 0.9rem; font-size: 0.75rem;">
+                  <span class="btn-text">Case Study</span>
+                </button>
+              </div>
+            </div>
+            <div class="project-case-study">
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture Deep Dive: ONey</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
+                Designed for direct host-to-host encrypted remote management without third-party relays. Utilizes raw UDP sockets for low-latency frame transport, session key cryptography for host verification, and bidirectional input synchronization.
+              </p>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; font-size: 0.82rem;">
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Challenge:</strong> Low-latency frame streaming across restrictive NAT firewalls.
+                </div>
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Solution:</strong> Engineered lightweight UDP socket streaming with frame compression.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Z-Protocol -->
+          <article class="pro-card project-card" data-category="Java & Systems Python & Automation" data-tags="Python Raw Sockets Binary Framing CRC32 Network Protocols">
+            <div class="project-preview">
+              <img src="./public/projects/zprotocol-cover.svg" alt="Z-Protocol Wire Transport" loading="lazy" />
+              <div class="project-status-badges">
+                <span class="badge">In Progress</span>
+                <span class="badge">Featured</span>
+                <span class="badge">Systems</span>
+              </div>
+              <div class="project-metrics-ribbon">
+                <div class="metric-box"><div class="metric-label">State</div><div class="metric-val">Ongoing</div></div>
+                <div class="metric-box"><div class="metric-label">Header Overhead</div><div class="metric-val">16 Bytes</div></div>
+                <div class="metric-box"><div class="metric-label">Integrity</div><div class="metric-val">CRC32</div></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 0.2rem;">Networking Protocols</span>
+                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">Z-Protocol Wire Transport</h3>
+                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
+                  From-scratch Layer-4 binary networking protocol built on raw Python sockets with custom handshake state machines and CRC32 verification.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-tag" data-tag="Python">Python</span>
+                  <span class="tech-tag" data-tag="Raw Sockets">Raw Sockets</span>
+                  <span class="tech-tag" data-tag="Binary Framing">Binary Framing</span>
+                  <span class="tech-tag" data-tag="CRC32">CRC32</span>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
+                <a href="https://github.com/DHAYALANKANIAPPAN/Z-Protocol" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
+                  Source Repo ↗
+                </a>
+                <button class="btn btn-secondary toggle-case-study-btn" style="padding: 0.35rem 0.9rem; font-size: 0.75rem;">
+                  <span class="btn-text">Case Study</span>
+                </button>
+              </div>
+            </div>
+            <div class="project-case-study">
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture Deep Dive: Z-Protocol</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6;">
+                Built to understand the low-level mechanics of transport layer protocols. Features a custom 16-byte binary header, 3-way handshake state machine (SYN/SYN-ACK/ACK), and sequence numbering for packet reordering.
+              </p>
+            </div>
+          </article>
+
+          <!-- 3. Browser Monitoring Tool -->
+          <article class="pro-card project-card" data-category="Python & Automation" data-tags="Python JSON Buffer DOM Telemetry Event Intercept">
+            <div class="project-preview">
+              <img src="./public/projects/browser-monitoring-cover.svg" alt="Browser Monitoring Tool" loading="lazy" />
+              <div class="project-status-badges">
+                <span class="badge">Completed</span>
+                <span class="badge">Featured</span>
+                <span class="badge">Python</span>
+              </div>
+              <div class="project-metrics-ribbon">
+                <div class="metric-box"><div class="metric-label">Status</div><div class="metric-val">Completed</div></div>
+                <div class="metric-box"><div class="metric-label">Data Format</div><div class="metric-val">JSON Buffer</div></div>
+                <div class="metric-box"><div class="metric-label">Execution</div><div class="metric-val">Real-time</div></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 0.2rem;">Telemetry &amp; Automation</span>
+                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">Browser Monitoring Tool</h3>
+                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
+                  Python telemetry tool designed to instrument browser sessions, capturing DOM events, unsent buffer queues, and activity streams.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-tag" data-tag="Python">Python</span>
+                  <span class="tech-tag" data-tag="JSON Buffer">JSON Buffer</span>
+                  <span class="tech-tag" data-tag="DOM Telemetry">DOM Telemetry</span>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
+                <a href="https://github.com/DHAYALANKANIAPPAN/PROJECTS/tree/main/Browser_Monitoring_Tool" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
+                  Source Repo ↗
+                </a>
+                <button class="btn btn-secondary toggle-case-study-btn" style="padding: 0.35rem 0.9rem; font-size: 0.75rem;">
+                  <span class="btn-text">Case Study</span>
+                </button>
+              </div>
+            </div>
+            <div class="project-case-study">
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture: Browser Monitoring Tool</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6;">
+                Maintains a fault-tolerant local JSON buffer queue to ensure zero event loss during network interruptions, alongside streaming analytics.
+              </p>
+            </div>
+          </article>
+
+          <!-- 4. ATM Banking System -->
+          <article class="pro-card project-card" data-category="Java & Systems" data-tags="Java OOP Encapsulation Collections CLI Interface">
+            <div class="project-preview">
+              <img src="./public/projects/atm-cover.svg" alt="ATM Banking & Account System" loading="lazy" />
+              <div class="project-status-badges">
+                <span class="badge">Completed</span>
+                <span class="badge">Featured</span>
+                <span class="badge">Java OOP</span>
+              </div>
+              <div class="project-metrics-ribbon">
+                <div class="metric-box"><div class="metric-label">Status</div><div class="metric-val">Completed</div></div>
+                <div class="metric-box"><div class="metric-label">Architecture</div><div class="metric-val">OOP / MVC</div></div>
+                <div class="metric-box"><div class="metric-label">Data Integrity</div><div class="metric-val">Atomic TXN</div></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 0.2rem;">Systems &amp; OOP</span>
+                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">ATM Banking &amp; Account System</h3>
+                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
+                  Java Object-Oriented banking application (maincode.java) with PIN authentication, balance protection, and mini-statement receipts.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-tag" data-tag="Java">Java</span>
+                  <span class="tech-tag" data-tag="OOP">OOP</span>
+                  <span class="tech-tag" data-tag="Encapsulation">Encapsulation</span>
+                  <span class="tech-tag" data-tag="Collections">Collections</span>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
+                <a href="https://github.com/DHAYALANKANIAPPAN/PROJECTS/tree/main/ATM" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
+                  Source Repo ↗
+                </a>
+                <button class="btn btn-secondary toggle-case-study-btn" style="padding: 0.35rem 0.9rem; font-size: 0.75rem;">
+                  <span class="btn-text">Case Study</span>
+                </button>
+              </div>
+            </div>
+            <div class="project-case-study">
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture: Java ATM System</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6;">
+                Strict object encapsulation preventing unauthorized balance modification, complete with audit logs and transaction history rollback safety.
+              </p>
+            </div>
+          </article>
+
+          <!-- 5. Ansible Fleet Automation -->
+          <article class="pro-card project-card" data-category="DevOps" data-tags="Ansible YAML Linux Bash UFW Firewall">
+            <div class="project-preview">
+              <img src="./public/projects/ansible-cover.svg" alt="Ansible Fleet Provisioning & Automation" loading="lazy" />
+              <div class="project-status-badges">
+                <span class="badge">Completed</span>
+                <span class="badge">Featured</span>
+                <span class="badge">DevOps</span>
+              </div>
+              <div class="project-metrics-ribbon">
+                <div class="metric-box"><div class="metric-label">Status</div><div class="metric-val">Completed</div></div>
+                <div class="metric-box"><div class="metric-label">Idempotency</div><div class="metric-val">100%</div></div>
+                <div class="metric-box"><div class="metric-label">Setup Time</div><div class="metric-val">&lt; 2 Mins</div></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 0.2rem;">Infrastructure as Code</span>
+                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">Ansible Fleet Automation</h3>
+                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
+                  Playbook-driven Linux server provisioning, SSH security hardening, and UFW firewall enforcement across multi-node environments.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-tag" data-tag="Ansible">Ansible</span>
+                  <span class="tech-tag" data-tag="YAML">YAML</span>
+                  <span class="tech-tag" data-tag="Linux">Linux</span>
+                  <span class="tech-tag" data-tag="UFW Firewall">UFW Firewall</span>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
+                <a href="https://github.com/DHAYALANKANIAPPAN/Ansible" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
+                  Source Repo ↗
+                </a>
+                <button class="btn btn-secondary toggle-case-study-btn" style="padding: 0.35rem 0.9rem; font-size: 0.75rem;">
+                  <span class="btn-text">Case Study</span>
+                </button>
+              </div>
+            </div>
+            <div class="project-case-study">
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture: Ansible Fleet</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6;">
+                Structured with modular roles, variable isolation, and idempotent execution to guarantee reproducible server configurations in seconds.
+              </p>
+            </div>
+          </article>
+
+          <!-- 6. Shahihennaholic Storefront -->
+          <article class="pro-card project-card" data-category="Full-Stack" data-tags="HTML5 CSS3 JavaScript Local Storage Responsive UI">
+            <div class="project-preview">
+              <img src="./public/projects/shahihennaholic-cover.svg" alt="Shahihennaholic Storefront" loading="lazy" />
+              <div class="project-status-badges">
+                <span class="badge">Completed</span>
+                <span class="badge">Featured</span>
+                <span class="badge">Web Platform</span>
+              </div>
+              <div class="project-metrics-ribbon">
+                <div class="metric-box"><div class="metric-label">Status</div><div class="metric-val">Completed</div></div>
+                <div class="metric-box"><div class="metric-label">Design</div><div class="metric-val">Mobile-First</div></div>
+                <div class="metric-box"><div class="metric-label">Load Speed</div><div class="metric-val">Instant</div></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 0.2rem;">Web Platform &amp; E-Commerce</span>
+                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">Shahihennaholic Storefront</h3>
+                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
+                  Responsive web catalog and order generation interface for an organic henna brand with local storage cart persistence.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-tag" data-tag="HTML5">HTML5</span>
+                  <span class="tech-tag" data-tag="CSS3">CSS3</span>
+                  <span class="tech-tag" data-tag="JavaScript">JavaScript</span>
+                  <span class="tech-tag" data-tag="Local Storage">Local Storage</span>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
+                <a href="https://github.com/DHAYALANKANIAPPAN/PROJECTS/tree/main/shahihennaholic" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
+                  Source Repo ↗
+                </a>
+                <button class="btn btn-secondary toggle-case-study-btn" style="padding: 0.35rem 0.9rem; font-size: 0.75rem;">
+                  <span class="btn-text">Case Study</span>
+                </button>
+              </div>
+            </div>
+            <div class="project-case-study">
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture: Shahihennaholic</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6;">
+                Client-side state management for cart calculation, responsive image layouts for mobile shoppers, and direct WhatsApp order payload dispatch.
+              </p>
+            </div>
+          </article>
+
+          <!-- 7. Python File Organizer -->
+          <article class="pro-card project-card" data-category="Python & Automation" data-tags="Python Filesystem OS Shutil Automation">
+            <div class="project-preview">
+              <img src="./public/projects/file-organizer-cover.svg" alt="Python Automated File Organizer" loading="lazy" />
+              <div class="project-status-badges">
+                <span class="badge">Completed</span>
+                <span class="badge">Python</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 0.2rem;">Automation Daemon</span>
+                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">Python File Organizer</h3>
+                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
+                  Automated directory classifier daemon in Python (main.py) that categorizes downloads by MIME type and prevents filename collisions.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-tag" data-tag="Python">Python</span>
+                  <span class="tech-tag" data-tag="Filesystem OS">Filesystem OS</span>
+                  <span class="tech-tag" data-tag="Automation">Automation</span>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
+                <a href="https://github.com/DHAYALANKANIAPPAN/PROJECTS/tree/main/File-organizer" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
+                  Source Repo ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Matrix Section -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div style="text-align: center; max-width: 680px; margin: 0 auto 2.5rem;">
+          <span class="eyebrow">Core Competencies</span>
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem);">Skills &amp; Technology Stack</h2>
+          <p style="margin-top: 0.5rem;">Languages, automation tools, cloud stacks, and network analyzers I actively build and deploy with.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Python -->
+          <div class="pro-card skill-card">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="eyebrow" style="margin-bottom: 0;">Programming</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--text-primary);">94%</span>
+              </div>
+              <h4 style="font-size: 1.2rem; margin-top: 0.3rem;">Python</h4>
+              <p style="font-size: 0.82rem; margin-top: 0.3rem;">Core development language: ONey remote tool, Z-Protocol, telemetry &amp; automation scripts.</p>
+            </div>
+            <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 94%;"></div></div>
+          </div>
+
+          <!-- Ansible -->
+          <div class="pro-card skill-card">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="eyebrow" style="margin-bottom: 0;">DevOps</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--text-primary);">90%</span>
+              </div>
+              <h4 style="font-size: 1.2rem; margin-top: 0.3rem;">Ansible</h4>
+              <p style="font-size: 0.82rem; margin-top: 0.3rem;">Multi-node fleet provisioning, modular YAML roles, automated server hardening.</p>
+            </div>
+            <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 90%;"></div></div>
+          </div>
+
+          <!-- Linux Admin -->
+          <div class="pro-card skill-card">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="eyebrow" style="margin-bottom: 0;">DevOps</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--text-primary);">92%</span>
+              </div>
+              <h4 style="font-size: 1.2rem; margin-top: 0.3rem;">Linux Administration</h4>
+              <p style="font-size: 0.82rem; margin-top: 0.3rem;">Ubuntu/Debian management, systemd services, SSH keys, and UFW firewall enforcement.</p>
+            </div>
+            <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 92%;"></div></div>
+          </div>
+
+          <!-- Docker -->
+          <div class="pro-card skill-card">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="eyebrow" style="margin-bottom: 0;">DevOps</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--text-primary);">88%</span>
+              </div>
+              <h4 style="font-size: 1.2rem; margin-top: 0.3rem;">Docker &amp; Containers</h4>
+              <p style="font-size: 0.82rem; margin-top: 0.3rem;">Microservice containerization, multi-stage builds, and Docker Compose orchestration.</p>
+            </div>
+            <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 88%;"></div></div>
+          </div>
+
+          <!-- Java OOP -->
+          <div class="pro-card skill-card">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="eyebrow" style="margin-bottom: 0;">Programming</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--text-primary);">90%</span>
+              </div>
+              <h4 style="font-size: 1.2rem; margin-top: 0.3rem;">Java (OOP &amp; Collections)</h4>
+              <p style="font-size: 0.82rem; margin-top: 0.3rem;">Encapsulation, banking architectures, and data structures (Hazhtech 92% Merit).</p>
+            </div>
+            <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 90%;"></div></div>
+          </div>
+
+          <!-- MERN / React -->
+          <div class="pro-card skill-card">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="eyebrow" style="margin-bottom: 0;">Full-Stack</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--text-primary);">90%</span>
+              </div>
+              <h4 style="font-size: 1.2rem; margin-top: 0.3rem;">MERN Stack &amp; React</h4>
+              <p style="font-size: 0.82rem; margin-top: 0.3rem;">React components, Node.js/Express REST APIs, MongoDB schemas, and Tailwind CSS.</p>
+            </div>
+            <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 90%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume & Certifications Section -->
+    <section class="section" id="resume">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1.5rem;">
+          <div>
+            <span class="eyebrow">Credentials &amp; Resume</span>
+            <h2 style="font-size: clamp(2rem, 4vw, 3rem);">Certifications &amp; Experience</h2>
+            <p style="margin-top: 0.5rem; max-width: 600px;">
+              Verified credentials, national CTF achievements, and academic training at Sri Shakthi Institute.
+            </p>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <button id="copy-resume-text-btn" class="btn btn-secondary" style="font-size: 0.8rem;">
+              📋 Copy Text
+            </button>
+            <button class="btn btn-secondary open-resume-modal-btn" style="font-size: 0.8rem;">
+              🖨️ Print / Full Layout
+            </button>
+            <a href="./public/resume.pdf" download="Dhayalan_Kaniappan_Resume.pdf" class="btn btn-primary" style="font-size: 0.8rem;">
+              📥 Download PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- Resume Tabs -->
+        <div class="resume-tabs">
+          <button class="resume-tab-btn active" data-tab="certs">
+            🏆 Verified Credentials (4)
+          </button>
+          <button class="resume-tab-btn" data-tab="experience">
+            💼 Experience &amp; Roles
+          </button>
+          <button class="resume-tab-btn" data-tab="education">
+            🎓 Education
+          </button>
+          <button class="resume-tab-btn" data-tab="matrix">
+            🗂️ Domain Matrix
+          </button>
+        </div>
+
+        <!-- Tab 1: Certifications -->
+        <div class="resume-tab-content active" id="tab-certs">
+          <!-- LinkedIn Verification Banner -->
+          <div class="pro-card" style="padding: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 2rem;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-primary); font-family: var(--font-mono); font-size: 0.82rem; font-weight: 800;">
+                <span>🔗 Original Verified Credentials Available on LinkedIn</span>
+              </div>
+              <p style="font-size: 0.85rem; margin-top: 0.25rem;">
+                All original signed certificates and CTF competition records are verifiable on my LinkedIn profile.
+              </p>
+            </div>
+            <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn btn-primary" style="font-size: 0.8rem;">
+              Check Out on LinkedIn ↗
+            </a>
+          </div>
+
+          <div class="cert-grid">
+            <!-- 1. Java + MongoDB -->
+            <div class="pro-card cert-card">
+              <div>
+                <div class="cert-badge-wrapper" data-img="./public/certificates/java-mongodb-badge.svg" data-title="Certificate of Merit: Java + MongoDB (92% Score)">
+                  <img src="./public/certificates/java-mongodb-badge.svg" alt="Java + MongoDB Certificate of Merit" loading="lazy" />
+                </div>
+                <div style="padding: 1.25rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-subtle);">August 2025</span>
+                  <h4 style="font-size: 1.05rem; margin-top: 0.2rem;">Certificate of Merit: Java + Mongo DB (92% Score)</h4>
+                  <p style="font-size: 0.78rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-mono); margin-top: 0.2rem;">Hazhtech / IACT</p>
+                  <p style="font-size: 0.82rem; margin-top: 0.5rem; line-height: 1.5;">
+                    60-day intensive course in Java OOP, data structures, and MongoDB database modeling.
+                  </p>
+                </div>
+              </div>
+              <div style="padding: 0 1.25rem 1.25rem;">
+                <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.78rem; padding: 0.45rem;">
+                  View on LinkedIn ↗
+                </a>
+              </div>
+            </div>
+
+            <!-- 2. Yukthi CTF -->
+            <div class="pro-card cert-card">
+              <div>
+                <div class="cert-badge-wrapper" data-img="./public/certificates/yukthi-ctf-badge.svg" data-title="Yukthi CTF 2.0 (National CTF)">
+                  <img src="./public/certificates/yukthi-ctf-badge.svg" alt="Yukthi CTF 2.0 Certificate" loading="lazy" />
+                </div>
+                <div style="padding: 1.25rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-subtle);">December 2025</span>
+                  <h4 style="font-size: 1.05rem; margin-top: 0.2rem;">Yukthi CTF 2.0 (National-Level CTF)</h4>
+                  <p style="font-size: 0.78rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-mono); margin-top: 0.2rem;">Tamil Nadu Police &amp; Selfmade Ninja</p>
+                  <p style="font-size: 0.82rem; margin-top: 0.5rem; line-height: 1.5;">
+                    National-level Capture The Flag competition organized by the Tamil Nadu Police contributing to cyber defense.
+                  </p>
+                </div>
+              </div>
+              <div style="padding: 0 1.25rem 1.25rem;">
+                <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.78rem; padding: 0.45rem;">
+                  View on LinkedIn ↗
+                </a>
+              </div>
+            </div>
+
+            <!-- 3. HackTiVate -->
+            <div class="pro-card cert-card">
+              <div>
+                <div class="cert-badge-wrapper" data-img="./public/certificates/hacktivate-ctf-badge.svg" data-title="0xTi - HackTiVate 24-Hour CTF (Titanium 2026)">
+                  <img src="./public/certificates/hacktivate-ctf-badge.svg" alt="HackTiVate 24-Hour CTF Certificate" loading="lazy" />
+                </div>
+                <div style="padding: 1.25rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-subtle);">January 2026</span>
+                  <h4 style="font-size: 1.05rem; margin-top: 0.2rem;">0xTi - HackTiVate 24-Hour CTF</h4>
+                  <p style="font-size: 0.78rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-mono); margin-top: 0.2rem;">Rajalakshmi Engineering College</p>
+                  <p style="font-size: 0.82rem; margin-top: 0.5rem; line-height: 1.5;">
+                    24-hour intensive CTF hackathon showcasing technical problem-solving, binary analysis, and web exploitation.
+                  </p>
+                </div>
+              </div>
+              <div style="padding: 0 1.25rem 1.25rem;">
+                <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.78rem; padding: 0.45rem;">
+                  View on LinkedIn ↗
+                </a>
+              </div>
+            </div>
+
+            <!-- 4. Lemon CTF -->
+            <div class="pro-card cert-card">
+              <div>
+                <div class="cert-badge-wrapper" data-img="./public/certificates/lemon-ctf-badge.svg" data-title="L3m0n CTF 2025 (24-Hour CTF)">
+                  <img src="./public/certificates/lemon-ctf-badge.svg" alt="L3m0n CTF Certificate" loading="lazy" />
+                </div>
+                <div style="padding: 1.25rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-subtle);">2025</span>
+                  <h4 style="font-size: 1.05rem; margin-top: 0.2rem;">L3m0n CTF 2025 (24-Hour CTF)</h4>
+                  <p style="font-size: 0.78rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-mono); margin-top: 0.2rem;">Amrita Vishwa Vidyapeetham</p>
+                  <p style="font-size: 0.82rem; margin-top: 0.5rem; line-height: 1.5;">
+                    24-hour national cybersecurity and problem-solving competition hosted by Amrita Vishwa Vidyapeetham.
+                  </p>
+                </div>
+              </div>
+              <div style="padding: 0 1.25rem 1.25rem;">
+                <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.78rem; padding: 0.45rem;">
+                  View on LinkedIn ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Experience -->
+        <div class="resume-tab-content" id="tab-experience">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+            <div class="pro-card" style="padding: 2rem;">
+              <span class="eyebrow">Automation &amp; Infrastructure</span>
+              <h4 style="font-size: 1.25rem; margin-top: 0.3rem;">DevOps &amp; Systems Developer</h4>
+              <p style="font-size: 0.82rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-mono);">Independent Systems · 2025 — Present</p>
+              <ul style="margin-top: 1rem; font-size: 0.88rem; line-height: 1.7; padding-left: 1.2rem;">
+                <li>Architecting ONey — low-latency remote system management client with encrypted P2P tunneling.</li>
+                <li>Created modular Ansible automation playbooks for rapid Linux server provisioning and firewall security.</li>
+                <li>Automated directory classification and maintenance daemons using Python and Bash.</li>
+              </ul>
+            </div>
+
+            <div class="pro-card" style="padding: 2rem;">
+              <span class="eyebrow">Full-Stack Engineering</span>
+              <h4 style="font-size: 1.25rem; margin-top: 0.3rem;">Full-Stack MERN Developer</h4>
+              <p style="font-size: 0.82rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-mono);">Web Platforms · 2024 — Present</p>
+              <ul style="margin-top: 1rem; font-size: 0.88rem; line-height: 1.7; padding-left: 1.2rem;">
+                <li>Built responsive e-commerce storefronts (Shahihennaholic) with localized cart state.</li>
+                <li>Engineered custom Flarum extensions with JavaScript/Mithril frontend hooks and MySQL indexing.</li>
+                <li>Developed RESTful APIs in Express with JWT authentication and MongoDB schemas.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Education -->
+        <div class="resume-tab-content" id="tab-education">
+          <div class="pro-card" style="padding: 2.5rem;">
+            <span class="eyebrow">Academic Degree Program</span>
+            <h3 style="font-size: 1.6rem; margin-top: 0.25rem;">Bachelor of Engineering (B.E.)</h3>
+            <p style="font-weight: 700; color: var(--text-primary); margin-top: 0.25rem;">
+              Sri Shakthi Institute of Engineering and Technology, Coimbatore
+            </p>
+            <p style="font-size: 0.88rem; margin-top: 1rem; line-height: 1.7;">
+              Core coursework in Python Systems Development, Java OOP, Operating Systems, Linux Administration, Computer Networks, and Cloud DevOps practices.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tab 4: Domain Matrix -->
+        <div class="resume-tab-content" id="tab-matrix">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <div class="pro-card" style="padding: 1.5rem;">
+              <h4 style="margin-bottom: 0.5rem;">DevOps &amp; Cloud</h4>
+              <p style="font-size: 0.85rem; line-height: 1.7;">Ansible Playbooks · Docker · Linux Fleet Administration · CI/CD Workflows · Bash Scripting · UFW Firewall</p>
+            </div>
+            <div class="pro-card" style="padding: 1.5rem;">
+              <h4 style="margin-bottom: 0.5rem;">Programming</h4>
+              <p style="font-size: 0.85rem; line-height: 1.7;">Python (Primary) · Java (OOP &amp; Collections) · JavaScript (ES6+) · TypeScript · Raw Sockets</p>
+            </div>
+            <div class="pro-card" style="padding: 1.5rem;">
+              <h4 style="margin-bottom: 0.5rem;">Full-Stack Web</h4>
+              <p style="font-size: 0.85rem; line-height: 1.7;">React · Node.js · Express.js · MongoDB · Tailwind CSS · HTML5/CSS3 · REST APIs</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="pro-card" style="padding: clamp(2rem, 5vw, 4rem); max-width: 900px; margin: 0 auto; text-align: center;">
+          <span class="eyebrow">Get In Touch</span>
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem);">Let's build resilient systems together</h2>
+          <p style="max-width: 580px; margin: 1rem auto 2rem; font-size: 0.95rem;">
+            Available for full-stack engineering roles, DevOps automation, and scalable cloud systems. Feel free to reach out directly via email or LinkedIn.
+          </p>
+
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem;">
+            <a href="mailto:dhaya3486@gmail.com" class="btn btn-primary">
+              ✉️ Send Email Directly
+            </a>
+            <button id="copy-email-btn" class="btn btn-secondary">
+              📋 Copy: dhaya3486@gmail.com
+            </button>
+            <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn btn-secondary">
+              💼 LinkedIn Profile ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem;">
+      <div>
+        <a href="#hero" class="nav-logo">
+          <span class="logo-badge">DK</span>
+          <span>Dhayalan</span>
+        </a>
+        <p style="font-size: 0.78rem; color: var(--text-subtle); margin-top: 0.25rem;">
+          DevOps Specialist · Python &amp; MERN Developer · Sri Shakthi Institute
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 1.5rem; font-size: 0.85rem; font-weight: 600;">
+        <a href="https://github.com/DHAYALANKANIAPPAN" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="#resume">Resume</a>
+        <a href="#hero">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Certificate Zoom Modal -->
+  <div class="modal-overlay" id="cert-zoom-modal">
+    <div class="modal-container" style="max-width: 720px; padding: 2rem; background: var(--bg-card);">
+      <button class="modal-close-btn" aria-label="Close Preview">✕</button>
+      <h3 id="cert-zoom-title" style="font-size: 1.1rem; margin-bottom: 1.25rem; color: var(--text-primary);">Certificate Preview</h3>
+      <div style="position: relative; aspect-ratio: 4/3; width: 100%; border-radius: var(--radius-md); overflow: hidden; background: #000;">
+        <img id="cert-zoom-img" src="" alt="Zoomed Certificate" style="width: 100%; height: 100%; object-fit: contain;" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Full Printable Resume Modal -->
+  <div class="modal-overlay" id="resume-full-modal">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="Close Resume">✕</button>
+      
+      <div class="no-print" style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-main); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+        <span style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
+          ● Dhayalan Kaniappan — Complete Resume Document
+        </span>
+        <button class="btn btn-primary" onclick="window.print()" style="padding: 0.4rem 1rem; font-size: 0.78rem;">
+          🖨️ Print / Save as PDF
+        </button>
+      </div>
+
+      <!-- Printable Resume Body -->
+      <div>
+        <h1 style="font-size: 2.2rem; font-weight: 900;">Dhayalan Kaniappan</h1>
+        <p style="font-family: var(--font-mono); font-size: 0.95rem; font-weight: 700; margin-top: 0.2rem; color: var(--text-primary);">
+          The Code Whisperer · DevOps Specialist · Python &amp; MERN Stack Developer
+        </p>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.5rem;">
+          Email: dhaya3486@gmail.com · Location: Coimbatore, Tamil Nadu, India · GitHub: github.com/DHAYALANKANIAPPAN · LinkedIn: linkedin.com/in/dhaya05
+        </p>
+
+        <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid var(--border-main);" />
+
+        <h3 style="font-size: 1rem; text-transform: uppercase; font-weight: 800; margin-bottom: 0.5rem;">Professional Summary</h3>
+        <p style="font-size: 0.88rem; line-height: 1.6;">
+          Engineering student, DevOps specialist, and Python/MERN developer with hands-on experience in Linux server automation (Ansible, Docker), remote system access (ONey), Java OOP architectures, and Python telemetry tooling. Proven track record of competing in national 24-hour CTFs (Tamil Nadu Police Yukthi CTF, Amrita, REC) and building real-world web and systems software.
+        </p>
+
+        <h3 style="font-size: 1rem; text-transform: uppercase; font-weight: 800; margin: 1.5rem 0 0.5rem;">Key Projects &amp; Systems</h3>
+        <ul style="font-size: 0.88rem; line-height: 1.7; padding-left: 1.2rem;">
+          <li><b>ONey Remote System Control:</b> Low-latency remote system management client with encrypted P2P tunneling.</li>
+          <li><b>Ansible Fleet Automation:</b> Modular Linux provisioning playbooks, SSH security, and UFW firewall enforcement.</li>
+          <li><b>Browser Monitoring Tool:</b> Real-time browser telemetry and event stream inspector in Python.</li>
+          <li><b>ATM Banking &amp; Account System:</b> Java OOP encapsulated banking model with atomic transaction ledger.</li>
+          <li><b>Shahihennaholic Storefront:</b> Responsive bridal henna e-commerce catalog with local storage.</li>
+          <li><b>Z-Protocol Wire Transport:</b> Layer-4 binary networking protocol built on raw Python sockets.</li>
+        </ul>
+
+        <h3 style="font-size: 1rem; text-transform: uppercase; font-weight: 800; margin: 1.5rem 0 0.5rem;">Verified Certifications</h3>
+        <ul style="font-size: 0.88rem; line-height: 1.7; padding-left: 1.2rem;">
+          <li><b>Certificate of Merit: Java + Mongo DB (92% Score)</b> — Hazhtech Career Development Centre / IACT (Aug 2025)</li>
+          <li><b>Yukthi CTF 2.0 (National-Level CTF)</b> — Tamil Nadu Police &amp; Selfmade Ninja Academy (Dec 2025)</li>
+          <li><b>0xTi - HackTiVate 24-Hour CTF (Titanium 2026)</b> — Rajalakshmi Engineering College (Jan 2026)</li>
+          <li><b>L3m0n CTF 2025 (24-Hour CTF)</b> — Amrita Vishwa Vidyapeetham (2025)</li>
+        </ul>
+
+        <h3 style="font-size: 1rem; text-transform: uppercase; font-weight: 800; margin: 1.5rem 0 0.5rem;">Education</h3>
+        <p style="font-size: 0.88rem;">
+          <b>Bachelor of Engineering (B.E.)</b> — Sri Shakthi Institute of Engineering and Technology, Coimbatore (2023 — 2027)
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Script -->
+  <script src="./script.js"></script>
+</body>
+</html>

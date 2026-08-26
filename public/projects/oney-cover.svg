@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="on-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070c1f" />
+      <stop offset="50%" stop-color="#0d1b3e" />
+      <stop offset="100%" stop-color="#040816" />
+    </linearGradient>
+    <linearGradient id="on-stream" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="50%" stop-color="#7B61FF" />
+      <stop offset="100%" stop-color="#00FFB3" />
+    </linearGradient>
+    <filter id="on-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="7" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#on-bg)" />
+
+  <!-- Background telemetry grid -->
+  <g opacity="0.12" stroke="#00E5FF" stroke-width="1">
+    <path d="M0 60 H800 M0 130 H800 M0 200 H800 M0 270 H800 M0 340 H800 M0 410 H800 M0 480 H800" />
+    <path d="M60 0 V500 M140 0 V500 M220 0 V500 M300 0 V500 M380 0 V500 M460 0 V500 M540 0 V500 M620 0 V500 M700 0 V500 M780 0 V500" />
+  </g>
+
+  <!-- ONey Remote System Dashboard -->
+  <g transform="translate(60, 60)">
+    <rect width="680" height="380" rx="18" fill="#09132e" stroke="#00E5FF" stroke-width="1.5" stroke-opacity="0.6" />
+    
+    <!-- Top Header -->
+    <rect width="680" height="42" rx="18" fill="#10204a" />
+    <rect y="24" width="680" height="18" fill="#10204a" />
+    <circle cx="24" cy="21" r="5" fill="#FF5F56" />
+    <circle cx="40" cy="21" r="5" fill="#FFBD2E" />
+    <circle cx="56" cy="21" r="5" fill="#27C93F" />
+    <text x="340" y="26" fill="#FFFFFF" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">ONey — Remote System Management &amp; Encrypted Control Hub</text>
+
+    <!-- Content Grid -->
+    <g transform="translate(25, 60)">
+      <!-- Left: Remote Machine Canvas Stream -->
+      <g>
+        <rect width="380" height="280" rx="12" fill="#050c20" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.3" />
+        
+        <!-- Remote Desktop Screen Simulation -->
+        <rect x="15" y="15" width="350" height="180" rx="8" fill="#0c183a" />
+        
+        <!-- Desktop Taskbar -->
+        <rect x="15" y="165" width="350" height="30" rx="4" fill="#081028" />
+        <circle cx="35" cy="180" r="7" fill="#00E5FF" />
+        <rect x="52" y="174" width="60" height="12" rx="3" fill="#ffffff" fill-opacity="0.1" />
+        <text x="340" y="184" fill="#00FFB3" font-family="monospace" font-size="10" text-anchor="end">60 FPS · 12ms</text>
+
+        <!-- Remote Terminal inside desktop -->
+        <g transform="translate(30, 30)">
+          <rect width="260" height="110" rx="6" fill="#040816" stroke="#ffffff" stroke-opacity="0.1" />
+          <text x="10" y="20" fill="#00FFB3" font-family="monospace" font-size="9">oney-daemon@remote-node:~$</text>
+          <text x="10" y="38" fill="#E5E7F5" opacity="0.8" font-family="monospace" font-size="9">tunnel: active [AES-256-GCM]</text>
+          <text x="10" y="56" fill="#00E5FF" font-family="monospace" font-size="9">screen_capture: h264 zero-copy</text>
+          <text x="10" y="74" fill="#FFBD2E" font-family="monospace" font-size="9">input_sync: mouse/kbd mapped</text>
+          <text x="10" y="92" fill="#00FFB3" font-family="monospace" font-size="9">✓ peer verified: 192.168.1.45:8443</text>
+        </g>
+
+        <!-- Status Bottom Band -->
+        <g transform="translate(15, 210)" font-family="monospace" font-size="10">
+          <rect width="350" height="55" rx="8" fill="#0e1e48" />
+          <text x="14" y="22" fill="#00FFB3">● CONNECTED · ENCRYPTED P2P TUNNEL</text>
+          <text x="14" y="40" fill="#E5E7F5" opacity="0.7">Bandwidth: 2.4 MB/s · Codec: H.264 / AV1</text>
+        </g>
+      </g>
+
+      <!-- Right: System Metrics & Control Actions -->
+      <g transform="translate(405, 0)">
+        <rect width="225" height="280" rx="12" fill="#050c20" stroke="#ffffff" stroke-opacity="0.06" />
+        <text x="16" y="26" fill="#00E5FF" font-family="monospace" font-size="11" font-weight="bold">REMOTE CONTROLS</text>
+
+        <g transform="translate(14, 40)" font-family="monospace" font-size="10">
+          <rect width="197" height="38" rx="6" fill="#0e1f46" />
+          <text x="10" y="16" fill="#FFFFFF">Peer ID: ON-89304</text>
+          <text x="10" y="30" fill="#00FFB3">Direct UDP Hole Punching</text>
+
+          <rect y="46" width="197" height="38" rx="6" fill="#0e1f46" />
+          <text x="10" y="16" fill="#FFFFFF">Clipboard Bridge</text>
+          <text x="10" y="30" fill="#00E5FF">Bidirectional Sync Active</text>
+
+          <rect y="92" width="197" height="38" rx="6" fill="#0e1f46" />
+          <text x="10" y="16" fill="#FFFFFF">File Transfer Hub</text>
+          <text x="10" y="30" fill="#7B61FF">Drag &amp; Drop Ready</text>
+
+          <rect y="142" width="197" height="75" rx="6" fill="#142c62" stroke="#00E5FF" stroke-width="1" />
+          <text x="10" y="20" fill="#00E5FF" font-weight="bold">Current Status: WIP</text>
+          <text x="10" y="38" fill="#E5E7F5">Client: Python / Rust</text>
+          <text x="10" y="52" fill="#E5E7F5">Protocol: UDP Socket</text>
+          <text x="10" y="66" fill="#00FFB3">Zero Third-Party Relay</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
