@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ecs-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1021" />
+      <stop offset="50%" stop-color="#141f3d" />
+      <stop offset="100%" stop-color="#080c18" />
+    </linearGradient>
+    <linearGradient id="aws-orange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF9900" />
+      <stop offset="100%" stop-color="#FFB84D" />
+    </linearGradient>
+    <filter id="ecs-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="450" rx="20" fill="url(#ecs-bg)" />
+  <rect x="20" y="20" width="560" height="410" rx="14" fill="none" stroke="url(#aws-orange)" stroke-width="1.5" stroke-opacity="0.4" />
+  <rect x="28" y="28" width="544" height="394" rx="10" fill="none" stroke="#FF9900" stroke-width="1" stroke-dasharray="6,4" stroke-opacity="0.25" />
+
+  <!-- Credly Verified Hexagon Badge -->
+  <g transform="translate(300, 130)" filter="url(#ecs-glow)">
+    <polygon points="0,-50 43.3,-25 43.3,25 0,50 -43.3,25 -43.3,-25" fill="#18274d" stroke="url(#aws-orange)" stroke-width="2.5" />
+    <!-- Container Icon -->
+    <path d="M-18,-12 L0,-22 L18,-12 L18,12 L0,22 L-18,12 Z" fill="none" stroke="#FF9900" stroke-width="2.5" />
+    <path d="M-18,-12 L0,-2 M18,-12 L0,-2 M0,-2 L0,22" stroke="#FF9900" stroke-width="2" />
+    <!-- Verified Checkmark Pin -->
+    <circle cx="28" cy="28" r="12" fill="#FF9900" />
+    <path d="M23,28 L27,32 L34,24" fill="none" stroke="#0b1021" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Title & Organization -->
+  <text x="300" y="220" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="800" font-size="20" text-anchor="middle">AMAZON ECS KNOWLEDGE BADGE</text>
+  <text x="300" y="244" fill="#FF9900" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Amazon Web Services (AWS) · Credly Verified</text>
+
+  <line x1="120" y1="266" x2="480" y2="266" stroke="#FFFFFF" stroke-opacity="0.1" />
+
+  <!-- Recipient & Details -->
+  <text x="300" y="295" fill="#E5E7F5" opacity="0.7" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">Awarded to</text>
+  <text x="300" y="322" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="bold" font-size="18" text-anchor="middle">DHAYALAN KANIAPPAN</text>
+  <text x="300" y="344" fill="#E5E7F5" opacity="0.6" font-family="monospace" font-size="11" text-anchor="middle">Container Orchestration · Cluster Ops · Fargate</text>
+
+  <!-- Credly & Skill Builder Badge Seal -->
+  <g transform="translate(150, 370)">
+    <rect width="300" height="34" rx="17" fill="#1b2a52" stroke="#FF9900" stroke-width="1" />
+    <text x="150" y="21" fill="#FF9900" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">✓ CREDLY BADGE · SEPTEMBER 05, 2026</text>
+  </g>
+</svg>

@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initTerminal();
   initProjectsFilter();
   initResumeTabs();
+  initCertWeightageFilter();
   initModals();
   initParticles();
 });
@@ -37,11 +38,9 @@ function initTheme() {
     localStorage.setItem("portfolio-theme", theme);
     if (themeIcon) {
       if (theme === "light") {
-        // Moon icon for switching to dark
         themeIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`;
         themeIcon.setAttribute("title", "Switch to Dark Mode");
       } else {
-        // Sun icon for switching to light
         themeIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`;
         themeIcon.setAttribute("title", "Switch to Light Mode");
       }
@@ -51,7 +50,6 @@ function initTheme() {
 
 /* 2. Navbar & Mobile Menu */
 function initNavbar() {
-  const navbar = document.getElementById("navbar");
   const mobileBtn = document.getElementById("mobile-menu-btn");
   const mobileNav = document.getElementById("mobile-nav");
 
@@ -77,7 +75,7 @@ function initTypewriter() {
     "Python Systems Developer",
     "DevOps Specialist",
     "Full-Stack MERN Engineer",
-    "Java OOP & Automation Builder"
+    "AWS Container & Cloud Builder"
   ];
 
   let phraseIdx = 0;
@@ -149,7 +147,7 @@ function initTerminal() {
         <div><b>bio</b> — Backstory</div>
         <div><b>projects</b> — Codebases & tools</div>
         <div><b>skills</b> — Core technical stack</div>
-        <div><b>certs</b> — CTFs & Certificates</div>
+        <div><b>certs</b> — CTFs & AWS Badges</div>
         <div><b>contact</b> — Email & LinkedIn</div>
         <div><b>matrix</b> — System status</div>
         <div><b>clear</b> — Wipe terminal</div>
@@ -162,16 +160,16 @@ function initTerminal() {
       </div>`,
     bio: () => `
       <div>
-        <p>DevOps builder and Python developer passionate about automated Linux server fleets, remote system control (ONey), and responsive MERN web architectures.</p>
+        <p>DevOps builder and Python developer passionate about automated Linux server fleets, remote system control (ONey), AWS container orchestration (ECS), and responsive MERN web architectures.</p>
       </div>`,
     skills: () => `
       <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px;">
         <span style="background: rgba(255,255,255,0.12); padding: 2px 6px; border-radius: 4px; color: #ffffff;">Python (94%)</span>
         <span style="background: rgba(255,255,255,0.12); padding: 2px 6px; border-radius: 4px; color: #ffffff;">Ansible (90%)</span>
-        <span style="background: rgba(255,255,255,0.12); padding: 2px 6px; border-radius: 4px; color: #ffffff;">Docker (88%)</span>
+        <span style="background: rgba(255,255,255,0.12); padding: 2px 6px; border-radius: 4px; color: #ffffff;">Docker & Amazon ECS (90%)</span>
+        <span style="background: rgba(255,255,255,0.12); padding: 2px 6px; border-radius: 4px; color: #ffffff;">AWS CDK & CloudFormation (86%)</span>
         <span style="background: rgba(255,255,255,0.12); padding: 2px 6px; border-radius: 4px; color: #ffffff;">Linux Admin (92%)</span>
         <span style="background: rgba(255,255,255,0.12); padding: 2px 6px; border-radius: 4px; color: #ffffff;">React/MERN (90%)</span>
-        <span style="background: rgba(255,255,255,0.12); padding: 2px 6px; border-radius: 4px; color: #ffffff;">Java OOP (90%)</span>
       </div>`,
     projects: () => `
       <div style="display: flex; flex-direction: column; gap: 4px;">
@@ -183,9 +181,13 @@ function initTerminal() {
       </div>`,
     certs: () => `
       <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div>🎖️ <b>Amazon ECS Knowledge Badge</b> — AWS · Credly Verified (Sep 2026)</div>
+        <div>⚙️ <b>CI/CD Pipeline with AWS CDK</b> — AWS Lab Accreditation (Sep 2026)</div>
+        <div>☁️ <b>AWS CloudFormation for Automation</b> — AWS Lab Accreditation (Sep 2026)</div>
+        <div>🎮 <b>Cloud Game Development Knowledge Badge</b> — AWS · Credly Verified (Sep 2026)</div>
         <div>🏆 <b>Java + MongoDB Merit (92%)</b> — Hazhtech / IACT</div>
         <div>🛡️ <b>Yukthi CTF 2.0</b> — Tamil Nadu Police & Selfmade Ninja</div>
-        <div>⚡ <b>HackTiVate 24h CTF</b> — Rajalakshmi Engineering College (Titanium 2026)</div>
+        <div>⚡ <b>HackTiVate 24h CTF</b> — Rajalakshmi Engineering College</div>
         <div>🍋 <b>L3m0n CTF 2025</b> — Amrita Vishwa Vidyapeetham</div>
       </div>`,
     contact: () => `
@@ -197,7 +199,7 @@ function initTerminal() {
     matrix: () => `
       <div style="color: #ffffff; font-family: var(--font-mono); font-size: 0.75rem;">
         <p>01000100 01001000 01000001 01011001 01000001 01001100 01000001 01001110</p>
-        <p>[+] DEVOPS FLEET: PROVISIONED | PYTHON SOCKETS: OPEN | ALL SYSTEMS OPERATIONAL</p>
+        <p>[+] AWS ECS FLEET: ACTIVE | CREDLY BADGES: VERIFIED | AUTOMATION DEPLOYED</p>
       </div>`,
     clear: () => {
       body.innerHTML = "";
@@ -278,7 +280,7 @@ function initTerminal() {
   });
 }
 
-/* 6. Projects Filtering, Search & Case Studies */
+/* 6. Projects Filtering & Search */
 function initProjectsFilter() {
   const filterBtns = document.querySelectorAll(".filter-btn");
   const searchInput = document.getElementById("project-search");
@@ -327,7 +329,7 @@ function initProjectsFilter() {
   }
 
   document.querySelectorAll(".tech-tag").forEach(tag => {
-    tag.addEventListener("click", (e) => {
+    tag.addEventListener("click", () => {
       const tagName = tag.getAttribute("data-tag") || tag.textContent.trim();
       if (activeTag === tagName) {
         activeTag = null;
@@ -340,7 +342,6 @@ function initProjectsFilter() {
     });
   });
 
-  // Case study toggles
   document.querySelectorAll(".toggle-case-study-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const card = btn.closest(".project-card");
@@ -373,28 +374,94 @@ function initResumeTabs() {
   });
 }
 
-/* 8. Modals (Resume Full-View & Certificate Zoom) */
+/* 8. Certificate Weightage Filter & Expandable Foundation Drawer */
+function initCertWeightageFilter() {
+  const certFilterBtns = document.querySelectorAll(".cert-filter-btn");
+  const certCards = document.querySelectorAll(".cert-grid .cert-card");
+  const drawerBtn = document.getElementById("toggle-foundation-drawer-btn");
+  const drawer = document.getElementById("foundation-cert-drawer");
+
+  function filterCerts(filterVal) {
+    certCards.forEach(card => {
+      const weight = card.getAttribute("data-weightage") || "high";
+      const isCredly = card.getAttribute("data-credly") === "true";
+      const category = card.getAttribute("data-cert-category") || "";
+
+      if (filterVal === "all") {
+        card.style.display = "flex";
+      } else if (filterVal === "credly") {
+        card.style.display = isCredly ? "flex" : "none";
+      } else if (filterVal === "high") {
+        card.style.display = weight === "high" ? "flex" : "none";
+      } else if (filterVal === "aws") {
+        card.style.display = category.includes("aws") ? "flex" : "none";
+      } else if (filterVal === "ctf") {
+        card.style.display = category.includes("ctf") || category.includes("merit") ? "flex" : "none";
+      }
+    });
+  }
+
+  certFilterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      certFilterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const val = btn.getAttribute("data-cert-filter") || "high";
+      filterCerts(val);
+    });
+  });
+
+  // Expandable Drawer for Foundation & Micro-modules
+  if (drawerBtn && drawer) {
+    drawerBtn.addEventListener("click", () => {
+      drawer.classList.toggle("open");
+      const isOpen = drawer.classList.contains("open");
+      const textEl = drawerBtn.querySelector(".drawer-btn-text");
+      const iconEl = drawerBtn.querySelector(".drawer-btn-icon");
+
+      if (textEl) {
+        textEl.textContent = isOpen 
+          ? "Hide Foundation Modules & Readiness Overviews" 
+          : "Show 10 Additional AWS Technical Modules & Foundations";
+      }
+      if (iconEl) {
+        iconEl.textContent = isOpen ? "▲" : "▼";
+      }
+    });
+  }
+}
+
+/* 9. Modals (Resume Full-View & Certificate Zoom) */
 function initModals() {
-  // Certificate Zoom Modal
   const certModal = document.getElementById("cert-zoom-modal");
   const certImg = document.getElementById("cert-zoom-img");
   const certTitle = document.getElementById("cert-zoom-title");
+  const certPdfLink = document.getElementById("cert-zoom-pdf-link");
 
-  document.querySelectorAll(".cert-badge-wrapper").forEach(wrapper => {
+  document.querySelectorAll(".cert-badge-wrapper, .zoomable-cert-trigger").forEach(wrapper => {
     wrapper.addEventListener("click", () => {
       const img = wrapper.querySelector("img");
       const title = wrapper.getAttribute("data-title") || img?.alt || "Certificate";
       const src = wrapper.getAttribute("data-img") || img?.src || "";
+      const pdf = wrapper.getAttribute("data-pdf") || "";
 
       if (certModal && certImg && certTitle) {
         certImg.src = src;
         certTitle.textContent = title;
+
+        if (certPdfLink) {
+          if (pdf) {
+            certPdfLink.href = pdf;
+            certPdfLink.style.display = "inline-flex";
+          } else {
+            certPdfLink.style.display = "none";
+          }
+        }
+
         certModal.classList.add("open");
       }
     });
   });
 
-  // Resume Modal
   const resumeModal = document.getElementById("resume-full-modal");
   const openResumeBtns = document.querySelectorAll(".open-resume-modal-btn");
 
@@ -404,7 +471,6 @@ function initModals() {
     });
   });
 
-  // Close buttons
   document.querySelectorAll(".modal-close-btn, .modal-overlay").forEach(el => {
     el.addEventListener("click", (e) => {
       if (e.target === el || el.classList.contains("modal-close-btn")) {
@@ -413,7 +479,6 @@ function initModals() {
     });
   });
 
-  // Copy email button
   const copyEmailBtn = document.getElementById("copy-email-btn");
   if (copyEmailBtn) {
     copyEmailBtn.addEventListener("click", () => {
@@ -422,7 +487,6 @@ function initModals() {
     });
   }
 
-  // Copy plain text resume
   const copyResumeBtn = document.getElementById("copy-resume-text-btn");
   if (copyResumeBtn) {
     copyResumeBtn.addEventListener("click", () => {
@@ -433,7 +497,7 @@ Email: dhaya3486@gmail.com | Location: Coimbatore, TN, India
 GitHub: https://github.com/DHAYALANKANIAPPAN | LinkedIn: https://www.linkedin.com/in/dhaya05/
 
 SUMMARY:
-Engineering student, DevOps specialist, and Python/MERN developer with experience in Linux server automation (Ansible, Docker), remote system access (ONey), Java OOP architectures, and Python telemetry tooling. Competed in national 24-hour CTFs (Tamil Nadu Police Yukthi CTF, Amrita, REC).
+Engineering student, DevOps specialist, and Python/MERN developer with experience in Linux server automation (Ansible, Docker), AWS container orchestration (Amazon ECS Knowledge Badge), remote system access (ONey), Java OOP architectures, and Python telemetry tooling. Competed in national 24-hour CTFs (Tamil Nadu Police Yukthi CTF, Amrita, REC).
 
 EDUCATION:
 * Bachelor of Engineering (B.E.) — Sri Shakthi Institute of Engineering and Technology, Coimbatore
@@ -446,11 +510,16 @@ KEY PROJECTS:
 * Shahihennaholic Storefront — Web catalog & cart interface
 * Z-Protocol — Layer-4 binary networking protocol on raw Python sockets
 
-CERTIFICATIONS:
-* Certificate of Merit: Java + MongoDB (92% Score) — Hazhtech / IACT
-* Yukthi CTF 2.0 — Tamil Nadu Police & Selfmade Ninja Academy
-* HackTiVate 24h CTF — Rajalakshmi Engineering College (Titanium 2026)
-* L3m0n CTF 2025 — Amrita Vishwa Vidyapeetham
+CORE CERTIFICATIONS & CREDLY BADGES:
+* Amazon ECS Knowledge Badge — AWS Skill Builder / Credly Verified (Sep 05, 2026)
+* Lab: Deploying a CI/CD Pipeline with Managed Deployment Stage using AWS CDK (Sep 04, 2026)
+* Lab: Using AWS CloudFormation for Automation (Sep 04, 2026)
+* Cloud Game Development Knowledge Badge — AWS Skill Builder / Credly (Sep 09, 2026)
+* Certificate of Merit: Java + MongoDB (92% Score) — Hazhtech / IACT (Aug 2025)
+* Yukthi CTF 2.0 — Tamil Nadu Police & Selfmade Ninja Academy (Dec 2025)
+* HackTiVate 24h CTF — Rajalakshmi Engineering College (Jan 2026)
+* L3m0n CTF 2025 — Amrita Vishwa Vidyapeetham (2025)
+* (+10 Additional AWS Technical Modules in ECS Security, Networking, Observability, Auto Scaling)
 `.trim();
       navigator.clipboard.writeText(text);
       showToast("Full resume copied as text!", "success");
@@ -458,7 +527,7 @@ CERTIFICATIONS:
   }
 }
 
-/* 9. Toast Notification Helper */
+/* 10. Toast Notification Helper */
 function showToast(message, type = "success") {
   let container = document.getElementById("toast-container");
   if (!container) {
@@ -486,7 +555,7 @@ function showToast(message, type = "success") {
   }, 3000);
 }
 
-/* 10. Lightweight Subtle Background Canvas */
+/* 11. Lightweight Subtle Background Canvas */
 function initParticles() {
   const canvas = document.getElementById("particle-canvas");
   if (!canvas) return;

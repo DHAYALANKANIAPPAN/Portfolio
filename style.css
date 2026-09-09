@@ -918,9 +918,64 @@ code, kbd, pre, .mono {
   display: block;
 }
 
+/* Credly & Weightage Custom Styling */
+.credly-badge-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.credly-card {
+  border: 1px solid var(--border-strong);
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-card);
+  transition: all 0.25s ease;
+}
+
+.credly-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--text-primary);
+  box-shadow: var(--shadow-hover);
+}
+
+.weightage-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.weightage-high {
+  background: var(--text-primary);
+  color: var(--bg-main);
+}
+
+.weightage-deepdive {
+  background: var(--accent-badge-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-main);
+}
+
+.weightage-foundation {
+  background: transparent;
+  color: var(--text-subtle);
+  border: 1px dashed var(--border-main);
+}
+
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 1.5rem;
 }
 
@@ -949,6 +1004,39 @@ code, kbd, pre, .mono {
 
 .cert-badge-wrapper:hover img {
   transform: scale(1.03);
+}
+
+/* Expandable Foundation Certificates Drawer */
+.drawer-toggle-box {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.foundation-cert-drawer {
+  margin-top: 2rem;
+  display: none;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--border-main);
+}
+
+.foundation-cert-drawer.open {
+  display: block;
+}
+
+.foundation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.foundation-card {
+  padding: 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-main);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Modals */
