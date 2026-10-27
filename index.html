@@ -30,6 +30,7 @@
       <!-- Desktop Navigation Links -->
       <ul class="nav-links">
         <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#devops-lab" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.35rem;">DevOps Lab <span style="font-size: 0.62rem; padding: 0.1rem 0.4rem; border-radius: 4px; background: rgba(16, 185, 129, 0.15); color: #10b981; font-family: var(--font-mono); font-weight: 700; border: 1px solid rgba(16, 185, 129, 0.3);">LIVE</span></a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#resume" class="nav-link">Resume &amp; Certs</a></li>
@@ -66,6 +67,7 @@
   <!-- Mobile Navigation Drawer -->
   <div class="mobile-nav" id="mobile-nav">
     <a href="#about" class="nav-link">About</a>
+    <a href="#devops-lab" class="nav-link">DevOps Lab (Live Command Center)</a>
     <a href="#projects" class="nav-link">Projects</a>
     <a href="#skills" class="nav-link">Skills</a>
     <a href="#resume" class="nav-link">Resume &amp; Certifications</a>
@@ -77,44 +79,144 @@
   </div>
 
   <main>
-    <!-- Hero Section -->
+    <!-- Hero Section: DevOps Workstation Split -->
     <section class="hero-section" id="hero">
       <canvas id="particle-canvas" style="position: absolute; inset: 0; pointer-events: none;"></canvas>
 
       <div class="container" style="position: relative; z-index: 2; width: 100%;">
-        <div class="hero-status-pill">
-          <span class="status-dot"></span>
-          <span>DevOps Specialist · Python &amp; MERN · Coimbatore, India</span>
-        </div>
+        <div class="hero-grid">
 
-        <h1 class="hero-title">
-          <span>Dhayalan</span><br />
-          <span>Kaniappan</span>
-        </h1>
+          <!-- Left Column: Professional Identity & Command Header -->
+          <div>
+            <div class="hero-status-pill">
+              <span class="status-dot"></span>
+              <span>CLUSTER: AP-SOUTH-1 · DEVOPS &amp; SYSTEMS ENGINEER</span>
+            </div>
 
-        <div class="hero-typewriter-container">
-          <span style="font-weight: 800;">&gt;</span>
-          <span id="typewriter-text"></span>
-          <span class="typewriter-cursor"></span>
-        </div>
+            <div class="hero-prompt-bar">
+              <span>dhaya@latitude-3410:~$</span>
+              <span style="color: #ffffff; font-weight: 700;">whoami --verbose</span>
+            </div>
 
-        <p class="hero-description">
-          I build reliable cloud infrastructure, automate deployment pipelines with Ansible and Docker, and engineer robust Python systems and full-stack MERN applications.
-        </p>
+            <h1 class="hero-title">
+              <span>Dhayalan</span><br />
+              <span>Kaniappan</span>
+            </h1>
 
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">
-            Explore Projects
-          </a>
-          <button class="btn btn-secondary open-resume-modal-btn">
-            Resume &amp; Certifications
-          </button>
-          <a href="https://github.com/DHAYALANKANIAPPAN" target="_blank" rel="noreferrer" class="btn-icon" aria-label="GitHub Profile" title="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn-icon" aria-label="LinkedIn Profile" title="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
+            <div class="hero-badge-tag">
+              &lt; THE CODE WHISPERER /&gt;
+            </div>
+
+            <div class="hero-typewriter-container">
+              <span style="font-weight: 800; color: #10b981;">&gt;</span>
+              <span id="typewriter-text"></span>
+              <span class="typewriter-cursor"></span>
+            </div>
+
+            <p class="hero-description">
+              I build reliable cloud infrastructure, automate deployment pipelines with Ansible and Docker, and engineer robust Python systems and full-stack MERN applications.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#devops-lab" class="btn btn-primary" style="background: #10b981; color: #000000; border-color: #10b981;">
+                ⚡ DevOps Command Center
+              </a>
+              <a href="#projects" class="btn btn-secondary">
+                📁 Explore 9 Projects
+              </a>
+              <button class="btn btn-secondary open-resume-modal-btn">
+                📜 Resume &amp; Certs
+              </button>
+              <a href="https://github.com/DHAYALANKANIAPPAN" target="_blank" rel="noreferrer" class="btn-icon" aria-label="GitHub Profile" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn-icon" aria-label="LinkedIn Profile" title="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+            </div>
+
+            <!-- Verified Credentials Ribbon -->
+            <div class="hero-credentials-bar">
+              <span class="cred-pill">☁️ AWS Amazon ECS Certified</span>
+              <span class="cred-pill">📜 Ansible 100% Idempotent</span>
+              <span class="cred-pill">🛡️ TN Police Yukthi CTF 2.0</span>
+              <span class="cred-pill">☕ Java OOP Merit (92%)</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Host Telemetry Workstation Window -->
+          <div>
+            <div class="workstation-window">
+              <div class="workstation-header">
+                <div class="terminal-dots">
+                  <span class="terminal-dot" style="background: #ef4444;"></span>
+                  <span class="terminal-dot" style="background: #eab308;"></span>
+                  <span class="terminal-dot" style="background: #22c55e;"></span>
+                  <span class="terminal-title" style="margin-left: 0.5rem; font-family: var(--font-mono); color: #94a3b8;">
+                    dhaya@latitude-3410:~ (neofetch)
+                  </span>
+                </div>
+                <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #10b981; font-weight: 700;">
+                  ● HOST ONLINE
+                </span>
+              </div>
+
+              <div class="workstation-body">
+                <div class="neofetch-table">
+                  <div class="neofetch-row">
+                    <span class="neofetch-key">OS</span>
+                    <span class="neofetch-val">Ubuntu 24.04 LTS x86_64</span>
+                  </div>
+                  <div class="neofetch-row">
+                    <span class="neofetch-key">Host</span>
+                    <span class="neofetch-val">Dell Latitude 3410</span>
+                  </div>
+                  <div class="neofetch-row">
+                    <span class="neofetch-key">Kernel</span>
+                    <span class="neofetch-val">Linux 6.8.0-45-generic</span>
+                  </div>
+                  <div class="neofetch-row">
+                    <span class="neofetch-key">Shell</span>
+                    <span class="neofetch-val">bash 5.2.21</span>
+                  </div>
+                  <div class="neofetch-row">
+                    <span class="neofetch-key">Uptime</span>
+                    <span class="neofetch-val" style="color: #10b981;">48 days, 14 hours (Fleet Stable)</span>
+                  </div>
+                  <div class="neofetch-row">
+                    <span class="neofetch-key">CPU</span>
+                    <span class="neofetch-val">Intel Core i5 (8) @ 4.200GHz [18%]</span>
+                  </div>
+                  <div class="neofetch-row">
+                    <span class="neofetch-key">Memory</span>
+                    <span class="neofetch-val">4,120MiB / 15,820MiB [26%]</span>
+                  </div>
+                  <div class="neofetch-row">
+                    <span class="neofetch-key">Containers</span>
+                    <span class="neofetch-val" style="color: #38bdf8;">4 Docker Daemons Active</span>
+                  </div>
+                  <div class="neofetch-row">
+                    <span class="neofetch-key">Ansible</span>
+                    <span class="neofetch-val" style="color: #10b981;">14 Tasks OK, 0 Failed</span>
+                  </div>
+                  <div class="neofetch-row">
+                    <span class="neofetch-key">Network</span>
+                    <span class="neofetch-val">192.168.1.104 (ap-south-1 · 14ms)</span>
+                  </div>
+                </div>
+
+                <!-- Quick Terminal Shell Launcher from Hero -->
+                <div class="workstation-quick-cmds">
+                  <span style="font-size: 0.68rem; color: #64748b; text-transform: uppercase;">Run:</span>
+                  <button type="button" class="ws-cmd-chip quick-cmd-btn" data-cmd="docker ps">$ docker ps</button>
+                  <button type="button" class="ws-cmd-chip quick-cmd-btn" data-cmd="ansible">$ ansible</button>
+                  <button type="button" class="ws-cmd-chip quick-cmd-btn" data-cmd="zprotocol">$ zprotocol</button>
+                  <button type="button" class="ws-cmd-chip quick-cmd-btn" data-cmd="uptime">$ uptime</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -290,6 +392,405 @@
       </div>
     </section>
 
+    <!-- DevOps Command Center & Systems Lab Section -->
+    <section class="section" id="devops-lab" style="border-top: 1px solid var(--border-main); background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);">
+      <div class="container">
+        <div style="text-align: center; max-width: 760px; margin: 0 auto 3rem;">
+          <span class="eyebrow">Visual Infrastructure &amp; Automation</span>
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem);">DevOps Command Center &amp; Systems Lab</h2>
+          <p style="margin-top: 0.5rem; line-height: 1.6;">
+            A live simulation of my production infrastructure: multi-node server cluster telemetry, an automated CI/CD deployment pipeline engine, and interactive protocol packet inspection.
+          </p>
+        </div>
+
+        <div class="devops-hud">
+
+          <!-- 1. Live Telemetry Strip -->
+          <div class="devops-metric-strip">
+            <div class="hud-pill">
+              <span class="pulse-indicator"></span>
+              <span style="font-weight: 700; color: #10b981;">ALL SYSTEMS OPERATIONAL</span>
+            </div>
+            <div class="hud-pill">
+              <span style="color: var(--text-subtle);">FLEET UPTIME:</span>
+              <span style="font-weight: 700; color: var(--text-primary);" id="hud-uptime">99.98%</span>
+            </div>
+            <div class="hud-pill">
+              <span style="color: var(--text-subtle);">ORCHESTRATION:</span>
+              <span style="font-weight: 700; color: var(--text-primary);">Docker &amp; Amazon ECS</span>
+            </div>
+            <div class="hud-pill">
+              <span style="color: var(--text-subtle);">CONFIG MGMT:</span>
+              <span style="font-weight: 700; color: var(--text-primary);">Ansible Playbooks</span>
+            </div>
+          </div>
+
+          <!-- 2. Live Cluster Nodes Grid -->
+          <div class="cluster-grid">
+            
+            <!-- Node 1 -->
+            <div class="cluster-node-card">
+              <div class="node-header">
+                <span class="node-title">
+                  <span>🖥️</span> node-01.gateway
+                </span>
+                <span class="node-status-badge">● Active</span>
+              </div>
+              <div class="node-meta">
+                Ubuntu 22.04 LTS · Nginx Reverse Proxy · TLS 1.3 Termination &amp; SSL Certbot
+              </div>
+              <div class="node-gauge-row">
+                <div class="gauge-labels">
+                  <span>CPU Usage</span>
+                  <span id="node1-cpu">18%</span>
+                </div>
+                <div class="gauge-bar-track">
+                  <div class="gauge-bar-fill" id="node1-cpu-bar" style="width: 18%;"></div>
+                </div>
+              </div>
+              <div class="node-gauge-row">
+                <div class="gauge-labels">
+                  <span>Memory</span>
+                  <span>1.4 / 4.0 GB (35%)</span>
+                </div>
+                <div class="gauge-bar-track">
+                  <div class="gauge-bar-fill" style="width: 35%;"></div>
+                </div>
+              </div>
+              <div class="node-footer">
+                <span>Ports: :80, :443</span>
+                <span id="node1-ping">Ping: 14ms</span>
+              </div>
+            </div>
+
+            <!-- Node 2 -->
+            <div class="cluster-node-card">
+              <div class="node-header">
+                <span class="node-title">
+                  <span>⚙️</span> node-02.telemetry
+                </span>
+                <span class="node-status-badge">● Active</span>
+              </div>
+              <div class="node-meta">
+                Debian 12 · Python Telemetry &amp; Z-Protocol Socket Receiver Daemon
+              </div>
+              <div class="node-gauge-row">
+                <div class="gauge-labels">
+                  <span>CPU Usage</span>
+                  <span id="node2-cpu">34%</span>
+                </div>
+                <div class="gauge-bar-track">
+                  <div class="gauge-bar-fill" id="node2-cpu-bar" style="width: 34%;"></div>
+                </div>
+              </div>
+              <div class="node-gauge-row">
+                <div class="gauge-labels">
+                  <span>Memory</span>
+                  <span>2.6 / 8.0 GB (32%)</span>
+                </div>
+                <div class="gauge-bar-track">
+                  <div class="gauge-bar-fill" style="width: 32%;"></div>
+                </div>
+              </div>
+              <div class="node-footer">
+                <span>Ports: :9000 (Raw), :8080</span>
+                <span id="node2-ping">Ping: 19ms</span>
+              </div>
+            </div>
+
+            <!-- Node 3 -->
+            <div class="cluster-node-card">
+              <div class="node-header">
+                <span class="node-title">
+                  <span>📦</span> node-03.database
+                </span>
+                <span class="node-status-badge">● Active</span>
+              </div>
+              <div class="node-meta">
+                Alpine Linux · Redis In-Memory Cache &amp; MongoDB Replica Cluster
+              </div>
+              <div class="node-gauge-row">
+                <div class="gauge-labels">
+                  <span>CPU Usage</span>
+                  <span id="node3-cpu">12%</span>
+                </div>
+                <div class="gauge-bar-track">
+                  <div class="gauge-bar-fill" id="node3-cpu-bar" style="width: 12%;"></div>
+                </div>
+              </div>
+              <div class="node-gauge-row">
+                <div class="gauge-labels">
+                  <span>Memory</span>
+                  <span>1.8 / 8.0 GB (22%)</span>
+                </div>
+                <div class="gauge-bar-track">
+                  <div class="gauge-bar-fill" style="width: 22%;"></div>
+                </div>
+              </div>
+              <div class="node-footer">
+                <span>Ports: :6379, :27017</span>
+                <span id="node3-ping">Ping: 11ms</span>
+              </div>
+            </div>
+
+            <!-- Node 4 -->
+            <div class="cluster-node-card">
+              <div class="node-header">
+                <span class="node-title">
+                  <span>☁️</span> node-04.aws-runner
+                </span>
+                <span class="node-status-badge">● Active</span>
+              </div>
+              <div class="node-meta">
+                AWS ECS Fargate Task · Automated Ansible Fleet Workers &amp; CI Jobs
+              </div>
+              <div class="node-gauge-row">
+                <div class="gauge-labels">
+                  <span>CPU Usage</span>
+                  <span id="node4-cpu">8%</span>
+                </div>
+                <div class="gauge-bar-track">
+                  <div class="gauge-bar-fill" id="node4-cpu-bar" style="width: 8%;"></div>
+                </div>
+              </div>
+              <div class="node-gauge-row">
+                <div class="gauge-labels">
+                  <span>Memory</span>
+                  <span>512 MB / 1 GB (50%)</span>
+                </div>
+                <div class="gauge-bar-track">
+                  <div class="gauge-bar-fill" style="width: 50%;"></div>
+                </div>
+              </div>
+              <div class="node-footer">
+                <span>VPC: ap-south-1</span>
+                <span id="node4-ping">Ping: 22ms</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 3. Interactive CI/CD Pipeline Simulator -->
+          <div class="cicd-card">
+            <div class="cicd-header-row">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 0.2rem;">Automated Delivery Pipeline</span>
+                <h3 style="font-size: 1.35rem; margin-top: 0.2rem;">Interactive CI/CD Deployment Simulator</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+                  Simulate a production deployment run from git commit push to multi-node Ansible rolling release.
+                </p>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <button type="button" class="btn btn-primary" id="cicd-run-btn" style="padding: 0.5rem 1.2rem; font-size: 0.82rem; font-family: var(--font-mono);">
+                  ▶ Trigger Build &amp; Deploy
+                </button>
+                <button type="button" class="btn btn-secondary" id="cicd-reset-btn" style="padding: 0.5rem 1rem; font-size: 0.82rem; font-family: var(--font-mono);">
+                  ↺ Reset
+                </button>
+              </div>
+            </div>
+
+            <!-- Stages Flow -->
+            <div class="cicd-pipeline-flow">
+              <div class="cicd-stage-box" id="stage-1">
+                <div class="cicd-stage-header">
+                  <span class="stage-num">STAGE 01</span>
+                  <span class="stage-status-icon" id="stage-icon-1">⚪</span>
+                </div>
+                <div class="stage-title">Git Push</div>
+                <div class="stage-desc">commit 7f8a91c (main)</div>
+              </div>
+
+              <div class="cicd-stage-box" id="stage-2">
+                <div class="cicd-stage-header">
+                  <span class="stage-num">STAGE 02</span>
+                  <span class="stage-status-icon" id="stage-icon-2">⚪</span>
+                </div>
+                <div class="stage-title">Lint &amp; Audit</div>
+                <div class="stage-desc">flake8 · Trivy CVE scan</div>
+              </div>
+
+              <div class="cicd-stage-box" id="stage-3">
+                <div class="cicd-stage-header">
+                  <span class="stage-num">STAGE 03</span>
+                  <span class="stage-status-icon" id="stage-icon-3">⚪</span>
+                </div>
+                <div class="stage-title">Test Suites</div>
+                <div class="stage-desc">pytest · 42 tests passed</div>
+              </div>
+
+              <div class="cicd-stage-box" id="stage-4">
+                <div class="cicd-stage-header">
+                  <span class="stage-num">STAGE 04</span>
+                  <span class="stage-status-icon" id="stage-icon-4">⚪</span>
+                </div>
+                <div class="stage-title">Docker Build</div>
+                <div class="stage-desc">Multi-stage cache build</div>
+              </div>
+
+              <div class="cicd-stage-box" id="stage-5">
+                <div class="cicd-stage-header">
+                  <span class="stage-num">STAGE 05</span>
+                  <span class="stage-status-icon" id="stage-icon-5">⚪</span>
+                </div>
+                <div class="stage-title">Ansible Fleet</div>
+                <div class="stage-desc">Rolling deploy 3 nodes</div>
+              </div>
+
+              <div class="cicd-stage-box" id="stage-6">
+                <div class="cicd-stage-header">
+                  <span class="stage-num">STAGE 06</span>
+                  <span class="stage-status-icon" id="stage-icon-6">⚪</span>
+                </div>
+                <div class="stage-title">Health Gate</div>
+                <div class="stage-desc">HTTP 200 OK (0 downtime)</div>
+              </div>
+            </div>
+
+            <!-- Terminal Build Log Output -->
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-subtle);">
+                <span>PIPELINE BUILD LOGS (STDOUT)</span>
+                <span id="cicd-status-text">STATUS: IDLE · READY FOR COMMIT TRIGGER</span>
+              </div>
+              <div class="cicd-console" id="cicd-console">
+                <div class="cicd-log-line log-cmd">$ git status</div>
+                <div class="cicd-log-line">On branch main. Your branch is up to date with 'origin/main'.</div>
+                <div class="cicd-log-line log-info">Click [Trigger Build &amp; Deploy] above to run an automated CI/CD simulation.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Systems Protocol & P2P Lab -->
+          <div class="systems-lab-card">
+            <div>
+              <span class="eyebrow" style="margin-bottom: 0.2rem;">Systems Engineering Lab</span>
+              <h3 style="font-size: 1.35rem; margin-top: 0.2rem;">Interactive Wire Protocol &amp; P2P Architecture</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+                Hands-on visualizer for my low-level systems projects: <b>Z-Protocol</b> (custom raw socket transport) and <b>ONey</b> (direct encrypted remote access).
+              </p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="systems-tab-bar">
+              <button type="button" class="systems-tab-btn active" id="tab-btn-zproto" data-tab="zproto">
+                📡 Z-Protocol 16-Byte Frame Inspector
+              </button>
+              <button type="button" class="systems-tab-btn" id="tab-btn-oney" data-tab="oney">
+                🔒 ONey P2P Tunneling Architecture
+              </button>
+            </div>
+
+            <!-- Pane 1: Z-Protocol Frame Inspector -->
+            <div id="pane-zproto" class="systems-tab-pane">
+              <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                Below is the exact 16-byte binary frame structure implemented in Python raw sockets for <b>Z-Protocol</b>. Toggle the control flags below to see how the bitmask and protocol state machine dynamically adjust:
+              </div>
+
+              <div class="packet-frame-display">
+                <div class="packet-field-card">
+                  <span class="packet-field-title">Byte 0 - 1</span>
+                  <span class="packet-field-hex">0x5A 0x50</span>
+                  <span class="packet-field-desc">Magic Header ('ZP')</span>
+                </div>
+                <div class="packet-field-card">
+                  <span class="packet-field-title">Byte 2 - 3</span>
+                  <span class="packet-field-hex">0x01 0x02</span>
+                  <span class="packet-field-desc">Protocol Version (v1.2)</span>
+                </div>
+                <div class="packet-field-card">
+                  <span class="packet-field-title">Byte 4 - 7</span>
+                  <span class="packet-field-hex">0x0000002A</span>
+                  <span class="packet-field-desc">Sequence ID (seq: 42)</span>
+                </div>
+                <div class="packet-field-card" style="border-color: var(--border-strong); background: var(--bg-card-hover);">
+                  <span class="packet-field-title">Byte 8 (Flags)</span>
+                  <span class="packet-field-hex" id="packet-flags-hex" style="color: #10b981;">0x12</span>
+                  <span class="packet-field-desc" id="packet-flags-label">SYN + ACK Active</span>
+                </div>
+                <div class="packet-field-card">
+                  <span class="packet-field-title">Byte 9 - 11</span>
+                  <span class="packet-field-hex">0x000400</span>
+                  <span class="packet-field-desc">Payload (1,024 Bytes)</span>
+                </div>
+                <div class="packet-field-card">
+                  <span class="packet-field-title">Byte 12 - 15</span>
+                  <span class="packet-field-hex" id="packet-crc-hex">0x9E3779B9</span>
+                  <span class="packet-field-desc">CRC32 Checksum</span>
+                </div>
+              </div>
+
+              <!-- Flag Toggles -->
+              <div style="margin-top: 1.25rem; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-surface);">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700;">TOGGLE CONTROL FLAGS (BITMASK):</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);" id="active-flags-mask">Bitmask: 0b00010010</span>
+                </div>
+                <div class="flags-toggle-group">
+                  <button type="button" class="flag-toggle-btn active" data-flag="SYN" data-bit="2" data-hex="0x02">SYN (0x02)</button>
+                  <button type="button" class="flag-toggle-btn active" data-flag="ACK" data-bit="16" data-hex="0x10">ACK (0x10)</button>
+                  <button type="button" class="flag-toggle-btn" data-flag="FIN" data-bit="1" data-hex="0x01">FIN (0x01)</button>
+                  <button type="button" class="flag-toggle-btn" data-flag="RST" data-bit="4" data-hex="0x04">RST (0x04)</button>
+                  <button type="button" class="flag-toggle-btn" data-flag="PSH" data-bit="8" data-hex="0x08">PSH (0x08)</button>
+                </div>
+                <p id="packet-state-explanation" style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; font-family: var(--font-mono);">
+                  👉 <b>State:</b> Handshake acknowledgment. Server confirms connection and synchronizes stream sequence numbers.
+                </p>
+              </div>
+            </div>
+
+            <!-- Pane 2: ONey P2P Topology -->
+            <div id="pane-oney" class="systems-tab-pane" style="display: none;">
+              <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                Architectural breakdown of <b>ONey Remote System Control</b>: establishing zero-relay direct UDP streams through restricted NAT firewalls with authenticated end-to-end encryption.
+              </div>
+
+              <div class="p2p-topology-box">
+                <div class="topology-flow">
+                  <div class="topology-node">
+                    <div style="font-size: 1.25rem; margin-bottom: 0.25rem;">💻</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700;">Host A (Latitude-3410)</div>
+                    <div style="font-size: 0.7rem; color: var(--text-subtle);">Local Operator Client</div>
+                    <div style="font-size: 0.68rem; color: #10b981; margin-top: 0.25rem;">● Capturing Input</div>
+                  </div>
+
+                  <div class="topology-connector">
+                    <span style="font-size: 0.65rem; color: #10b981;">UDP Hole-Punch</span>
+                    <div class="connector-line"></div>
+                    <span style="font-size: 0.65rem; color: var(--text-subtle);">AES-256-GCM Direct</span>
+                  </div>
+
+                  <div class="topology-node">
+                    <div style="font-size: 1.25rem; margin-bottom: 0.25rem;">🖥️</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700;">Host B (Remote Target)</div>
+                    <div style="font-size: 0.7rem; color: var(--text-subtle);">Headless Linux System</div>
+                    <div style="font-size: 0.68rem; color: #10b981; margin-top: 0.25rem;">● Streaming 60 FPS</div>
+                  </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 0.5rem; font-family: var(--font-mono); font-size: 0.75rem;">
+                  <div style="color: var(--text-muted);">
+                    <span style="color: var(--text-subtle);">P2P Latency:</span> <b style="color: #10b981;">14ms (Direct UDP)</b>
+                  </div>
+                  <div style="color: var(--text-muted);">
+                    <span style="color: var(--text-subtle);">Zero-Copy Capture:</span> <b style="color: var(--text-primary);">Raw Framebuffer Hook</b>
+                  </div>
+                  <div style="color: var(--text-muted);">
+                    <span style="color: var(--text-subtle);">Key Exchange:</span> <b style="color: var(--text-primary);">ECDH + Session Nonce</b>
+                  </div>
+                  <div style="color: var(--text-muted);">
+                    <span style="color: var(--text-subtle);">Third-Party Relays:</span> <b style="color: #10b981;">Zero (True P2P)</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- Projects Section -->
     <section class="section" id="projects">
       <div class="container">
@@ -330,7 +831,7 @@
           <!-- 1. ONey Remote System -->
           <article class="pro-card project-card" data-category="DevOps Python & Automation" data-tags="Python P2P Tunneling UDP Sockets Screen Streaming Cryptography">
             <div class="project-preview">
-              <img src="./public/projects/oney-cover.svg" alt="ONey Remote System Control" loading="lazy" />
+              <img src="./public/projects/oney-cover.svg" alt="ONey Remote System Control" />
               <div class="project-status-badges">
                 <span class="badge">In Progress</span>
                 <span class="badge">Featured</span>
@@ -384,7 +885,7 @@
           <!-- 2. Z-Protocol -->
           <article class="pro-card project-card" data-category="Java & Systems Python & Automation" data-tags="Python Raw Sockets Binary Framing CRC32 Network Protocols">
             <div class="project-preview">
-              <img src="./public/projects/zprotocol-cover.svg" alt="Z-Protocol Wire Transport" loading="lazy" />
+              <img src="./public/projects/zprotocol-cover.svg" alt="Z-Protocol Wire Transport" />
               <div class="project-status-badges">
                 <span class="badge">In Progress</span>
                 <span class="badge">Featured</span>
@@ -430,7 +931,7 @@
           <!-- 3. Browser Monitoring Tool -->
           <article class="pro-card project-card" data-category="Python & Automation" data-tags="Python JSON Buffer DOM Telemetry Event Intercept">
             <div class="project-preview">
-              <img src="./public/projects/browser-monitoring-cover.svg" alt="Browser Monitoring Tool" loading="lazy" />
+              <img src="./public/projects/browser-monitoring-cover.svg" alt="Browser Monitoring Tool" />
               <div class="project-status-badges">
                 <span class="badge">Completed</span>
                 <span class="badge">Featured</span>
@@ -475,7 +976,7 @@
           <!-- 4. ATM Banking System -->
           <article class="pro-card project-card" data-category="Java & Systems" data-tags="Java OOP Encapsulation Collections CLI Interface">
             <div class="project-preview">
-              <img src="./public/projects/atm-cover.svg" alt="ATM Banking & Account System" loading="lazy" />
+              <img src="./public/projects/atm-cover.svg" alt="ATM Banking & Account System" />
               <div class="project-status-badges">
                 <span class="badge">Completed</span>
                 <span class="badge">Featured</span>
@@ -521,7 +1022,7 @@
           <!-- 5. Ansible Fleet Automation -->
           <article class="pro-card project-card" data-category="DevOps" data-tags="Ansible YAML Linux Bash UFW Firewall">
             <div class="project-preview">
-              <img src="./public/projects/ansible-cover.svg" alt="Ansible Fleet Provisioning & Automation" loading="lazy" />
+              <img src="./public/projects/ansible-cover.svg" alt="Ansible Fleet Provisioning & Automation" />
               <div class="project-status-badges">
                 <span class="badge">Completed</span>
                 <span class="badge">Featured</span>
@@ -567,7 +1068,7 @@
           <!-- 6. Shahihennaholic Storefront -->
           <article class="pro-card project-card" data-category="Full-Stack" data-tags="HTML5 CSS3 JavaScript Local Storage Responsive UI">
             <div class="project-preview">
-              <img src="./public/projects/shahihennaholic-cover.svg" alt="Shahihennaholic Storefront" loading="lazy" />
+              <img src="./public/projects/shahihennaholic-cover.svg" alt="Shahihennaholic Storefront" />
               <div class="project-status-badges">
                 <span class="badge">Completed</span>
                 <span class="badge">Featured</span>
@@ -613,7 +1114,7 @@
           <!-- 7. Python File Organizer -->
           <article class="pro-card project-card" data-category="Python & Automation" data-tags="Python Filesystem OS Shutil Automation">
             <div class="project-preview">
-              <img src="./public/projects/file-organizer-cover.svg" alt="Python Automated File Organizer" loading="lazy" />
+              <img src="./public/projects/file-organizer-cover.svg" alt="Python Automated File Organizer" />
               <div class="project-status-badges">
                 <span class="badge">Completed</span>
                 <span class="badge">Python</span>
@@ -634,6 +1135,88 @@
               </div>
               <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
                 <a href="https://github.com/DHAYALANKANIAPPAN/PROJECTS/tree/main/File-organizer" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
+                  Source Repo ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Cross-Protocol Traffic Fingerprinting -->
+          <article class="pro-card project-card" data-category="Security & Research Python & Automation" data-tags="Python Traffic Analysis Packet Metadata Security Research">
+            <div class="project-preview">
+              <img src="./public/projects/fingerprinting-cover.svg" alt="Cross-Protocol Traffic Fingerprinting" />
+              <div class="project-status-badges">
+                <span class="badge">Completed</span>
+                <span class="badge">Security &amp; CTF</span>
+              </div>
+              <div class="project-metrics-ribbon">
+                <div class="metric-box"><div class="metric-label">Status</div><div class="metric-val">Completed</div></div>
+                <div class="metric-box"><div class="metric-label">Domain</div><div class="metric-val">Packet Metadata</div></div>
+                <div class="metric-box"><div class="metric-label">Analysis</div><div class="metric-val">Statistical</div></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 0.2rem;">Cybersecurity &amp; Protocol Research</span>
+                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">Cross-Protocol Traffic Fingerprinting</h3>
+                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
+                  Research into traffic pattern analysis, packet burst sequences, and metadata leakage across protocol boundaries even when payload is encrypted.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-tag" data-tag="Python">Python</span>
+                  <span class="tech-tag" data-tag="Traffic Analysis">Traffic Analysis</span>
+                  <span class="tech-tag" data-tag="Packet Metadata">Packet Metadata</span>
+                  <span class="tech-tag" data-tag="Security Research">Security Research</span>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
+                <a href="https://github.com/DHAYALANKANIAPPAN/PROJECTS/tree/main/Cross-Protocol-Fingerprinting" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
+                  Source Repo ↗
+                </a>
+                <button class="btn btn-secondary toggle-case-study-btn" style="padding: 0.35rem 0.9rem; font-size: 0.75rem;">
+                  <span class="btn-text">Case Study</span>
+                </button>
+              </div>
+            </div>
+            <div class="project-case-study">
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture: Traffic Fingerprinting</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6;">
+                Extracts statistical packet signatures, burst timings, and inter-arrival intervals to evaluate protocol classification accuracy in encrypted environments.
+              </p>
+            </div>
+          </article>
+
+          <!-- 9. Flarum Community Forum & FLARUM1 -->
+          <article class="pro-card project-card" data-category="Full-Stack" data-tags="Flarum PHP JavaScript Mithril.js MySQL">
+            <div class="project-preview">
+              <img src="./public/projects/flarum-cover.svg" alt="Flarum Community Platform & FLARUM1" />
+              <div class="project-status-badges">
+                <span class="badge">Completed</span>
+                <span class="badge">Full-Stack</span>
+              </div>
+              <div class="project-metrics-ribbon">
+                <div class="metric-box"><div class="metric-label">Status</div><div class="metric-val">Completed</div></div>
+                <div class="metric-box"><div class="metric-label">Extension</div><div class="metric-val">FLARUM1 (JS)</div></div>
+                <div class="metric-box"><div class="metric-label">Database</div><div class="metric-val">MySQL Index</div></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 0.2rem;">Web Platforms &amp; Client Stack</span>
+                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">Flarum Forum &amp; FLARUM1 Extension</h3>
+                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
+                  Customized Flarum community platform deployment extended with a dedicated JavaScript companion extension (FLARUM1) for custom UI themes and hooks.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-tag" data-tag="Flarum">Flarum</span>
+                  <span class="tech-tag" data-tag="PHP">PHP</span>
+                  <span class="tech-tag" data-tag="JavaScript">JavaScript</span>
+                  <span class="tech-tag" data-tag="Mithril.js">Mithril.js</span>
+                  <span class="tech-tag" data-tag="MySQL">MySQL</span>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
+                <a href="https://github.com/DHAYALANKANIAPPAN/flarum" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
                   Source Repo ↗
                 </a>
               </div>
@@ -799,7 +1382,7 @@
               <div class="credly-card">
                 <div>
                   <div class="cert-badge-wrapper zoomable-cert-trigger" data-img="./public/certificates/aws-ecs-knowledge-badge.svg" data-title="Amazon ECS Knowledge Badge Assessment" data-pdf="./public/certificates/aws/Amazon ECS Knowledge Badge.pdf">
-                    <img src="./public/certificates/aws-ecs-knowledge-badge.svg" alt="Amazon ECS Knowledge Badge" loading="lazy" />
+                    <img src="./public/certificates/aws-ecs-knowledge-badge.svg" alt="Amazon ECS Knowledge Badge" />
                   </div>
                   <div style="padding: 1.5rem;">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -829,7 +1412,7 @@
               <div class="credly-card">
                 <div>
                   <div class="cert-badge-wrapper zoomable-cert-trigger" data-img="./public/certificates/aws-game-dev-badge.svg" data-title="Cloud Game Development Knowledge Badge Assessment" data-pdf="./public/certificates/aws/Cloud Game Development Knowledge .pdf">
-                    <img src="./public/certificates/aws-game-dev-badge.svg" alt="Cloud Game Development Knowledge Badge" loading="lazy" />
+                    <img src="./public/certificates/aws-game-dev-badge.svg" alt="Cloud Game Development Knowledge Badge" />
                   </div>
                   <div style="padding: 1.5rem;">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -889,7 +1472,7 @@
             <div class="pro-card cert-card" data-weightage="high" data-credly="false" data-cert-category="aws">
               <div>
                 <div class="cert-badge-wrapper zoomable-cert-trigger" data-img="./public/certificates/aws-cdk-cicd-badge.svg" data-title="Deploying a CI/CD Pipeline with AWS CDK" data-pdf="./public/certificates/aws/Deploying a CI-CD Pipeline with a Managed Deployment Stage using AWS CDK.pdf">
-                  <img src="./public/certificates/aws-cdk-cicd-badge.svg" alt="CI/CD Pipeline with AWS CDK" loading="lazy" />
+                  <img src="./public/certificates/aws-cdk-cicd-badge.svg" alt="CI/CD Pipeline with AWS CDK" />
                 </div>
                 <div style="padding: 1.25rem;">
                   <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -914,7 +1497,7 @@
             <div class="pro-card cert-card" data-weightage="high" data-credly="false" data-cert-category="aws">
               <div>
                 <div class="cert-badge-wrapper zoomable-cert-trigger" data-img="./public/certificates/aws-cloudformation-badge.svg" data-title="Using AWS CloudFormation for Automation" data-pdf="./public/certificates/aws/AWS CloudFormation for Automation.pdf">
-                  <img src="./public/certificates/aws-cloudformation-badge.svg" alt="AWS CloudFormation for Automation" loading="lazy" />
+                  <img src="./public/certificates/aws-cloudformation-badge.svg" alt="AWS CloudFormation for Automation" />
                 </div>
                 <div style="padding: 1.25rem;">
                   <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -939,7 +1522,7 @@
             <div class="pro-card cert-card" data-weightage="high" data-credly="true" data-cert-category="aws">
               <div>
                 <div class="cert-badge-wrapper zoomable-cert-trigger" data-img="./public/certificates/aws-ecs-knowledge-badge.svg" data-title="Amazon ECS Knowledge Badge Assessment" data-pdf="./public/certificates/aws/Amazon ECS Knowledge Badge.pdf">
-                  <img src="./public/certificates/aws-ecs-knowledge-badge.svg" alt="Amazon ECS Knowledge Badge" loading="lazy" />
+                  <img src="./public/certificates/aws-ecs-knowledge-badge.svg" alt="Amazon ECS Knowledge Badge" />
                 </div>
                 <div style="padding: 1.25rem;">
                   <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -964,7 +1547,7 @@
             <div class="pro-card cert-card" data-weightage="high" data-credly="true" data-cert-category="aws">
               <div>
                 <div class="cert-badge-wrapper zoomable-cert-trigger" data-img="./public/certificates/aws-game-dev-badge.svg" data-title="Cloud Game Development Knowledge Badge Assessment" data-pdf="./public/certificates/aws/Cloud Game Development Knowledge .pdf">
-                  <img src="./public/certificates/aws-game-dev-badge.svg" alt="Cloud Game Development Knowledge Badge" loading="lazy" />
+                  <img src="./public/certificates/aws-game-dev-badge.svg" alt="Cloud Game Development Knowledge Badge" />
                 </div>
                 <div style="padding: 1.25rem;">
                   <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -985,11 +1568,14 @@
               </div>
             </div>
 
-            <!-- 5. Java + MongoDB -->
+            <!-- 5. Java + MongoDB (Real Certificate Proof) -->
             <div class="pro-card cert-card" data-weightage="high" data-credly="false" data-cert-category="merit">
               <div>
-                <div class="cert-badge-wrapper zoomable-cert-trigger" data-img="./public/certificates/java-mongodb-badge.svg" data-title="Certificate of Merit: Java + MongoDB (92% Score)">
-                  <img src="./public/certificates/java-mongodb-badge.svg" alt="Java + MongoDB Certificate of Merit" loading="lazy" />
+                <div class="cert-badge-wrapper zoomable-cert-trigger" data-img="./public/certificates/java-mongodb.png" data-title="Certificate of Merit: Java + MongoDB (92% Score)" style="height: 220px; overflow: hidden; position: relative;">
+                  <img src="./public/certificates/java-mongodb.png" alt="Java + MongoDB Certificate of Merit" class="cert-real-img" />
+                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.65rem; color: #10b981;">
+                    🔍 Click to Enlarge
+                  </div>
                 </div>
                 <div style="padding: 1.25rem;">
                   <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -1003,22 +1589,28 @@
                   </p>
                 </div>
               </div>
-              <div style="padding: 0 1.25rem 1.25rem;">
-                <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.78rem; padding: 0.45rem;">
-                  View on LinkedIn ↗
+              <div style="padding: 0 1.25rem 1.25rem; display: flex; gap: 0.5rem;">
+                <button type="button" class="btn btn-primary zoomable-cert-trigger" data-img="./public/certificates/java-mongodb.png" data-title="Certificate of Merit: Java + MongoDB (92% Score)" style="flex: 1; font-size: 0.75rem; padding: 0.45rem;">
+                  View Certificate 🔍
+                </button>
+                <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn btn-secondary" style="flex: 1; font-size: 0.75rem; padding: 0.45rem;">
+                  Verify ↗
                 </a>
               </div>
             </div>
 
-            <!-- 6. Yukthi CTF -->
+            <!-- 6. Yukthi CTF 2.0 (Real Certificate Proof) -->
             <div class="pro-card cert-card" data-weightage="high" data-credly="false" data-cert-category="ctf">
               <div>
-                <div class="cert-badge-wrapper zoomable-cert-trigger" data-img="./public/certificates/yukthi-ctf-badge.svg" data-title="Yukthi CTF 2.0 (National CTF)">
-                  <img src="./public/certificates/yukthi-ctf-badge.svg" alt="Yukthi CTF 2.0 Certificate" loading="lazy" />
+                <div class="cert-badge-wrapper zoomable-cert-trigger" data-img="./public/certificates/yukthi-ctf.png" data-title="Yukthi CTF 2.0 (National CTF - Tamil Nadu Police)" style="height: 220px; overflow: hidden; position: relative;">
+                  <img src="./public/certificates/yukthi-ctf.png" alt="Yukthi CTF 2.0 Certificate" class="cert-real-img" />
+                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.65rem; color: #10b981;">
+                    🔍 Click to Enlarge
+                  </div>
                 </div>
                 <div style="padding: 1.25rem;">
                   <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span class="weightage-pill weightage-high">High Weightage · CTF</span>
+                    <span class="weightage-pill weightage-high">National CTF · TN Police</span>
                     <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-subtle);">December 2025</span>
                   </div>
                   <h4 style="font-size: 1.05rem; margin-top: 0.2rem;">Yukthi CTF 2.0 (National-Level CTF)</h4>
@@ -1028,22 +1620,28 @@
                   </p>
                 </div>
               </div>
-              <div style="padding: 0 1.25rem 1.25rem;">
-                <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.78rem; padding: 0.45rem;">
-                  View on LinkedIn ↗
+              <div style="padding: 0 1.25rem 1.25rem; display: flex; gap: 0.5rem;">
+                <button type="button" class="btn btn-primary zoomable-cert-trigger" data-img="./public/certificates/yukthi-ctf.png" data-title="Yukthi CTF 2.0 Certificate (Tamil Nadu Police)" style="flex: 1; font-size: 0.75rem; padding: 0.45rem;">
+                  View Certificate 🔍
+                </button>
+                <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn btn-secondary" style="flex: 1; font-size: 0.75rem; padding: 0.45rem;">
+                  Verify ↗
                 </a>
               </div>
             </div>
 
-            <!-- 7. HackTiVate -->
+            <!-- 7. HackTiVate 24-Hour CTF (Real Certificate Proof) -->
             <div class="pro-card cert-card" data-weightage="high" data-credly="false" data-cert-category="ctf">
               <div>
-                <div class="cert-badge-wrapper zoomable-cert-trigger" data-img="./public/certificates/hacktivate-ctf-badge.svg" data-title="0xTi - HackTiVate 24-Hour CTF (Titanium 2026)">
-                  <img src="./public/certificates/hacktivate-ctf-badge.svg" alt="HackTiVate 24-Hour CTF Certificate" loading="lazy" />
+                <div class="cert-badge-wrapper zoomable-cert-trigger" data-img="./public/certificates/hacktivate-ctf.png" data-title="0xTi - HackTiVate 24-Hour CTF (Titanium 2026)" style="height: 220px; overflow: hidden; position: relative;">
+                  <img src="./public/certificates/hacktivate-ctf.png" alt="HackTiVate 24-Hour CTF Certificate" class="cert-real-img" />
+                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.65rem; color: #10b981;">
+                    🔍 Click to Enlarge
+                  </div>
                 </div>
                 <div style="padding: 1.25rem;">
                   <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span class="weightage-pill weightage-high">High Weightage · CTF</span>
+                    <span class="weightage-pill weightage-high">24-Hour CTF</span>
                     <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-subtle);">January 2026</span>
                   </div>
                   <h4 style="font-size: 1.05rem; margin-top: 0.2rem;">0xTi - HackTiVate 24-Hour CTF</h4>
@@ -1053,22 +1651,28 @@
                   </p>
                 </div>
               </div>
-              <div style="padding: 0 1.25rem 1.25rem;">
-                <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.78rem; padding: 0.45rem;">
-                  View on LinkedIn ↗
+              <div style="padding: 0 1.25rem 1.25rem; display: flex; gap: 0.5rem;">
+                <button type="button" class="btn btn-primary zoomable-cert-trigger" data-img="./public/certificates/hacktivate-ctf.png" data-title="0xTi - HackTiVate 24-Hour CTF Certificate" style="flex: 1; font-size: 0.75rem; padding: 0.45rem;">
+                  View Certificate 🔍
+                </button>
+                <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn btn-secondary" style="flex: 1; font-size: 0.75rem; padding: 0.45rem;">
+                  Verify ↗
                 </a>
               </div>
             </div>
 
-            <!-- 8. Lemon CTF -->
+            <!-- 8. Lemon CTF 2025 (Real Certificate Proof) -->
             <div class="pro-card cert-card" data-weightage="high" data-credly="false" data-cert-category="ctf">
               <div>
-                <div class="cert-badge-wrapper zoomable-cert-trigger" data-img="./public/certificates/lemon-ctf-badge.svg" data-title="L3m0n CTF 2025 (24-Hour CTF)">
-                  <img src="./public/certificates/lemon-ctf-badge.svg" alt="L3m0n CTF Certificate" loading="lazy" />
+                <div class="cert-badge-wrapper zoomable-cert-trigger" data-img="./public/certificates/lemon-ctf.png" data-title="L3m0n CTF 2025 (24-Hour CTF - Amrita University)" style="height: 220px; overflow: hidden; position: relative;">
+                  <img src="./public/certificates/lemon-ctf.png" alt="L3m0n CTF Certificate" class="cert-real-img" />
+                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.65rem; color: #10b981;">
+                    🔍 Click to Enlarge
+                  </div>
                 </div>
                 <div style="padding: 1.25rem;">
                   <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span class="weightage-pill weightage-high">High Weightage · CTF</span>
+                    <span class="weightage-pill weightage-high">24-Hour CTF</span>
                     <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-subtle);">2025</span>
                   </div>
                   <h4 style="font-size: 1.05rem; margin-top: 0.2rem;">L3m0n CTF 2025 (24-Hour CTF)</h4>
@@ -1078,9 +1682,12 @@
                   </p>
                 </div>
               </div>
-              <div style="padding: 0 1.25rem 1.25rem;">
-                <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.78rem; padding: 0.45rem;">
-                  View on LinkedIn ↗
+              <div style="padding: 0 1.25rem 1.25rem; display: flex; gap: 0.5rem;">
+                <button type="button" class="btn btn-primary zoomable-cert-trigger" data-img="./public/certificates/lemon-ctf.png" data-title="L3m0n CTF 2025 Certificate (Amrita University)" style="flex: 1; font-size: 0.75rem; padding: 0.45rem;">
+                  View Certificate 🔍
+                </button>
+                <a href="https://www.linkedin.com/in/dhaya05/" target="_blank" rel="noreferrer" class="btn btn-secondary" style="flex: 1; font-size: 0.75rem; padding: 0.45rem;">
+                  Verify ↗
                 </a>
               </div>
             </div>

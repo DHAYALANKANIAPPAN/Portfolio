@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initTypewriter();
   initClock();
   initTerminal();
+  initDevOpsLab();
   initProjectsFilter();
   initResumeTabs();
   initCertWeightageFilter();
@@ -145,12 +146,62 @@ function initTerminal() {
       <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 4px; color: #ffffff;">
         <div><b>whoami</b> — Identity & role</div>
         <div><b>bio</b> — Backstory</div>
+        <div><b>docker ps</b> — Running containers</div>
+        <div><b>ansible</b> — Fleet playbook status</div>
+        <div><b>zprotocol</b> — Wire protocol spec</div>
+        <div><b>oney</b> — P2P remote architecture</div>
+        <div><b>uptime</b> — Cluster status</div>
+        <div><b>uname -a</b> — Host & kernel info</div>
         <div><b>projects</b> — Codebases & tools</div>
         <div><b>skills</b> — Core technical stack</div>
         <div><b>certs</b> — CTFs & AWS Badges</div>
+        <div><b>matrix</b> — System telemetry</div>
         <div><b>contact</b> — Email & LinkedIn</div>
-        <div><b>matrix</b> — System status</div>
         <div><b>clear</b> — Wipe terminal</div>
+      </div>`,
+    "docker ps": () => `
+      <div style="font-family: var(--font-mono); font-size: 0.72rem; overflow-x: auto; color: #10b981;">
+        <pre style="margin: 0; white-space: pre;">
+CONTAINER ID   IMAGE                 STATUS         PORTS                  NAMES
+7a9b1c2d3e     oney-p2p:v1.4         Up 18 days     0.0.0.0:8888->8888/udp oney-daemon
+4f8e2a1b9c     zproto-wire:latest    Up 12 days     0.0.0.0:9000->9000/tcp zproto-srv
+1d3c5e7b9a     nginx:alpine          Up 34 days     0.0.0.0:80,443->80,443 gateway-proxy
+9c8b7a6d5e     ansible-runner:v2.4   Up 5 days      --                     fleet-deployer
+        </pre>
+      </div>`,
+    docker: () => commands["docker ps"](),
+    ansible: () => `
+      <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #ffffff;">
+        <p style="color: #38bdf8;">PLAY [Fleet Server Provisioning & Hardening] *************************************</p>
+        <p>TASK [Gathering Facts] .................................... <span style="color:#10b981;">ok: [node1, node2, node3]</span></p>
+        <p>TASK [Configure UFW Firewall & SSH Port] .................. <span style="color:#10b981;">ok: [node1, node2, node3]</span></p>
+        <p>TASK [Deploy Docker Daemon & Metrics Exporter] ............ <span style="color:#fbbf24;">changed: [node1, node2, node3]</span></p>
+        <p style="color: #38bdf8;">PLAY RECAP ***********************************************************************</p>
+        <p style="color:#10b981;">node1 : ok=14   changed=2    unreachable=0    failed=0</p>
+        <p style="color:#10b981;">node2 : ok=14   changed=2    unreachable=0    failed=0</p>
+        <p style="color:#10b981;">node3 : ok=14   changed=2    unreachable=0    failed=0</p>
+      </div>`,
+    "ansible-playbook": () => commands.ansible(),
+    uptime: () => `
+      <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #10b981;">
+        <p>12:18:40 up 48 days, 14:22, 1 user, load average: 0.14, 0.18, 0.12</p>
+        <p>Cluster: 4/4 nodes healthy | Fleet Uptime: 99.98%</p>
+      </div>`,
+    "uname -a": () => `
+      <p style="font-family: var(--font-mono); font-size: 0.75rem; color: #ffffff;">
+        Linux latitude-3410 6.8.0-45-generic #45-Ubuntu SMP PREEMPT x86_64 x86_64 x86_64 GNU/Linux
+      </p>`,
+    uname: () => commands["uname -a"](),
+    zprotocol: () => `
+      <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #38bdf8;">
+        <p>📡 <b>Z-Protocol Specification v1.2:</b></p>
+        <p>16-byte custom binary framing over raw Python sockets:</p>
+        <p>Magic: 0x5A50 ('ZP') | Version: 0x0102 | State Machine: SYN -> SYN-ACK -> ACK | Integrity: CRC32</p>
+      </div>`,
+    oney: () => `
+      <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #10b981;">
+        <p>🔒 <b>ONey Remote System Control:</b></p>
+        <p>Direct P2P UDP encrypted session without third-party cloud relays. Latency: &lt;20ms. AES-256-GCM.</p>
       </div>`,
     whoami: () => `
       <div>
@@ -275,7 +326,15 @@ function initTerminal() {
   quickBtns.forEach(btn => {
     btn.addEventListener("click", () => {
       const cmd = btn.getAttribute("data-cmd");
-      if (cmd) execute(cmd);
+      if (cmd) {
+        execute(cmd);
+        if (btn.classList.contains("ws-cmd-chip")) {
+          const terminalCard = document.querySelector(".terminal-card");
+          if (terminalCard) {
+            terminalCard.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+        }
+      }
     });
   });
 }
@@ -606,3 +665,300 @@ function initParticles() {
 
   draw();
 }
+
+/* ─────────────────────────────────────────────────────────────
+   DEVOPS COMMAND CENTER & SYSTEMS LAB LOGIC
+   ───────────────────────────────────────────────────────────── */
+
+function initDevOpsLab() {
+  initClusterTelemetry();
+  initCicdSimulator();
+  initSystemsProtocolLab();
+}
+
+/* 1. Real-time Cluster Jitter & Health Monitor */
+function initClusterTelemetry() {
+  const node1Ping = document.getElementById("node1-ping");
+  const node2Ping = document.getElementById("node2-ping");
+  const node3Ping = document.getElementById("node3-ping");
+  const node4Ping = document.getElementById("node4-ping");
+
+  const node1Cpu = document.getElementById("node1-cpu");
+  const node1CpuBar = document.getElementById("node1-cpu-bar");
+  const node2Cpu = document.getElementById("node2-cpu");
+  const node2CpuBar = document.getElementById("node2-cpu-bar");
+
+  if (!node1Ping) return;
+
+  setInterval(() => {
+    // Ping jitter
+    if (node1Ping) node1Ping.textContent = `Ping: ${13 + Math.floor(Math.random() * 4)}ms`;
+    if (node2Ping) node2Ping.textContent = `Ping: ${18 + Math.floor(Math.random() * 5)}ms`;
+    if (node3Ping) node3Ping.textContent = `Ping: ${10 + Math.floor(Math.random() * 3)}ms`;
+    if (node4Ping) node4Ping.textContent = `Ping: ${21 + Math.floor(Math.random() * 4)}ms`;
+
+    // CPU jitter
+    const cpu1 = 16 + Math.floor(Math.random() * 6);
+    if (node1Cpu) node1Cpu.textContent = `${cpu1}%`;
+    if (node1CpuBar) node1CpuBar.style.width = `${cpu1}%`;
+
+    const cpu2 = 31 + Math.floor(Math.random() * 8);
+    if (node2Cpu) node2Cpu.textContent = `${cpu2}%`;
+    if (node2CpuBar) node2CpuBar.style.width = `${cpu2}%`;
+  }, 3500);
+}
+
+/* 2. Interactive CI/CD Pipeline Simulator */
+function initCicdSimulator() {
+  const runBtn = document.getElementById("cicd-run-btn");
+  const resetBtn = document.getElementById("cicd-reset-btn");
+  const consoleEl = document.getElementById("cicd-console");
+  const statusText = document.getElementById("cicd-status-text");
+
+  if (!runBtn || !consoleEl) return;
+
+  let isRunning = false;
+  let pipelineTimers = [];
+
+  const stages = [
+    {
+      id: "stage-1",
+      icon: "stage-icon-1",
+      delay: 200,
+      logs: [
+        { cls: "log-cmd", text: "$ git push origin main -> commit 7f8a91c" },
+        { cls: "", text: "Enumerating objects: 24, done. Compressing objects: 100% (18/18)." },
+        { cls: "log-info", text: "Webhook received by CI Runner: Triggering workflow 'Production Deploy'." }
+      ]
+    },
+    {
+      id: "stage-2",
+      icon: "stage-icon-2",
+      delay: 1100,
+      logs: [
+        { cls: "log-cmd", text: "$ flake8 . && trivy fs --security-checks vuln,config ." },
+        { cls: "log-ok", text: "[AUDIT OK] 0 Critical vulnerabilities found. Python PEP8 static analysis passed." }
+      ]
+    },
+    {
+      id: "stage-3",
+      icon: "stage-icon-3",
+      delay: 2100,
+      logs: [
+        { cls: "log-cmd", text: "$ pytest tests/ -v --cov=app" },
+        { cls: "log-ok", text: "================ 42 passed in 1.14s (Coverage: 96.4%) ================" }
+      ]
+    },
+    {
+      id: "stage-4",
+      icon: "stage-icon-4",
+      delay: 3100,
+      logs: [
+        { cls: "log-cmd", text: "$ docker build --target production -t registry.dhayalan.dev/app:latest ." },
+        { cls: "", text: "[+] Building 1.1s (7/7) FINISHED => CACHED layers [1..5]" },
+        { cls: "log-ok", text: "=> exporting to image sha256:8b4f17c (Image size: 48.2MB Alpine)" }
+      ]
+    },
+    {
+      id: "stage-5",
+      icon: "stage-icon-5",
+      delay: 4100,
+      logs: [
+        { cls: "log-cmd", text: "$ ansible-playbook -i inventory.ini deploy.yml --forks 3" },
+        { cls: "log-warn", text: "TASK [Rolling Restart & Health Check] => node1, node2, node3 updated sequentially" },
+        { cls: "log-ok", text: "PLAY RECAP: node1: ok=14 changed=2 | node2: ok=14 changed=2 | node3: ok=14 changed=2" }
+      ]
+    },
+    {
+      id: "stage-6",
+      icon: "stage-icon-6",
+      delay: 5100,
+      logs: [
+        { cls: "log-cmd", text: "$ curl -I https://dhayalan.dev/health" },
+        { cls: "log-ok", text: "HTTP/2 200 OK — Response: 14ms. Cluster Healthy. ZERO DOWNTIME VERIFIED." }
+      ]
+    }
+  ];
+
+  runBtn.addEventListener("click", () => {
+    if (isRunning) return;
+    isRunning = true;
+    runBtn.disabled = true;
+    runBtn.style.opacity = "0.5";
+
+    // Reset UI before run
+    resetStages();
+    consoleEl.innerHTML = "";
+    if (statusText) statusText.textContent = "STATUS: PIPELINE RUNNING...";
+
+    stages.forEach((stage, idx) => {
+      // Step to active
+      const t1 = setTimeout(() => {
+        const stageEl = document.getElementById(stage.id);
+        const iconEl = document.getElementById(stage.icon);
+        if (stageEl) stageEl.classList.add("active");
+        if (iconEl) iconEl.textContent = "⏳";
+
+        stage.logs.forEach(log => {
+          const logDiv = document.createElement("div");
+          logDiv.className = `cicd-log-line ${log.cls}`;
+          const time = new Date().toLocaleTimeString("en-US", { hour12: false });
+          logDiv.textContent = `[${time}] ${log.text}`;
+          consoleEl.appendChild(logDiv);
+          consoleEl.scrollTop = consoleEl.scrollHeight;
+        });
+      }, stage.delay);
+
+      // Step to success
+      const t2 = setTimeout(() => {
+        const stageEl = document.getElementById(stage.id);
+        const iconEl = document.getElementById(stage.icon);
+        if (stageEl) {
+          stageEl.classList.remove("active");
+          stageEl.classList.add("success");
+        }
+        if (iconEl) iconEl.textContent = "🟢";
+
+        // If last stage completed
+        if (idx === stages.length - 1) {
+          isRunning = false;
+          runBtn.disabled = false;
+          runBtn.style.opacity = "1";
+          if (statusText) statusText.textContent = "STATUS: PIPELINE SUCCESS · ZERO DOWNTIME (5.2s)";
+          if (typeof showToast === "function") {
+            showToast("Production CI/CD deployment succeeded! (Zero downtime)", "info");
+          }
+        }
+      }, stage.delay + 750);
+
+      pipelineTimers.push(t1, t2);
+    });
+  });
+
+  resetBtn.addEventListener("click", () => {
+    pipelineTimers.forEach(t => clearTimeout(t));
+    pipelineTimers = [];
+    isRunning = false;
+    runBtn.disabled = false;
+    runBtn.style.opacity = "1";
+    resetStages();
+    consoleEl.innerHTML = `
+      <div class="cicd-log-line log-cmd">$ git status</div>
+      <div class="cicd-log-line">On branch main. Ready for commit trigger.</div>
+      <div class="cicd-log-line log-info">Click [Trigger Build &amp; Deploy] above to run automated CI/CD simulation.</div>
+    `;
+    if (statusText) statusText.textContent = "STATUS: IDLE · READY FOR COMMIT TRIGGER";
+  });
+
+  function resetStages() {
+    stages.forEach(stage => {
+      const stageEl = document.getElementById(stage.id);
+      const iconEl = document.getElementById(stage.icon);
+      if (stageEl) {
+        stageEl.classList.remove("active", "success");
+      }
+      if (iconEl) iconEl.textContent = "⚪";
+    });
+  }
+}
+
+/* 3. Systems Protocol Lab (Z-Protocol & ONey) */
+function initSystemsProtocolLab() {
+  // Tab Switching
+  const tabZproto = document.getElementById("tab-btn-zproto");
+  const tabOney = document.getElementById("tab-btn-oney");
+  const paneZproto = document.getElementById("pane-zproto");
+  const paneOney = document.getElementById("pane-oney");
+
+  if (tabZproto && tabOney && paneZproto && paneOney) {
+    tabZproto.addEventListener("click", () => {
+      tabZproto.classList.add("active");
+      tabOney.classList.remove("active");
+      paneZproto.style.display = "block";
+      paneOney.style.display = "none";
+    });
+
+    tabOney.addEventListener("click", () => {
+      tabOney.classList.add("active");
+      tabZproto.classList.remove("active");
+      paneZproto.style.display = "none";
+      paneOney.style.display = "block";
+    });
+  }
+
+  // Z-Protocol Flag Toggle Inspector
+  const flagBtns = document.querySelectorAll(".flag-toggle-btn");
+  const flagsHexEl = document.getElementById("packet-flags-hex");
+  const flagsLabelEl = document.getElementById("packet-flags-label");
+  const flagsMaskEl = document.getElementById("active-flags-mask");
+  const explanationEl = document.getElementById("packet-state-explanation");
+  const crcEl = document.getElementById("packet-crc-hex");
+
+  if (!flagBtns.length || !flagsHexEl) return;
+
+  const flagDescriptions = {
+    SYN: "Connection handshake initiation. Requests sequence number synchronization.",
+    ACK: "Acknowledgment of received sequence number and stream boundary.",
+    FIN: "Graceful stream teardown request from raw socket endpoint.",
+    RST: "Immediate ungraceful connection reset / reject.",
+    PSH: "Push buffer immediately to receiver application layer without waiting for full frame."
+  };
+
+  flagBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      updateFlags();
+    });
+  });
+
+  function updateFlags() {
+    let mask = 0;
+    const activeNames = [];
+
+    flagBtns.forEach(btn => {
+      if (btn.classList.contains("active")) {
+        const bit = parseInt(btn.getAttribute("data-bit") || "0", 10);
+        const name = btn.getAttribute("data-flag") || "";
+        mask |= bit;
+        activeNames.push(name);
+      }
+    });
+
+    const hexStr = "0x" + mask.toString(16).padStart(2, "0").toUpperCase();
+    const binStr = "0b" + mask.toString(2).padStart(8, "0");
+
+    flagsHexEl.textContent = hexStr;
+    if (flagsMaskEl) flagsMaskEl.textContent = `Bitmask: ${binStr}`;
+
+    if (activeNames.length === 0) {
+      flagsLabelEl.textContent = "No Flags Active";
+      flagsHexEl.style.color = "var(--text-subtle)";
+      explanationEl.innerHTML = `👉 <b>State:</b> Raw payload transfer frame without transport state control flags.`;
+      if (crcEl) crcEl.textContent = "0x1A2B3C4D";
+    } else {
+      flagsHexEl.style.color = "#10b981";
+      flagsLabelEl.textContent = `${activeNames.join(" + ")} Active`;
+
+      // Meaningful state summaries
+      let expText = "";
+      if (activeNames.includes("SYN") && activeNames.includes("ACK")) {
+        expText = "<b>3-Way Handshake SYN-ACK Response:</b> Receiver verifies connection, sets sequence window, and acknowledges client.";
+      } else if (activeNames.includes("SYN")) {
+        expText = "<b>Connection Initiation (SYN):</b> Initiates Layer-4 3-way handshake over raw Python sockets.";
+      } else if (activeNames.includes("FIN") && activeNames.includes("ACK")) {
+        expText = "<b>Graceful Disconnect (FIN-ACK):</b> Confirms orderly shutdown of raw socket session.";
+      } else if (activeNames.includes("RST")) {
+        expText = "<b>Connection Reset (RST):</b> Immediate abnormal abort triggered (e.g. invalid CRC32 or sequence mismatch).";
+      } else {
+        expText = activeNames.map(n => flagDescriptions[n] || n).join(" ");
+      }
+
+      explanationEl.innerHTML = `👉 <b>State:</b> ${expText}`;
+
+      // Dynamically compute mock CRC32 with mask
+      const mockCrc = ((0x9E3779B9 ^ (mask * 0x1000193)) >>> 0).toString(16).toUpperCase();
+      if (crcEl) crcEl.textContent = `0x${mockCrc}`;
+    }
+  }
+}
+
