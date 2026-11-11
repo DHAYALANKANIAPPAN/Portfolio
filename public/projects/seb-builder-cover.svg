@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="seb-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050d1a" />
+      <stop offset="50%" stop-color="#0a1a36" />
+      <stop offset="100%" stop-color="#030812" />
+    </linearGradient>
+    <linearGradient id="blue-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#00F2FE" />
+    </linearGradient>
+    <filter id="seb-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#seb-bg)" />
+
+  <!-- Lockdown Grid -->
+  <g opacity="0.12" stroke="#3B82F6" stroke-width="1">
+    <path d="M0 60 H800 M0 130 H800 M0 200 H800 M0 270 H800 M0 340 H800 M0 410 H800 M0 480 H800" />
+    <path d="M60 0 V500 M140 0 V500 M220 0 V500 M300 0 V500 M380 0 V500 M460 0 V500 M540 0 V500 M620 0 V500 M700 0 V500 M780 0 V500" />
+  </g>
+
+  <!-- Ambient Glow -->
+  <circle cx="200" cy="240" r="140" fill="#3B82F6" opacity="0.1" filter="url(#seb-glow)" />
+  <circle cx="620" cy="250" r="150" fill="#00F2FE" opacity="0.08" filter="url(#seb-glow)" />
+
+  <!-- Main Kiosk Window Frame -->
+  <g transform="translate(50, 45)">
+    <rect width="700" height="410" rx="16" fill="#071224" stroke="#3B82F6" stroke-width="1.5" stroke-opacity="0.6" />
+    
+    <!-- Top Header -->
+    <rect width="700" height="42" rx="16" fill="#0e234a" />
+    <rect y="24" width="700" height="18" fill="#0e234a" />
+    <circle cx="24" cy="21" r="5" fill="#FF5F56" />
+    <circle cx="40" cy="21" r="5" fill="#FFBD2E" />
+    <circle cx="56" cy="21" r="5" fill="#27C93F" />
+    <text x="350" y="26" fill="#FFFFFF" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">LinuxSEB-Builder — Safe Exam Browser Linux Lockdown Sandbox</text>
+
+    <!-- Inner Split Layout -->
+    <g transform="translate(20, 58)">
+      <!-- Left: Lockdown Builder Terminal -->
+      <g>
+        <rect width="390" height="315" rx="12" fill="#030914" stroke="#3B82F6" stroke-width="1" stroke-opacity="0.3" />
+        
+        <!-- Live Builder Terminal -->
+        <g transform="translate(15, 15)">
+          <rect width="360" height="285" rx="8" fill="#02050d" stroke="#ffffff" stroke-opacity="0.08" />
+          <g font-family="monospace" font-size="10" transform="translate(14, 20)">
+            <text x="0" y="0" fill="#3B82F6">root@kiosk-builder:~# <tspan fill="#00F2FE">./build-linux-seb.sh</tspan></text>
+            <text x="0" y="20" fill="#E5E7F5" opacity="0.7">[1/5] Initializing Linux Kiosk Lockdown Environment...</text>
+            
+            <text x="0" y="44" fill="#10B981">✓ Trapping shortcut keys [Alt+Tab, Super, Ctrl+Alt+F1..F7]</text>
+            <text x="0" y="64" fill="#10B981">✓ Disabling TTY terminal console switching</text>
+            <text x="0" y="84" fill="#10B981">✓ Sandboxing browser process inside Linux cgroups</text>
+            <text x="0" y="104" fill="#00F2FE">✓ Enforcing read-only rootfs mount overlays</text>
+
+            <line x1="0" y1="120" x2="330" y2="120" stroke="#ffffff" stroke-opacity="0.1" />
+
+            <text x="0" y="140" fill="#FFBD2E">[*] Network Firewall Policy Activated:</text>
+            <text x="14" y="158" fill="#E5E7F5" opacity="0.8">• Whitelist: https://exam-portal.ssiet.edu</text>
+            <text x="14" y="176" fill="#E5E7F5" opacity="0.8">• All external egress dropped via iptables</text>
+            <text x="14" y="194" fill="#FF5376">• DevTools, clipboard copy &amp; printing intercepted</text>
+
+            <line x1="0" y1="210" x2="330" y2="210" stroke="#ffffff" stroke-opacity="0.1" />
+
+            <text x="0" y="230" fill="#10B981">● SEB LINUX SANDBOX ACTIVE · SYSTEM LOCKED DOWN</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- Right: Sandbox Controls & Metrics -->
+      <g transform="translate(405, 0)">
+        <rect width="255" height="315" rx="12" fill="#030914" stroke="#ffffff" stroke-opacity="0.08" />
+        
+        <g transform="translate(16, 22)" font-family="monospace">
+          <text x="0" y="0" fill="#00F2FE" font-size="11" font-weight="bold">KIOSK SECURITY METRICS</text>
+          
+          <rect y="14" width="223" height="48" rx="6" fill="#0a1f42" stroke="#3B82F6" stroke-width="0.8" />
+          <text x="10" y="34" fill="#E5E7F5" font-size="10">Lockdown Confinement:</text>
+          <text x="10" y="50" fill="#10B981" font-size="11" font-weight="bold">100% Window Trap Sealed</text>
+
+          <rect y="70" width="223" height="52" rx="6" fill="#071630" />
+          <text x="10" y="90" fill="#E5E7F5" opacity="0.7" font-size="9">TTY Escape Mitigation</text>
+          <text x="10" y="110" fill="#00F2FE" font-size="11" font-weight="bold">Kernel Keys Masked</text>
+
+          <rect y="130" width="223" height="52" rx="6" fill="#071630" />
+          <text x="10" y="150" fill="#E5E7F5" opacity="0.7" font-size="9">Sandbox Containment</text>
+          <text x="10" y="170" fill="#10B981" font-size="11" font-weight="bold">Linux cgroups &amp; namespaces</text>
+
+          <rect y="190" width="223" height="85" rx="6" fill="#0a1f42" stroke="#00F2FE" stroke-width="1" />
+          <text x="10" y="210" fill="#00F2FE" font-size="10" font-weight="bold">SYSTEM STACK</text>
+          <text x="10" y="228" fill="#E5E7F5" font-size="9">• Bash Automation Engine</text>
+          <text x="10" y="244" fill="#E5E7F5" font-size="9">• X11 / Wayland Kiosk Config</text>
+          <text x="10" y="260" fill="#3B82F6" font-size="9">• Linux Process Sandboxing</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

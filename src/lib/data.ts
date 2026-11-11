@@ -374,78 +374,6 @@ export const projects: Project[] = [
     gallery: ["/projects/zprotocol-cover.svg"],
   },
   {
-    slug: "browser-monitoring-tool",
-    name: "Browser Monitoring Tool",
-    tagline: "Python-built telemetry tool for capturing browser activity and event streams",
-    description:
-      "A dedicated Python monitoring tool from the PROJECTS suite that instruments browser sessions to capture DOM events, unsent buffer queues, network interactions, and execution telemetry in real time.",
-    status: "Completed",
-    featured: true,
-    category: "Python & Automation",
-    stack: ["Python", "JSON Buffer", "DOM Telemetry", "Event Intercept"],
-    metrics: [
-      { label: "Status", value: "Completed" },
-      { label: "Data Format", value: "JSON Buffer" },
-      { label: "Execution", value: "Real-time" },
-    ],
-    timeline: "Completed",
-    challenges: [
-      "Reliably capturing live browser interactions without dropping event streams.",
-      "Managing unsent telemetry buffers safely when network disconnects occur.",
-    ],
-    solutions: [
-      "Structured a local JSON buffer queue to persist events prior to analysis.",
-      "Implemented streamlined Python parsing logic for quick reporting.",
-    ],
-    achievements: [
-      "Actively maintained in the official PROJECTS repository with regular updates.",
-    ],
-    features: [
-      "Browser activity and event stream capture",
-      "Local JSON buffer queue management",
-      "Python-based analysis pipeline",
-    ],
-    github: "https://github.com/DHAYALANKANIAPPAN/PROJECTS/tree/main/Browser_Monitoring_Tool",
-    cover: "/projects/browser-monitoring-cover.svg",
-    gallery: ["/projects/browser-monitoring-cover.svg"],
-  },
-  {
-    slug: "atm-system",
-    name: "ATM Banking & Account System",
-    tagline: "Java Object-Oriented banking simulation with PIN security and transaction ledger",
-    description:
-      "A complete Java OOP banking and ATM management system (`maincode.java`) implementing encapsulated account models, PIN validation, atomic deposit/withdrawal operations, and mini-statement receipt generation.",
-    status: "Completed",
-    featured: true,
-    category: "Java & Systems",
-    stack: ["Java", "OOP", "Encapsulation", "Collections", "CLI Interface"],
-    metrics: [
-      { label: "Status", value: "Completed" },
-      { label: "Architecture", value: "OOP / MVC" },
-      { label: "Data Integrity", value: "Atomic TXN" },
-    ],
-    timeline: "Completed",
-    challenges: [
-      "Ensuring balance consistency and preventing negative withdrawal overdraws.",
-      "Structuring clean object-oriented class hierarchies for accounts and ledger entries.",
-    ],
-    solutions: [
-      "Encapsulated sensitive balance mutations behind verified authentication gates in Java.",
-      "Built clean interactive CLI menus with formatted receipt outputs.",
-    ],
-    achievements: [
-      "Reinforced core Java OOP certification concepts (awarded 92% Merit Score in Java + MongoDB).",
-    ],
-    features: [
-      "Account balance checking, deposits, and cash withdrawals",
-      "PIN authentication and session validation",
-      "Transaction history logging and mini-statement generator",
-    ],
-    github: "https://github.com/DHAYALANKANIAPPAN/PROJECTS/tree/main/ATM",
-    cover: "/projects/atm-cover.svg",
-    gallery: ["/projects/atm-cover.svg"],
-  },
-  {
     slug: "ansible-fleet-automation",
     name: "Ansible Fleet Provisioning & Automation",
     tagline: "Playbook-driven Linux server provisioning, UFW firewalls & automated setups",
@@ -482,11 +410,155 @@ export const projects: Project[] = [
     gallery: ["/projects/ansible-cover.svg"],
   },
   {
+    slug: "airlock-vault",
+    name: "Airlock AWS Key Quarantine Vault",
+    tagline: "Zero-leakage AWS access key isolation and rotation vault with AES-256 encryption",
+    description:
+      "Zero-leakage AWS access key isolation and rotation vault providing ephemeral STS tokens, automated age watchdogs, and AES-256 encrypted credential quarantine to prevent secret exfiltration.",
+    status: "Completed",
+    featured: true,
+    category: "DevOps",
+    stack: ["Python", "AWS IAM", "Boto3", "Cryptography", "AES-256", "Cloud Security"],
+    metrics: [
+      { label: "Encryption", value: "AES-256-GCM" },
+      { label: "Isolation", value: "Zero Leakage" },
+      { label: "Token TTL", value: "900s Ephemeral" },
+    ],
+    timeline: "Completed",
+    challenges: [
+      "Preventing permanent root credentials from leaking in shell histories or accidental git commits.",
+      "Managing short-lived credential exchange without breaking developer CLI workflows.",
+    ],
+    solutions: [
+      "Engineered an airlocked local proxy daemon issuing short-lived AWS STS tokens.",
+      "Encrypted root secrets at rest using AES-256-GCM with automated 30-day key age alarms.",
+    ],
+    achievements: [
+      "Complete credential isolation ensuring zero plaintext access keys touch workstation disk.",
+    ],
+    features: [
+      "AES-256-GCM encrypted credential vault",
+      "Ephemeral AWS STS session token broker",
+      "Automated IAM key age rotation watchdog",
+    ],
+    github: "https://github.com/DHAYALANKANIAPPAN/AWS_access_Keys_AIRLOCK",
+    cover: "/projects/airlock-cover.svg",
+    gallery: ["/projects/airlock-cover.svg"],
+  },
+  {
+    slug: "linuxseb-builder",
+    name: "LinuxSEB-Builder Kiosk Sandbox",
+    tagline: "Automated lockdown sandbox builder creating a hardened Safe Exam Browser for Linux",
+    description:
+      "Automated builder and lockdown environment generator creating a hardened Safe Exam Browser (SEB) equivalent for Linux distros with window traps, cgroups isolation, and egress whitelisting.",
+    status: "Completed",
+    featured: true,
+    category: "Java & Systems",
+    stack: ["Linux", "Bash Shell", "Kiosk Mode", "cgroups", "Sandboxing", "Security"],
+    metrics: [
+      { label: "Isolation", value: "100% Kiosk Trap" },
+      { label: "Sandboxing", value: "cgroups/TTY" },
+      { label: "Build Script", value: "Automated Bash" },
+    ],
+    timeline: "Completed",
+    challenges: [
+      "Lack of native flexible Safe Exam Browser support on Linux distributions.",
+      "Preventing students from switching TTY consoles or opening browser developer inspection tools.",
+    ],
+    solutions: [
+      "Built automated shell installer trapping kernel keyboard shortcuts (Alt+Tab, Super, Ctrl+Alt+F*).",
+      "Confined process trees inside dedicated Linux cgroups with read-only rootfs overlays.",
+    ],
+    achievements: [
+      "Delivered turnkey automated Linux lockdown environment for high-stakes evaluations.",
+    ],
+    features: [
+      "Kernel shortcut interception and TTY console masking",
+      "Linux cgroups process sandbox and memory confinement",
+      "Strict domain egress firewall whitelist via iptables",
+    ],
+    github: "https://github.com/DHAYALANKANIAPPAN/LinuxSEB-Builder",
+    cover: "/projects/seb-builder-cover.svg",
+    gallery: ["/projects/seb-builder-cover.svg"],
+  },
+  {
+    slug: "narcox-scanner",
+    name: "Narcox Network Vulnerability Auditor",
+    tagline: "Asynchronous multi-threaded network scanner & vulnerability recon framework",
+    description:
+      "Asynchronous multi-threaded network scanner and vulnerability reconnaissance framework engineered for rapid subnet footprinting, service fingerprinting, and automated CVE correlation.",
+    status: "Completed",
+    featured: true,
+    category: "Security & Research",
+    stack: ["Python", "Network Security", "Vulnerability Scanner", "Scapy", "CVE Correlator", "Multithreading"],
+    metrics: [
+      { label: "Concurrency", value: "250 Threads" },
+      { label: "Scope", value: "Subnet /24 Recon" },
+      { label: "Analysis", value: "Heuristic CVE" },
+    ],
+    timeline: "Completed",
+    challenges: [
+      "Slow sequential socket probing triggering network rate limits or timing out on wide CIDR subnets.",
+      "Extracting accurate service daemon versions from sparse TCP banners.",
+    ],
+    solutions: [
+      "Architected an asynchronous worker queue in Python with socket connection pooling.",
+      "Implemented modular vulnerability signatures and CVE risk scoring algorithms.",
+    ],
+    achievements: [
+      "Scans full /24 subnets in seconds and auto-generates actionable risk audit JSON reports.",
+    ],
+    features: [
+      "Asynchronous high-concurrency socket engine",
+      "TCP/UDP port footprinting and banner grabbing",
+      "Automated CVE vulnerability correlation & reporting",
+    ],
+    github: "https://github.com/DHAYALANKANIAPPAN/Narcox",
+    cover: "/projects/narcox-cover.svg",
+    gallery: ["/projects/narcox-cover.svg"],
+  },
+  {
+    slug: "ev-share",
+    name: "EV_Share Smart Charging Station Platform",
+    tagline: "Full-stack EV charging point sharing and real-time slot reservation network",
+    description:
+      "Full-stack EV charging point sharing and slot reservation platform featuring interactive Leaflet/Mapbox geolocation, live dock availability, and collision-free atomic booking.",
+    status: "Completed",
+    featured: true,
+    category: "Full-Stack",
+    stack: ["React", "Node.js", "Express", "MongoDB", "Mapbox", "Tailwind CSS"],
+    metrics: [
+      { label: "Status", value: "Completed" },
+      { label: "Slot Lock", value: "Zero Collision" },
+      { label: "API Latency", value: "< 18ms" },
+    ],
+    timeline: "Completed",
+    challenges: [
+      "Race conditions during simultaneous booking requests for high-demand charging slots.",
+      "Rendering real-time map marker updates efficiently across urban densities.",
+    ],
+    solutions: [
+      "Implemented optimistic concurrency control and atomic document updates in MongoDB.",
+      "Engineered Leaflet/Mapbox vector tile clustering with sub-20ms Express API endpoints.",
+    ],
+    achievements: [
+      "Complete peer-to-peer charging sharing workflow from station discovery to confirmed slot lock.",
+    ],
+    features: [
+      "Geospatial charging station discovery with interactive radar",
+      "Real-time dock availability status and charging rate metrics",
+      "Atomic booking reservation engine with zero double-booking",
+    ],
+    github: "https://github.com/DHAYALANKANIAPPAN/EV_Share",
+    cover: "/projects/ev-share-cover.svg",
+    gallery: ["/projects/ev-share-cover.svg"],
+  },
+  {
     slug: "shahihennaholic-storefront",
     name: "Shahihennaholic Storefront",
     tagline: "Responsive web catalog and ordering interface for an organic henna brand",
     description:
-      "A tailored web application and product showcase built for Shahihennaholic, featuring organic bridal henna cones (`cones.html`), care oils, responsive mobile-friendly layouts, and local storage state persistence.",
+      "A tailored web application and product showcase built for Shahihennaholic, featuring organic bridal henna cones, care oils, responsive mobile-friendly layouts, and local storage state persistence.",
     status: "Completed",
     featured: true,
     category: "Full-Stack",
@@ -518,74 +590,6 @@ export const projects: Project[] = [
     gallery: ["/projects/shahihennaholic-cover.svg"],
   },
   {
-    slug: "file-organizer",
-    name: "Python Automated File Organizer",
-    tagline: "Automated filesystem classifier and directory sorting daemon in Python",
-    description:
-      "A practical Python automation utility (`main.py`) that monitors target folders, automatically categorizes incoming files by extension and MIME type into dedicated directories (Documents, Images, Archives, Audio), and prevents filename collisions.",
-    status: "Completed",
-    featured: false,
-    category: "Python & Automation",
-    stack: ["Python", "Filesystem OS", "Shutil", "Automation"],
-    metrics: [
-      { label: "Status", value: "Completed" },
-      { label: "Classification", value: "Instant" },
-      { label: "OS Support", value: "Cross-Platform" },
-    ],
-    timeline: "Completed",
-    challenges: [
-      "Safely moving large batches of files without overwriting existing files of the same name.",
-      "Categorizing diverse file extensions accurately into appropriate subfolders.",
-    ],
-    solutions: [
-      "Built deterministic rule mappings with collision detection and automatic renaming.",
-      "Utilized Python's `os` and `shutil` libraries for robust file stream handling.",
-    ],
-    achievements: [
-      "Reliable background tool for keeping messy download directories organized.",
-    ],
-    features: [
-      "Automated directory sorting for PDFs, images, zips, audio, and code files",
-      "Duplicate file collision prevention",
-      "Clean Python script ready for CLI or cron execution",
-    ],
-    github: "https://github.com/DHAYALANKANIAPPAN/PROJECTS/tree/main/File-organizer",
-    cover: "/projects/file-organizer-cover.svg",
-    gallery: ["/projects/file-organizer-cover.svg"],
-  },
-  {
-    slug: "cross-protocol-fingerprinting",
-    name: "Cross-Protocol Traffic Fingerprinting",
-    tagline: "Research into traffic metadata analysis and cross-protocol packet patterns",
-    description:
-      "A cybersecurity research project investigating how network traffic patterns, packet burst sequences, and metadata leakage can be analyzed across protocol boundaries even when payload contents are encrypted.",
-    status: "Completed",
-    featured: false,
-    category: "Security & Research",
-    stack: ["Python", "Traffic Analysis", "Packet Metadata", "Security Research"],
-    metrics: [
-      { label: "Status", value: "Completed" },
-      { label: "Domain", value: "Network Traffic" },
-    ],
-    timeline: "Completed",
-    challenges: [
-      "Extracting distinct statistical packet signatures from encrypted network streams.",
-    ],
-    solutions: [
-      "Built feature extraction pipelines in Python analyzing packet sizes, bursts, and intervals.",
-    ],
-    achievements: [
-      "Deepened practical understanding of network protocols, packet structures, and traffic defenses.",
-    ],
-    features: [
-      "Packet burst extraction and timing analyzer",
-      "Cross-protocol statistical comparison in Python",
-    ],
-    github: "https://github.com/DHAYALANKANIAPPAN/PROJECTS/tree/main/Cross-Protocol-Fingerprinting",
-    cover: "/projects/fingerprinting-cover.svg",
-    gallery: ["/projects/fingerprinting-cover.svg"],
-  },
-  {
     slug: "flarum-community-platform",
     name: "Flarum Forum & FLARUM1 Extension",
     tagline: "Customized Flarum forum deployment with custom JavaScript frontend extension",
@@ -594,10 +598,11 @@ export const projects: Project[] = [
     status: "Completed",
     featured: false,
     category: "Full-Stack",
-    stack: ["Flarum", "PHP", "JavaScript", "Mithril.js", "MySQL"],
+    stack: ["Flarum", "PHP", "JavaScript", "Mithril.js", "MySQL", "UI Extension"],
     metrics: [
       { label: "Status", value: "Completed" },
       { label: "Architecture", value: "PHP + JS" },
+      { label: "Database", value: "MySQL Index" },
     ],
     timeline: "Completed",
     challenges: [
@@ -613,7 +618,7 @@ export const projects: Project[] = [
       "Trackable Flarum core setup",
       "Modular JavaScript frontend extension in FLARUM1",
     ],
-    github: "https://github.com/DHAYALANKANIAPPAN/flarum",
+    github: "https://github.com/DHAYALANKANIAPPAN/FLARUM1",
     cover: "/projects/flarum-cover.svg",
     gallery: ["/projects/flarum-cover.svg"],
   },

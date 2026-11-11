@@ -978,7 +978,7 @@
             <span class="eyebrow">Software &amp; Systems Showcase</span>
             <h2 style="font-size: clamp(2rem, 4vw, 3rem);">Projects &amp; Codebases</h2>
             <p style="margin-top: 0.5rem; max-width: 600px;">
-              All codebases from my official GitHub repository — featuring remote systems (ONey), DevOps automation, Java OOP systems, MERN full-stack apps, and Python tools.
+              Production-grade systems, cloud security vaults (Airlock), network protocols (Z-Protocol), Linux lockdown sandboxing (SEB), and full-stack platforms (EV_Share, Flarum).
             </p>
           </div>
 
@@ -994,13 +994,13 @@
             <button class="filter-btn" data-filter="DevOps">DevOps</button>
             <button class="filter-btn" data-filter="Full-Stack">Full-Stack</button>
             <button class="filter-btn" data-filter="Python & Automation">Python &amp; Automation</button>
-            <button class="filter-btn" data-filter="Java & Systems">Java &amp; Systems</button>
+            <button class="filter-btn" data-filter="Java & Systems">Systems &amp; Linux</button>
             <button class="filter-btn" data-filter="Security & Research">Security &amp; Research</button>
           </div>
 
           <div class="search-input-wrapper">
             <span class="search-icon">🔍</span>
-            <input type="text" id="project-search" class="search-input" placeholder="Search Python, Docker, Java, Ansible..." />
+            <input type="text" id="project-search" class="search-input" placeholder="Search Python, Ansible, Airlock, EV_Share, Narcox, SEB..." />
           </div>
         </div>
 
@@ -1034,10 +1034,11 @@
                   <span class="tech-tag" data-tag="P2P Tunneling">P2P Tunneling</span>
                   <span class="tech-tag" data-tag="UDP Sockets">UDP Sockets</span>
                   <span class="tech-tag" data-tag="Screen Streaming">Screen Streaming</span>
+                  <span class="tech-tag" data-tag="Cryptography">Cryptography</span>
                 </div>
               </div>
               <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
-                <a href="https://github.com/DHAYALANKANIAPPAN/PROJECTS" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
+                <a href="https://github.com/DHAYALANKANIAPPAN/ONey" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
                   Source Repo ↗
                 </a>
                 <button class="btn btn-secondary toggle-case-study-btn" style="padding: 0.35rem 0.9rem; font-size: 0.75rem;">
@@ -1062,7 +1063,7 @@
           </article>
 
           <!-- 2. Z-Protocol -->
-          <article class="pro-card project-card" data-category="Java & Systems Python & Automation" data-tags="Python Raw Sockets Binary Framing CRC32 Network Protocols">
+          <article class="pro-card project-card" data-category="Java & Systems Python & Automation Security & Research" data-tags="Python Raw Sockets Binary Framing CRC32 Network Protocols">
             <div class="project-preview">
               <img src="./public/projects/zprotocol-cover.svg" alt="Z-Protocol Wire Transport" />
               <div class="project-status-badges">
@@ -1101,104 +1102,21 @@
             </div>
             <div class="project-case-study">
               <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture Deep Dive: Z-Protocol</h4>
-              <p style="font-size: 0.85rem; line-height: 1.6;">
+              <p style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
                 Built to understand the low-level mechanics of transport layer protocols. Features a custom 16-byte binary header, 3-way handshake state machine (SYN/SYN-ACK/ACK), and sequence numbering for packet reordering.
               </p>
-            </div>
-          </article>
-
-          <!-- 3. Browser Monitoring Tool -->
-          <article class="pro-card project-card" data-category="Python & Automation" data-tags="Python JSON Buffer DOM Telemetry Event Intercept">
-            <div class="project-preview">
-              <img src="./public/projects/browser-monitoring-cover.svg" alt="Browser Monitoring Tool" />
-              <div class="project-status-badges">
-                <span class="badge">Completed</span>
-                <span class="badge">Featured</span>
-                <span class="badge">Python</span>
-              </div>
-              <div class="project-metrics-ribbon">
-                <div class="metric-box"><div class="metric-label">Status</div><div class="metric-val">Completed</div></div>
-                <div class="metric-box"><div class="metric-label">Data Format</div><div class="metric-val">JSON Buffer</div></div>
-                <div class="metric-box"><div class="metric-label">Execution</div><div class="metric-val">Real-time</div></div>
-              </div>
-            </div>
-            <div class="project-content">
-              <div>
-                <span class="eyebrow" style="margin-bottom: 0.2rem;">Telemetry &amp; Automation</span>
-                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">Browser Monitoring Tool</h3>
-                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
-                  Python telemetry tool designed to instrument browser sessions, capturing DOM events, unsent buffer queues, and activity streams.
-                </p>
-                <div class="project-tags">
-                  <span class="tech-tag" data-tag="Python">Python</span>
-                  <span class="tech-tag" data-tag="JSON Buffer">JSON Buffer</span>
-                  <span class="tech-tag" data-tag="DOM Telemetry">DOM Telemetry</span>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; font-size: 0.82rem;">
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Challenge:</strong> Guaranteeing packet order &amp; integrity without relying on standard TCP kernel stacks.
+                </div>
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Solution:</strong> Custom binary frame packing (`struct`), sequence counters, and 32-bit checksum calculations.
                 </div>
               </div>
-              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
-                <a href="https://github.com/DHAYALANKANIAPPAN/PROJECTS/tree/main/Browser_Monitoring_Tool" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
-                  Source Repo ↗
-                </a>
-                <button class="btn btn-secondary toggle-case-study-btn" style="padding: 0.35rem 0.9rem; font-size: 0.75rem;">
-                  <span class="btn-text">Case Study</span>
-                </button>
-              </div>
-            </div>
-            <div class="project-case-study">
-              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture: Browser Monitoring Tool</h4>
-              <p style="font-size: 0.85rem; line-height: 1.6;">
-                Maintains a fault-tolerant local JSON buffer queue to ensure zero event loss during network interruptions, alongside streaming analytics.
-              </p>
             </div>
           </article>
 
-          <!-- 4. ATM Banking System -->
-          <article class="pro-card project-card" data-category="Java & Systems" data-tags="Java OOP Encapsulation Collections CLI Interface">
-            <div class="project-preview">
-              <img src="./public/projects/atm-cover.svg" alt="ATM Banking & Account System" />
-              <div class="project-status-badges">
-                <span class="badge">Completed</span>
-                <span class="badge">Featured</span>
-                <span class="badge">Java OOP</span>
-              </div>
-              <div class="project-metrics-ribbon">
-                <div class="metric-box"><div class="metric-label">Status</div><div class="metric-val">Completed</div></div>
-                <div class="metric-box"><div class="metric-label">Architecture</div><div class="metric-val">OOP / MVC</div></div>
-                <div class="metric-box"><div class="metric-label">Data Integrity</div><div class="metric-val">Atomic TXN</div></div>
-              </div>
-            </div>
-            <div class="project-content">
-              <div>
-                <span class="eyebrow" style="margin-bottom: 0.2rem;">Systems &amp; OOP</span>
-                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">ATM Banking &amp; Account System</h3>
-                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
-                  Java Object-Oriented banking application (maincode.java) with PIN authentication, balance protection, and mini-statement receipts.
-                </p>
-                <div class="project-tags">
-                  <span class="tech-tag" data-tag="Java">Java</span>
-                  <span class="tech-tag" data-tag="OOP">OOP</span>
-                  <span class="tech-tag" data-tag="Encapsulation">Encapsulation</span>
-                  <span class="tech-tag" data-tag="Collections">Collections</span>
-                </div>
-              </div>
-              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
-                <a href="https://github.com/DHAYALANKANIAPPAN/PROJECTS/tree/main/ATM" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
-                  Source Repo ↗
-                </a>
-                <button class="btn btn-secondary toggle-case-study-btn" style="padding: 0.35rem 0.9rem; font-size: 0.75rem;">
-                  <span class="btn-text">Case Study</span>
-                </button>
-              </div>
-            </div>
-            <div class="project-case-study">
-              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture: Java ATM System</h4>
-              <p style="font-size: 0.85rem; line-height: 1.6;">
-                Strict object encapsulation preventing unauthorized balance modification, complete with audit logs and transaction history rollback safety.
-              </p>
-            </div>
-          </article>
-
-          <!-- 5. Ansible Fleet Automation -->
+          <!-- 3. Ansible Fleet Automation -->
           <article class="pro-card project-card" data-category="DevOps" data-tags="Ansible YAML Linux Bash UFW Firewall">
             <div class="project-preview">
               <img src="./public/projects/ansible-cover.svg" alt="Ansible Fleet Provisioning & Automation" />
@@ -1237,14 +1155,242 @@
               </div>
             </div>
             <div class="project-case-study">
-              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture: Ansible Fleet</h4>
-              <p style="font-size: 0.85rem; line-height: 1.6;">
-                Structured with modular roles, variable isolation, and idempotent execution to guarantee reproducible server configurations in seconds.
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture Deep Dive: Ansible Fleet</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
+                Structured with modular roles, variable isolation, and idempotent execution to guarantee reproducible server configurations across staging and production in under two minutes.
               </p>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; font-size: 0.82rem;">
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Challenge:</strong> Configuration drift and human error in manual multi-node server hardening.
+                </div>
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Solution:</strong> Fully automated, self-healing playbooks locking down SSH and baseline security.
+                </div>
+              </div>
             </div>
           </article>
 
-          <!-- 6. Shahihennaholic Storefront -->
+          <!-- 4. Airlock AWS Access Keys Vault -->
+          <article class="pro-card project-card" data-category="DevOps Security & Research Python & Automation" data-tags="Python AWS IAM Boto3 Cryptography AES-256 Cloud Security">
+            <div class="project-preview">
+              <img src="./public/projects/airlock-cover.svg" alt="Airlock AWS Keys Quarantine Vault" />
+              <div class="project-status-badges">
+                <span class="badge">Completed</span>
+                <span class="badge">Featured</span>
+                <span class="badge">Cloud Security</span>
+              </div>
+              <div class="project-metrics-ribbon">
+                <div class="metric-box"><div class="metric-label">Encryption</div><div class="metric-val">AES-256-GCM</div></div>
+                <div class="metric-box"><div class="metric-label">Isolation</div><div class="metric-val">Zero Leakage</div></div>
+                <div class="metric-box"><div class="metric-label">Token TTL</div><div class="metric-val">900s Ephemeral</div></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 0.2rem;">Cloud Security &amp; IAM Automation</span>
+                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">Airlock AWS Key Quarantine Vault</h3>
+                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
+                  Zero-leakage AWS access key isolation and rotation vault providing ephemeral STS tokens, automated age watchdogs, and AES-256 encrypted credential quarantine.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-tag" data-tag="Python">Python</span>
+                  <span class="tech-tag" data-tag="AWS IAM">AWS IAM</span>
+                  <span class="tech-tag" data-tag="Boto3">Boto3</span>
+                  <span class="tech-tag" data-tag="Cryptography">Cryptography</span>
+                  <span class="tech-tag" data-tag="Cloud Security">Cloud Security</span>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
+                <a href="https://github.com/DHAYALANKANIAPPAN/AWS_access_Keys_AIRLOCK" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
+                  Source Repo ↗
+                </a>
+                <button class="btn btn-secondary toggle-case-study-btn" style="padding: 0.35rem 0.9rem; font-size: 0.75rem;">
+                  <span class="btn-text">Case Study</span>
+                </button>
+              </div>
+            </div>
+            <div class="project-case-study">
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture Deep Dive: Airlock AWS Vault</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
+                Engineered to eliminate plaintext cloud credentials on developer workstations. Root AWS access keys are sealed inside a hardware/passphrase-keyed AES-256 vault. When deployments run, Airlock mints scoped, short-lived AWS STS session tokens that expire automatically.
+              </p>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; font-size: 0.82rem;">
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Challenge:</strong> Permanent root credentials accidentally committed to git or exposed in local shell histories.
+                </div>
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Solution:</strong> Ephemeral token broker daemon with automated 30-day key age rotation alarms via Boto3.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. LinuxSEB-Builder -->
+          <article class="pro-card project-card" data-category="Java & Systems DevOps Security & Research" data-tags="Linux Bash Shell Kiosk Mode cgroups Sandboxing Security">
+            <div class="project-preview">
+              <img src="./public/projects/seb-builder-cover.svg" alt="LinuxSEB-Builder Kiosk Sandbox" />
+              <div class="project-status-badges">
+                <span class="badge">Completed</span>
+                <span class="badge">Featured</span>
+                <span class="badge">Linux Systems</span>
+              </div>
+              <div class="project-metrics-ribbon">
+                <div class="metric-box"><div class="metric-label">Isolation</div><div class="metric-val">100% Kiosk Trap</div></div>
+                <div class="metric-box"><div class="metric-label">Sandboxing</div><div class="metric-val">cgroups/TTY</div></div>
+                <div class="metric-box"><div class="metric-label">Build Script</div><div class="metric-val">Automated Bash</div></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 0.2rem;">Linux Systems &amp; Sandboxing</span>
+                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">LinuxSEB-Builder Kiosk Sandbox</h3>
+                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
+                  Automated lockdown sandbox builder creating a hardened Safe Exam Browser (SEB) environment for Linux with window traps, cgroups isolation, and egress whitelisting.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-tag" data-tag="Linux">Linux</span>
+                  <span class="tech-tag" data-tag="Bash Shell">Bash Shell</span>
+                  <span class="tech-tag" data-tag="Kiosk Mode">Kiosk Mode</span>
+                  <span class="tech-tag" data-tag="cgroups">cgroups</span>
+                  <span class="tech-tag" data-tag="Sandboxing">Sandboxing</span>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
+                <a href="https://github.com/DHAYALANKANIAPPAN/LinuxSEB-Builder" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
+                  Source Repo ↗
+                </a>
+                <button class="btn btn-secondary toggle-case-study-btn" style="padding: 0.35rem 0.9rem; font-size: 0.75rem;">
+                  <span class="btn-text">Case Study</span>
+                </button>
+              </div>
+            </div>
+            <div class="project-case-study">
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture Deep Dive: LinuxSEB-Builder</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
+                Bridges the absence of native Safe Exam Browser support on Linux distributions. Delivers a turnkey bash installer that builds an isolated X11/Wayland kiosk container, intercepts kernel shortcuts (`Alt+Tab`, `Ctrl+Alt+F*`), disables virtual consoles, and enforces iptables egress filtering.
+              </p>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; font-size: 0.82rem;">
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Challenge:</strong> Preventing exam-takers from switching TTY consoles, opening devtools, or running cheating scripts.
+                </div>
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Solution:</strong> Kernel shortcut trapping, strict cgroups resource boundaries, and read-only overlay filesystems.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Narcox Network Vulnerability Auditor -->
+          <article class="pro-card project-card" data-category="Security & Research Python & Automation Java & Systems" data-tags="Python Network Security Vulnerability Scanner Scapy Multithreading CVE">
+            <div class="project-preview">
+              <img src="./public/projects/narcox-cover.svg" alt="Narcox Network Vulnerability Auditor" />
+              <div class="project-status-badges">
+                <span class="badge">Completed</span>
+                <span class="badge">Featured</span>
+                <span class="badge">Security R&amp;D</span>
+              </div>
+              <div class="project-metrics-ribbon">
+                <div class="metric-box"><div class="metric-label">Concurrency</div><div class="metric-val">250 Threads</div></div>
+                <div class="metric-box"><div class="metric-label">Scope</div><div class="metric-val">Subnet /24 Recon</div></div>
+                <div class="metric-box"><div class="metric-label">Analysis</div><div class="metric-val">Heuristic CVE</div></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 0.2rem;">Cybersecurity &amp; Threat Recon</span>
+                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">Narcox Network Vulnerability Auditor</h3>
+                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
+                  Asynchronous multi-threaded network scanner and vulnerability reconnaissance framework engineered for rapid subnet footprinting, service fingerprinting, and CVE mapping.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-tag" data-tag="Python">Python</span>
+                  <span class="tech-tag" data-tag="Network Security">Network Security</span>
+                  <span class="tech-tag" data-tag="Vulnerability Scanner">Vulnerability Scanner</span>
+                  <span class="tech-tag" data-tag="Multithreading">Multithreading</span>
+                  <span class="tech-tag" data-tag="CVE">CVE Mapping</span>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
+                <a href="https://github.com/DHAYALANKANIAPPAN/Narcox" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
+                  Source Repo ↗
+                </a>
+                <button class="btn btn-secondary toggle-case-study-btn" style="padding: 0.35rem 0.9rem; font-size: 0.75rem;">
+                  <span class="btn-text">Case Study</span>
+                </button>
+              </div>
+            </div>
+            <div class="project-case-study">
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture Deep Dive: Narcox Recon Framework</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
+                High-speed security auditor for scanning enterprise local networks. Employs non-blocking socket pools, service banner analysis, and signature correlation to detect unpatched daemons, exposed database ports, and weak protocol configurations across 254 hosts simultaneously.
+              </p>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; font-size: 0.82rem;">
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Challenge:</strong> Slow sequential probes triggering firewall drops or timing out on high-latency nodes.
+                </div>
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Solution:</strong> Asynchronous thread pool with intelligent backoff and structured JSON risk reporting.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. EV_Share Smart Charging Platform -->
+          <article class="pro-card project-card" data-category="Full-Stack DevOps" data-tags="React Node.js Express MongoDB Mapbox Leaflet Full-Stack">
+            <div class="project-preview">
+              <img src="./public/projects/ev-share-cover.svg" alt="EV_Share Smart Charging Station Platform" />
+              <div class="project-status-badges">
+                <span class="badge">Completed</span>
+                <span class="badge">Featured</span>
+                <span class="badge">Full-Stack</span>
+              </div>
+              <div class="project-metrics-ribbon">
+                <div class="metric-box"><div class="metric-label">Status</div><div class="metric-val">Completed</div></div>
+                <div class="metric-box"><div class="metric-label">Slot Lock</div><div class="metric-val">Zero Collision</div></div>
+                <div class="metric-box"><div class="metric-label">API Latency</div><div class="metric-val">&lt; 18ms</div></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 0.2rem;">Smart Mobility &amp; Real-time Web</span>
+                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">EV_Share Smart Charging Platform</h3>
+                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
+                  Full-stack EV charging point sharing and slot reservation platform featuring interactive Leaflet/Mapbox geolocation, live dock availability, and collision-free booking.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-tag" data-tag="React">React</span>
+                  <span class="tech-tag" data-tag="Node.js">Node.js</span>
+                  <span class="tech-tag" data-tag="Express">Express</span>
+                  <span class="tech-tag" data-tag="MongoDB">MongoDB</span>
+                  <span class="tech-tag" data-tag="Mapbox">Mapbox Geolocation</span>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
+                <a href="https://github.com/DHAYALANKANIAPPAN/EV_Share" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
+                  Source Repo ↗
+                </a>
+                <button class="btn btn-secondary toggle-case-study-btn" style="padding: 0.35rem 0.9rem; font-size: 0.75rem;">
+                  <span class="btn-text">Case Study</span>
+                </button>
+              </div>
+            </div>
+            <div class="project-case-study">
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture Deep Dive: EV_Share Network</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
+                Peer-to-peer charging station network enabling homeowners and commercial operators to share charging docks. Built with a responsive React UI, dynamic geospatial map clustering, and an Express REST backend with MongoDB atomic locks to eliminate double-booking.
+              </p>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; font-size: 0.82rem;">
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Challenge:</strong> Concurrency race conditions when multiple users book the same fast-charging slot simultaneously.
+                </div>
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Solution:</strong> MongoDB optimistic locking with atomic transactional slot reservation and status broadcasting.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Shahihennaholic Storefront -->
           <article class="pro-card project-card" data-category="Full-Stack" data-tags="HTML5 CSS3 JavaScript Local Storage Responsive UI">
             <div class="project-preview">
               <img src="./public/projects/shahihennaholic-cover.svg" alt="Shahihennaholic Storefront" />
@@ -1283,90 +1429,23 @@
               </div>
             </div>
             <div class="project-case-study">
-              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture: Shahihennaholic</h4>
-              <p style="font-size: 0.85rem; line-height: 1.6;">
-                Client-side state management for cart calculation, responsive image layouts for mobile shoppers, and direct WhatsApp order payload dispatch.
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture Deep Dive: Shahihennaholic</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
+                Client-side state management for cart calculation, responsive image layouts for mobile shoppers, and direct WhatsApp order payload dispatch without heavyweight checkout dependencies.
               </p>
-            </div>
-          </article>
-
-          <!-- 7. Python File Organizer -->
-          <article class="pro-card project-card" data-category="Python & Automation" data-tags="Python Filesystem OS Shutil Automation">
-            <div class="project-preview">
-              <img src="./public/projects/file-organizer-cover.svg" alt="Python Automated File Organizer" />
-              <div class="project-status-badges">
-                <span class="badge">Completed</span>
-                <span class="badge">Python</span>
-              </div>
-            </div>
-            <div class="project-content">
-              <div>
-                <span class="eyebrow" style="margin-bottom: 0.2rem;">Automation Daemon</span>
-                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">Python File Organizer</h3>
-                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
-                  Automated directory classifier daemon in Python (main.py) that categorizes downloads by MIME type and prevents filename collisions.
-                </p>
-                <div class="project-tags">
-                  <span class="tech-tag" data-tag="Python">Python</span>
-                  <span class="tech-tag" data-tag="Filesystem OS">Filesystem OS</span>
-                  <span class="tech-tag" data-tag="Automation">Automation</span>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; font-size: 0.82rem;">
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Challenge:</strong> Preserving cart state without forcing account login or slow database overhead.
+                </div>
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Solution:</strong> LocalStorage serialization with dynamic order payload generation for one-click WhatsApp checkout.
                 </div>
               </div>
-              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
-                <a href="https://github.com/DHAYALANKANIAPPAN/PROJECTS/tree/main/File-organizer" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
-                  Source Repo ↗
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 8. Cross-Protocol Traffic Fingerprinting -->
-          <article class="pro-card project-card" data-category="Security & Research Python & Automation" data-tags="Python Traffic Analysis Packet Metadata Security Research">
-            <div class="project-preview">
-              <img src="./public/projects/fingerprinting-cover.svg" alt="Cross-Protocol Traffic Fingerprinting" />
-              <div class="project-status-badges">
-                <span class="badge">Completed</span>
-                <span class="badge">Security &amp; CTF</span>
-              </div>
-              <div class="project-metrics-ribbon">
-                <div class="metric-box"><div class="metric-label">Status</div><div class="metric-val">Completed</div></div>
-                <div class="metric-box"><div class="metric-label">Domain</div><div class="metric-val">Packet Metadata</div></div>
-                <div class="metric-box"><div class="metric-label">Analysis</div><div class="metric-val">Statistical</div></div>
-              </div>
-            </div>
-            <div class="project-content">
-              <div>
-                <span class="eyebrow" style="margin-bottom: 0.2rem;">Cybersecurity &amp; Protocol Research</span>
-                <h3 style="font-size: 1.45rem; margin-top: 0.2rem;">Cross-Protocol Traffic Fingerprinting</h3>
-                <p class="project-tagline" style="font-size: 0.88rem; margin-top: 0.4rem;">
-                  Research into traffic pattern analysis, packet burst sequences, and metadata leakage across protocol boundaries even when payload is encrypted.
-                </p>
-                <div class="project-tags">
-                  <span class="tech-tag" data-tag="Python">Python</span>
-                  <span class="tech-tag" data-tag="Traffic Analysis">Traffic Analysis</span>
-                  <span class="tech-tag" data-tag="Packet Metadata">Packet Metadata</span>
-                  <span class="tech-tag" data-tag="Security Research">Security Research</span>
-                </div>
-              </div>
-              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
-                <a href="https://github.com/DHAYALANKANIAPPAN/PROJECTS/tree/main/Cross-Protocol-Fingerprinting" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
-                  Source Repo ↗
-                </a>
-                <button class="btn btn-secondary toggle-case-study-btn" style="padding: 0.35rem 0.9rem; font-size: 0.75rem;">
-                  <span class="btn-text">Case Study</span>
-                </button>
-              </div>
-            </div>
-            <div class="project-case-study">
-              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture: Traffic Fingerprinting</h4>
-              <p style="font-size: 0.85rem; line-height: 1.6;">
-                Extracts statistical packet signatures, burst timings, and inter-arrival intervals to evaluate protocol classification accuracy in encrypted environments.
-              </p>
             </div>
           </article>
 
           <!-- 9. Flarum Community Forum & FLARUM1 -->
-          <article class="pro-card project-card" data-category="Full-Stack" data-tags="Flarum PHP JavaScript Mithril.js MySQL">
+          <article class="pro-card project-card" data-category="Full-Stack" data-tags="Flarum PHP JavaScript Mithril.js MySQL UI Extension">
             <div class="project-preview">
               <img src="./public/projects/flarum-cover.svg" alt="Flarum Community Platform & FLARUM1" />
               <div class="project-status-badges">
@@ -1395,9 +1474,26 @@
                 </div>
               </div>
               <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-main); padding-top: 1rem; margin-top: 1rem;">
-                <a href="https://github.com/DHAYALANKANIAPPAN/flarum" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
+                <a href="https://github.com/DHAYALANKANIAPPAN/FLARUM1" target="_blank" rel="noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
                   Source Repo ↗
                 </a>
+                <button class="btn btn-secondary toggle-case-study-btn" style="padding: 0.35rem 0.9rem; font-size: 0.75rem;">
+                  <span class="btn-text">Case Study</span>
+                </button>
+              </div>
+            </div>
+            <div class="project-case-study">
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Architecture Deep Dive: Flarum &amp; FLARUM1</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
+                Full forum stack deployment utilizing PHP/Composer on the backend and Mithril.js on the client. Authored the FLARUM1 modular extension to inject reactive UI widgets, custom author badges, and optimized discussion indexing.
+              </p>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; font-size: 0.82rem;">
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Challenge:</strong> Extending Flarum core styling and lifecycle hooks without modifying upstream core code.
+                </div>
+                <div style="padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main); background: var(--bg-card);">
+                  <strong>Solution:</strong> Built FLARUM1 as an isolated extension hooking into Flarum's frontend event bus and CSS pipelines.
+                </div>
               </div>
             </div>
           </article>
