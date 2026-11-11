@@ -425,149 +425,278 @@
             </div>
           </div>
 
-          <!-- 2. Live Cluster Nodes Grid -->
-          <div class="cluster-grid">
-            
-            <!-- Node 1 -->
-            <div class="cluster-node-card">
-              <div class="node-header">
-                <span class="node-title">
-                  <span>🖥️</span> node-01.gateway
-                </span>
-                <span class="node-status-badge">● Active</span>
+          <!-- 2. Visual DevOps Infrastructure & Cluster Pipeline Map -->
+          <div style="background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: 0 10px 30px rgba(0,0,0,0.35);">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; border-bottom: 1px solid var(--border-main); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 0.2rem; color: #10b981;">● HIGH-AVAILABILITY CLUSTER ARCHITECTURE</span>
+                <h3 style="font-size: 1.35rem; margin-top: 0.2rem; color: #ffffff;">How My Cloud Infrastructure Serves Real Traffic</h3>
+                <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 0.25rem; max-width: 680px;">
+                  Every incoming visitor request flows through this 4-tier pipeline: from edge SSL termination and custom socket daemons to in-memory caching and automated AWS Fargate workers.
+                </p>
               </div>
-              <div class="node-meta">
-                Ubuntu 22.04 LTS · Nginx Reverse Proxy · TLS 1.3 Termination &amp; SSL Certbot
-              </div>
-              <div class="node-gauge-row">
-                <div class="gauge-labels">
-                  <span>CPU Usage</span>
-                  <span id="node1-cpu">18%</span>
-                </div>
-                <div class="gauge-bar-track">
-                  <div class="gauge-bar-fill" id="node1-cpu-bar" style="width: 18%;"></div>
-                </div>
-              </div>
-              <div class="node-gauge-row">
-                <div class="gauge-labels">
-                  <span>Memory</span>
-                  <span>1.4 / 4.0 GB (35%)</span>
-                </div>
-                <div class="gauge-bar-track">
-                  <div class="gauge-bar-fill" style="width: 35%;"></div>
-                </div>
-              </div>
-              <div class="node-footer">
-                <span>Ports: :80, :443</span>
-                <span id="node1-ping">Ping: 14ms</span>
+
+              <!-- Cluster Simulation Mode Controls -->
+              <div style="display: flex; gap: 0.4rem; align-items: center; background: rgba(0,0,0,0.4); padding: 0.35rem 0.5rem; border-radius: var(--radius-sm); border: 1px solid var(--border-main);">
+                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-subtle); margin-right: 0.25rem;">SIMULATE LOAD:</span>
+                <button type="button" class="cluster-sim-btn active" id="sim-normal-btn" data-load="normal">Normal</button>
+                <button type="button" class="cluster-sim-btn" id="sim-spike-btn" data-load="spike">⚡ Traffic Spike</button>
+                <button type="button" class="cluster-sim-btn" id="sim-failover-btn" data-load="failover">🛡️ Auto-Failover</button>
               </div>
             </div>
 
-            <!-- Node 2 -->
-            <div class="cluster-node-card">
-              <div class="node-header">
-                <span class="node-title">
-                  <span>⚙️</span> node-02.telemetry
-                </span>
-                <span class="node-status-badge">● Active</span>
-              </div>
-              <div class="node-meta">
-                Debian 12 · Python Telemetry &amp; Z-Protocol Socket Receiver Daemon
-              </div>
-              <div class="node-gauge-row">
-                <div class="gauge-labels">
-                  <span>CPU Usage</span>
-                  <span id="node2-cpu">34%</span>
+            <!-- Pipeline Visual Grid with Step Indicators -->
+            <div class="cluster-grid">
+              
+              <!-- Tier 1: Ingress Gateway -->
+              <div class="cluster-node-card" id="cluster-card-node1">
+                <div class="node-step-badge">STEP 1: INGRESS GATEWAY</div>
+                <div class="node-header">
+                  <span class="node-title">
+                    <span>🛡️</span> node-01.gateway
+                  </span>
+                  <span class="node-status-badge">● Active</span>
                 </div>
-                <div class="gauge-bar-track">
-                  <div class="gauge-bar-fill" id="node2-cpu-bar" style="width: 34%;"></div>
+                <div class="node-meta" style="color: #e2e8f0; font-weight: 500;">
+                  Reverse Proxy &amp; SSL Certbot
                 </div>
-              </div>
-              <div class="node-gauge-row">
-                <div class="gauge-labels">
-                  <span>Memory</span>
-                  <span>2.6 / 8.0 GB (32%)</span>
+                <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.45; margin: 0;">
+                  Intercepts all inbound HTTPS traffic, enforces TLS 1.3 encryption, applies UFW firewall policies, and load balances to internal services.
+                </p>
+                <div class="node-sparkline-box">
+                  <svg class="node-sparkline-svg" viewBox="0 0 200 28" preserveAspectRatio="none">
+                    <path d="M0 20 Q 25 5, 50 18 T 100 12 T 150 22 T 200 8" fill="none" stroke="#00e5ff" stroke-width="2" />
+                    <path d="M0 20 Q 25 5, 50 18 T 100 12 T 150 22 T 200 8 L 200 28 L 0 28 Z" fill="rgba(0, 229, 255, 0.12)" />
+                  </svg>
                 </div>
-                <div class="gauge-bar-track">
-                  <div class="gauge-bar-fill" style="width: 32%;"></div>
+                <div class="node-gauge-row">
+                  <div class="gauge-labels">
+                    <span>CPU Load</span>
+                    <span id="node1-cpu">18%</span>
+                  </div>
+                  <div class="gauge-bar-track">
+                    <div class="gauge-bar-fill" id="node1-cpu-bar" style="width: 18%; background: #00e5ff;"></div>
+                  </div>
                 </div>
+                <div class="node-footer">
+                  <span>SSL: TLS 1.3 :443</span>
+                  <span id="node1-ping">Ping: 14ms</span>
+                </div>
+                <button type="button" class="node-inspect-btn" data-node="node1">
+                  🔍 Live Systemd &amp; Nginx Logs
+                </button>
               </div>
-              <div class="node-footer">
-                <span>Ports: :9000 (Raw), :8080</span>
-                <span id="node2-ping">Ping: 19ms</span>
+
+              <!-- Tier 2: Real-time Telemetry & Protocol Daemon -->
+              <div class="cluster-node-card" id="cluster-card-node2">
+                <div class="node-step-badge">STEP 2: SOCKET ENGINE</div>
+                <div class="node-header">
+                  <span class="node-title">
+                    <span>⚙️</span> node-02.telemetry
+                  </span>
+                  <span class="node-status-badge">● Active</span>
+                </div>
+                <div class="node-meta" style="color: #e2e8f0; font-weight: 500;">
+                  Python Telemetry &amp; ONey Daemon
+                </div>
+                <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.45; margin: 0;">
+                  Supervises raw socket sessions via Z-Protocol framing and encrypted ONey P2P tunnels with real-time frame buffering queues.
+                </p>
+                <div class="node-sparkline-box">
+                  <svg class="node-sparkline-svg" viewBox="0 0 200 28" preserveAspectRatio="none">
+                    <path d="M0 16 Q 30 24, 60 8 T 110 19 T 160 6 T 200 14" fill="none" stroke="#10b981" stroke-width="2" />
+                    <path d="M0 16 Q 30 24, 60 8 T 110 19 T 160 6 T 200 14 L 200 28 L 0 28 Z" fill="rgba(16, 185, 129, 0.12)" />
+                  </svg>
+                </div>
+                <div class="node-gauge-row">
+                  <div class="gauge-labels">
+                    <span>CPU Load</span>
+                    <span id="node2-cpu">34%</span>
+                  </div>
+                  <div class="gauge-bar-track">
+                    <div class="gauge-bar-fill" id="node2-cpu-bar" style="width: 34%; background: #10b981;"></div>
+                  </div>
+                </div>
+                <div class="node-footer">
+                  <span>Raw UDP: :9000</span>
+                  <span id="node2-ping">Ping: 19ms</span>
+                </div>
+                <button type="button" class="node-inspect-btn" data-node="node2">
+                  🔍 Live Socket &amp; P2P Logs
+                </button>
               </div>
+
+              <!-- Tier 3: In-Memory Cache & Database Replica -->
+              <div class="cluster-node-card" id="cluster-card-node3">
+                <div class="node-step-badge">STEP 3: STATE REPLICA</div>
+                <div class="node-header">
+                  <span class="node-title">
+                    <span>📦</span> node-03.database
+                  </span>
+                  <span class="node-status-badge">● Active</span>
+                </div>
+                <div class="node-meta" style="color: #e2e8f0; font-weight: 500;">
+                  Redis Cache &amp; MongoDB Replica
+                </div>
+                <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.45; margin: 0;">
+                  Maintains high-speed in-memory session caches in Redis and indexes persistent document stores in MongoDB with WiredTiger engine.
+                </p>
+                <div class="node-sparkline-box">
+                  <svg class="node-sparkline-svg" viewBox="0 0 200 28" preserveAspectRatio="none">
+                    <path d="M0 10 Q 35 15, 70 24 T 120 10 T 170 18 T 200 12" fill="none" stroke="#a855f7" stroke-width="2" />
+                    <path d="M0 10 Q 35 15, 70 24 T 120 10 T 170 18 T 200 12 L 200 28 L 0 28 Z" fill="rgba(168, 85, 247, 0.12)" />
+                  </svg>
+                </div>
+                <div class="node-gauge-row">
+                  <div class="gauge-labels">
+                    <span>CPU Load</span>
+                    <span id="node3-cpu">12%</span>
+                  </div>
+                  <div class="gauge-bar-track">
+                    <div class="gauge-bar-fill" id="node3-cpu-bar" style="width: 12%; background: #a855f7;"></div>
+                  </div>
+                </div>
+                <div class="node-footer">
+                  <span>DB Ports: :6379, :27017</span>
+                  <span id="node3-ping">Ping: 11ms</span>
+                </div>
+                <button type="button" class="node-inspect-btn" data-node="node3">
+                  🔍 Live MongoDB &amp; Cache Logs
+                </button>
+              </div>
+
+              <!-- Tier 4: Automated Cloud Workers & ECS Tasks -->
+              <div class="cluster-node-card" id="cluster-card-node4">
+                <div class="node-step-badge">STEP 4: CLOUD RUNNER</div>
+                <div class="node-header">
+                  <span class="node-title">
+                    <span>☁️</span> node-04.aws-runner
+                  </span>
+                  <span class="node-status-badge">● Active</span>
+                </div>
+                <div class="node-meta" style="color: #e2e8f0; font-weight: 500;">
+                  AWS ECS Fargate &amp; CI Runner
+                </div>
+                <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.45; margin: 0;">
+                  Autoscaling container runner executing Ansible automation jobs, batch background tasks, and zero-downtime rolling container releases.
+                </p>
+                <div class="node-sparkline-box">
+                  <svg class="node-sparkline-svg" viewBox="0 0 200 28" preserveAspectRatio="none">
+                    <path d="M0 22 Q 40 8, 80 18 T 130 5 T 180 16 T 200 20" fill="none" stroke="#f59e0b" stroke-width="2" />
+                    <path d="M0 22 Q 40 8, 80 18 T 130 5 T 180 16 T 200 20 L 200 28 L 0 28 Z" fill="rgba(245, 158, 11, 0.12)" />
+                  </svg>
+                </div>
+                <div class="node-gauge-row">
+                  <div class="gauge-labels">
+                    <span>CPU Load</span>
+                    <span id="node4-cpu">8%</span>
+                  </div>
+                  <div class="gauge-bar-track">
+                    <div class="gauge-bar-fill" id="node4-cpu-bar" style="width: 8%; background: #f59e0b;"></div>
+                  </div>
+                </div>
+                <div class="node-footer">
+                  <span>Region: ap-south-1</span>
+                  <span id="node4-ping">Ping: 22ms</span>
+                </div>
+                <button type="button" class="node-inspect-btn" data-node="node4">
+                  🔍 Live AWS ECS &amp; Job Logs
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Multi-Region Global Edge Latency Matrix -->
+          <div class="global-ping-strip">
+            <div class="region-ping-cell">
+              <span>🇮🇳 ap-south-1 (Mumbai / Chennai)</span>
+              <span class="region-ping-val">14ms [Fastest · Origin]</span>
+            </div>
+            <div class="region-ping-cell">
+              <span>🇸🇬 ap-southeast-1 (Singapore)</span>
+              <span class="region-ping-val">38ms [Stable]</span>
+            </div>
+            <div class="region-ping-cell">
+              <span>🇩🇪 eu-central-1 (Frankfurt)</span>
+              <span class="region-ping-val">96ms [Stable]</span>
+            </div>
+            <div class="region-ping-cell">
+              <span>🇺🇸 us-east-1 (N. Virginia)</span>
+              <span class="region-ping-val">138ms [Edge Sync]</span>
+            </div>
+          </div>
+
+          <!-- Architecture Topology Map -->
+          <div class="topology-map-card">
+            <div>
+              <span class="eyebrow" style="margin-bottom: 0.2rem;">Full-Stack &amp; Network Infrastructure</span>
+              <h3 style="font-size: 1.35rem; margin-top: 0.2rem;">Production Architecture &amp; Data Flow</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+                End-to-end data lifecycle: from external TLS clients to containerized Python workers and replicated databases.
+              </p>
             </div>
 
-            <!-- Node 3 -->
-            <div class="cluster-node-card">
-              <div class="node-header">
-                <span class="node-title">
-                  <span>📦</span> node-03.database
-                </span>
-                <span class="node-status-badge">● Active</span>
+            <div class="arch-flow-diagram">
+              <div class="arch-node-box">
+                <div class="arch-step-tag">1. INGRESS</div>
+                <div class="arch-node-icon">🌐</div>
+                <div class="arch-node-title">Public Web Traffic</div>
+                <div class="arch-node-spec">HTTPS :443 · Raw UDP :9000</div>
+                <span style="font-size: 0.68rem; color: #10b981; font-weight: 700;">● Continuous Stream</span>
               </div>
-              <div class="node-meta">
-                Alpine Linux · Redis In-Memory Cache &amp; MongoDB Replica Cluster
+
+              <!-- Animated Connector 1 -->
+              <div class="arch-connector-cell">
+                <span class="arch-connector-badge">TLS Handshake</span>
+                <div class="arch-flow-line">
+                  <div class="arch-data-packet"></div>
+                </div>
+                <span style="font-size: 0.68rem; color: var(--text-subtle); font-family: var(--font-mono);">Encrypted Wire</span>
               </div>
-              <div class="node-gauge-row">
-                <div class="gauge-labels">
-                  <span>CPU Usage</span>
-                  <span id="node3-cpu">12%</span>
-                </div>
-                <div class="gauge-bar-track">
-                  <div class="gauge-bar-fill" id="node3-cpu-bar" style="width: 12%;"></div>
-                </div>
+
+              <div class="arch-node-box">
+                <div class="arch-step-tag">2. FIREWALL &amp; TLS</div>
+                <div class="arch-node-icon">🛡️</div>
+                <div class="arch-node-title">Nginx Gateway &amp; UFW</div>
+                <div class="arch-node-spec">TLS 1.3 · Certbot · Zero Trust</div>
+                <span style="font-size: 0.68rem; color: #38bdf8; font-weight: 700;">● Authenticated &amp; Clean</span>
               </div>
-              <div class="node-gauge-row">
-                <div class="gauge-labels">
-                  <span>Memory</span>
-                  <span>1.8 / 8.0 GB (22%)</span>
+
+              <!-- Animated Connector 2 -->
+              <div class="arch-connector-cell">
+                <span class="arch-connector-badge">IPC / Sockets</span>
+                <div class="arch-flow-line">
+                  <div class="arch-data-packet" style="animation-delay: 0.4s;"></div>
                 </div>
-                <div class="gauge-bar-track">
-                  <div class="gauge-bar-fill" style="width: 22%;"></div>
-                </div>
+                <span style="font-size: 0.68rem; color: var(--text-subtle); font-family: var(--font-mono);">Fast Buffering</span>
               </div>
-              <div class="node-footer">
-                <span>Ports: :6379, :27017</span>
-                <span id="node3-ping">Ping: 11ms</span>
+
+              <div class="arch-node-box">
+                <div class="arch-step-tag">3. COMPUTE RUNNER</div>
+                <div class="arch-node-icon">⚡</div>
+                <div class="arch-node-title">Python Daemon &amp; ONey</div>
+                <div class="arch-node-spec">Raw Sockets · Z-Protocol 16B</div>
+                <span style="font-size: 0.68rem; color: #10b981; font-weight: 700;">● &lt;20ms Low-Latency</span>
+              </div>
+
+              <!-- Animated Connector 3 -->
+              <div class="arch-connector-cell">
+                <span class="arch-connector-badge">WiredTiger Sync</span>
+                <div class="arch-flow-line">
+                  <div class="arch-data-packet" style="animation-delay: 0.8s;"></div>
+                </div>
+                <span style="font-size: 0.68rem; color: var(--text-subtle); font-family: var(--font-mono);">Atomic Write</span>
+              </div>
+
+              <div class="arch-node-box">
+                <div class="arch-step-tag">4. PERSISTENCE</div>
+                <div class="arch-node-icon">📦</div>
+                <div class="arch-node-title">Redis &amp; MongoDB</div>
+                <div class="arch-node-spec">Cache &amp; Replicated DB Store</div>
+                <span style="font-size: 0.68rem; color: #a855f7; font-weight: 700;">● Multi-Host Quorum</span>
               </div>
             </div>
-
-            <!-- Node 4 -->
-            <div class="cluster-node-card">
-              <div class="node-header">
-                <span class="node-title">
-                  <span>☁️</span> node-04.aws-runner
-                </span>
-                <span class="node-status-badge">● Active</span>
-              </div>
-              <div class="node-meta">
-                AWS ECS Fargate Task · Automated Ansible Fleet Workers &amp; CI Jobs
-              </div>
-              <div class="node-gauge-row">
-                <div class="gauge-labels">
-                  <span>CPU Usage</span>
-                  <span id="node4-cpu">8%</span>
-                </div>
-                <div class="gauge-bar-track">
-                  <div class="gauge-bar-fill" id="node4-cpu-bar" style="width: 8%;"></div>
-                </div>
-              </div>
-              <div class="node-gauge-row">
-                <div class="gauge-labels">
-                  <span>Memory</span>
-                  <span>512 MB / 1 GB (50%)</span>
-                </div>
-                <div class="gauge-bar-track">
-                  <div class="gauge-bar-fill" style="width: 50%;"></div>
-                </div>
-              </div>
-              <div class="node-footer">
-                <span>VPC: ap-south-1</span>
-                <span id="node4-ping">Ping: 22ms</span>
-              </div>
-            </div>
-
           </div>
 
           <!-- 3. Interactive CI/CD Pipeline Simulator -->
@@ -657,6 +786,56 @@
                 <div class="cicd-log-line log-cmd">$ git status</div>
                 <div class="cicd-log-line">On branch main. Your branch is up to date with 'origin/main'.</div>
                 <div class="cicd-log-line log-info">Click [Trigger Build &amp; Deploy] above to run an automated CI/CD simulation.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Ansible Playbook Automation Runner -->
+          <div class="ansible-card">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+              <div>
+                <span class="eyebrow" style="margin-bottom: 0.2rem;">Infrastructure as Code &amp; Fleet Management</span>
+                <h3 style="font-size: 1.35rem; margin-top: 0.2rem;">Ansible Playbook Automation Runner</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+                  Select and simulate running modular Ansible automation playbooks against target Linux hosts.
+                </p>
+              </div>
+
+              <div style="display: flex; gap: 0.5rem;">
+                <button type="button" class="btn btn-primary" id="ansible-run-btn" style="background: #ee0000; border-color: #ee0000; font-family: var(--font-mono); font-size: 0.8rem; color: #ffffff;">
+                  ▶ Run Playbook
+                </button>
+              </div>
+            </div>
+
+            <!-- Playbook Selector Tabs -->
+            <div class="ansible-selector-bar">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-subtle); text-transform: uppercase;">Playbook:</span>
+              <button type="button" class="ansible-tab-pill active" data-playbook="hardening">
+                🛡️ security-hardening.yml (UFW &amp; SSH)
+              </button>
+              <button type="button" class="ansible-tab-pill" data-playbook="docker">
+                🐳 docker-engine-setup.yml (Containers)
+              </button>
+              <button type="button" class="ansible-tab-pill" data-playbook="oney">
+                ⚡ oney-remote-daemon.yml (Systemd)
+              </button>
+            </div>
+
+            <!-- Terminal Output Console -->
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-subtle);">
+                <span id="ansible-file-label">PLAYBOOK: playbooks/security-hardening.yml</span>
+                <span id="ansible-status-badge" style="color: #10b981; font-weight: 700;">STATUS: READY</span>
+              </div>
+              <div class="cicd-console" id="ansible-console" style="height: 190px;">
+                <div class="cicd-log-line log-cmd">$ cat playbooks/security-hardening.yml</div>
+                <div class="cicd-log-line" style="color: #38bdf8;">---</div>
+                <div class="cicd-log-line" style="color: #38bdf8;">- name: Fleet Server Hardening &amp; UFW Firewall Policy</div>
+                <div class="cicd-log-line">&nbsp;&nbsp;hosts: all</div>
+                <div class="cicd-log-line">&nbsp;&nbsp;become: true</div>
+                <div class="cicd-log-line">&nbsp;&nbsp;tasks: [ufw_rules, disable_root_ssh, fail2ban_jail]</div>
+                <div class="cicd-log-line log-info">Click [▶ Run Playbook] above to execute this automation across all 4 cluster nodes.</div>
               </div>
             </div>
           </div>
@@ -2039,59 +2218,73 @@
     <div class="modal-container">
       <button class="modal-close-btn" aria-label="Close Resume">✕</button>
       
-      <div class="no-print" style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-main); padding-bottom: 1rem; margin-bottom: 1.5rem;">
-        <span style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">
-          ● Dhayalan Kaniappan — Complete Resume Document
-        </span>
-        <button class="btn btn-primary" onclick="window.print()" style="padding: 0.4rem 1rem; font-size: 0.78rem;">
-          🖨️ Print / Save as PDF
+      <div class="no-print" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-main); padding-bottom: 1rem; margin-bottom: 1.25rem; gap: 0.75rem;">
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: #10b981;">
+            ● DOMAIN RESUME GENERATOR (ATS OPTIMIZED)
+          </span>
+          <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.15rem;">
+            Select a target domain to switch resume specialization and export:
+          </div>
+        </div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <button class="btn btn-secondary" id="modal-copy-domain-resume-btn" style="padding: 0.4rem 0.85rem; font-size: 0.76rem;">
+            📋 Copy Markdown
+          </button>
+          <button class="btn btn-primary" onclick="window.print()" style="padding: 0.4rem 1rem; font-size: 0.76rem;">
+            🖨️ Print / Save as PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Domain Selector Bar (Interactive) -->
+      <div class="no-print" style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; background: rgba(255,255,255,0.03); padding: 0.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-main);">
+        <button type="button" class="domain-resume-pill active" data-domain="fullstack">
+          ⚡ Full-Stack Developer
+        </button>
+        <button type="button" class="domain-resume-pill" data-domain="mern">
+          ⚛️ MERN-Stack Developer
+        </button>
+        <button type="button" class="domain-resume-pill" data-domain="devops">
+          ☁️ DevOps &amp; Cloud Engineer
+        </button>
+        <button type="button" class="domain-resume-pill" data-domain="cyber">
+          🛡️ Cyber Security &amp; Systems
+        </button>
+        <button type="button" class="domain-resume-pill" data-domain="frontend">
+          🎨 Frontend Developer
         </button>
       </div>
 
-      <!-- Printable Resume Body -->
-      <div>
-        <h1 style="font-size: 2.2rem; font-weight: 900;">Dhayalan Kaniappan</h1>
-        <p style="font-family: var(--font-mono); font-size: 0.95rem; font-weight: 700; margin-top: 0.2rem; color: var(--text-primary);">
-          The Code Whisperer · DevOps Specialist · Python &amp; MERN Stack Developer
-        </p>
-        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.5rem;">
-          Email: dhaya3486@gmail.com · Location: Coimbatore, Tamil Nadu, India · GitHub: github.com/DHAYALANKANIAPPAN · LinkedIn: linkedin.com/in/dhaya05
-        </p>
+      <!-- Printable Resume Body (Dynamically Populated by script.js) -->
+      <div id="dynamic-resume-body" style="line-height: 1.55;">
+        <!-- Injected dynamically on pill click -->
+      </div>
+    </div>
+  </div>
 
-        <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid var(--border-main);" />
+  <!-- Node Diagnostics & Daemon Inspector Modal -->
+  <div class="modal-overlay" id="node-inspect-modal">
+    <div class="modal-container" style="max-width: 780px; padding: 2rem; background: #060913; border: 1px solid var(--border-strong);">
+      <button class="modal-close-btn" aria-label="Close Diagnostics">✕</button>
+      
+      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.85rem; margin-bottom: 1.25rem;">
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #10b981; font-weight: 700;">● DIAGNOSTICS &amp; DAEMONS (LIVE)</span>
+          <h3 id="node-modal-title" style="font-size: 1.25rem; font-family: var(--font-mono); color: #ffffff; margin-top: 0.2rem;">
+            node-01.gateway.local
+          </h3>
+        </div>
+        <div style="display: flex; gap: 0.4rem;">
+          <button type="button" class="btn btn-secondary" id="node-modal-restart-btn" style="font-family: var(--font-mono); font-size: 0.72rem; padding: 0.35rem 0.75rem;">
+            🔁 Restart Service
+          </button>
+        </div>
+      </div>
 
-        <h3 style="font-size: 1rem; text-transform: uppercase; font-weight: 800; margin-bottom: 0.5rem;">Professional Summary</h3>
-        <p style="font-size: 0.88rem; line-height: 1.6;">
-          Engineering student, DevOps specialist, and Python/MERN developer with hands-on experience in AWS container orchestration (Amazon ECS Knowledge Badge), Infrastructure as Code (AWS CDK, CloudFormation), Linux server automation (Ansible, Docker), remote system access (ONey), Java OOP architectures, and Python telemetry tooling. Proven track record of competing in national 24-hour CTFs (Tamil Nadu Police Yukthi CTF, Amrita, REC) and building real-world web and systems software.
-        </p>
-
-        <h3 style="font-size: 1rem; text-transform: uppercase; font-weight: 800; margin: 1.5rem 0 0.5rem;">Key Projects &amp; Systems</h3>
-        <ul style="font-size: 0.88rem; line-height: 1.7; padding-left: 1.2rem;">
-          <li><b>ONey Remote System Control:</b> Low-latency remote system management client with encrypted P2P tunneling.</li>
-          <li><b>Ansible Fleet Automation:</b> Modular Linux provisioning playbooks, SSH security, and UFW firewall enforcement.</li>
-          <li><b>Browser Monitoring Tool:</b> Real-time browser telemetry and event stream inspector in Python.</li>
-          <li><b>ATM Banking &amp; Account System:</b> Java OOP encapsulated banking model with atomic transaction ledger.</li>
-          <li><b>Shahihennaholic Storefront:</b> Responsive bridal henna e-commerce catalog with local storage.</li>
-          <li><b>Z-Protocol Wire Transport:</b> Layer-4 binary networking protocol built on raw Python sockets.</li>
-        </ul>
-
-        <h3 style="font-size: 1rem; text-transform: uppercase; font-weight: 800; margin: 1.5rem 0 0.5rem;">Verified Certifications &amp; Credly Badges</h3>
-        <ul style="font-size: 0.88rem; line-height: 1.7; padding-left: 1.2rem;">
-          <li><b>Amazon ECS Knowledge Badge Assessment</b> — Amazon Web Services / Credly Official (Sep 05, 2026)</li>
-          <li><b>Deploying a CI/CD Pipeline with a Managed Deployment Stage using AWS CDK</b> — AWS Skill Builder Lab (Sep 04, 2026)</li>
-          <li><b>Using AWS CloudFormation for Automation</b> — AWS Skill Builder Lab (Sep 04, 2026)</li>
-          <li><b>Cloud Game Development Knowledge Badge Assessment</b> — Amazon Web Services / Credly Official (Sep 09, 2026)</li>
-          <li><b>Certificate of Merit: Java + Mongo DB (92% Score)</b> — Hazhtech Career Development Centre / IACT (Aug 2025)</li>
-          <li><b>Yukthi CTF 2.0 (National-Level CTF)</b> — Tamil Nadu Police &amp; Selfmade Ninja Academy (Dec 2025)</li>
-          <li><b>0xTi - HackTiVate 24-Hour CTF (Titanium 2026)</b> — Rajalakshmi Engineering College (Jan 2026)</li>
-          <li><b>L3m0n CTF 2025 (24-Hour CTF)</b> — Amrita Vishwa Vidyapeetham (2025)</li>
-          <li><i>(+10 Additional AWS Technical Deep-Dive Modules in ECS Security, Networking, Observability, Auto Scaling, Deployments &amp; Workloads)</i></li>
-        </ul>
-
-        <h3 style="font-size: 1rem; text-transform: uppercase; font-weight: 800; margin: 1.5rem 0 0.5rem;">Education</h3>
-        <p style="font-size: 0.88rem;">
-          <b>Bachelor of Engineering (B.E.)</b> — Sri Shakthi Institute of Engineering and Technology, Coimbatore (2023 — 2027)
-        </p>
+      <!-- Node Specs & Container Table -->
+      <div id="node-modal-content" style="font-family: var(--font-mono); font-size: 0.75rem; color: #d4d4d8; display: flex; flex-direction: column; gap: 1rem;">
+        <!-- Filled dynamically by script.js -->
       </div>
     </div>
   </div>

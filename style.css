@@ -495,12 +495,20 @@ code, kbd, pre, .mono {
 /* Hero Right: Workstation Telemetry Window */
 .workstation-window {
   background: #060913;
-  border: 1px solid var(--border-strong);
+  border: 1px solid rgba(56, 189, 248, 0.35);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 229, 255, 0.05);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(56, 189, 248, 0.12);
   display: flex;
   flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.workstation-window:hover {
+  border-color: #10b981;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 45px rgba(16, 185, 129, 0.2);
+  transform: translateY(-2px);
 }
 
 .workstation-header {
@@ -1353,8 +1361,20 @@ code, kbd, pre, .mono {
 /* Cluster Nodes Grid */
 .cluster-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
+}
+
+@media (max-width: 1100px) {
+  .cluster-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .cluster-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .cluster-node-card {
@@ -1365,15 +1385,52 @@ code, kbd, pre, .mono {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   position: relative;
   overflow: hidden;
 }
 
 .cluster-node-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--border-strong);
-  box-shadow: var(--shadow-card);
+  transform: translateY(-4px);
+  border-color: #38bdf8;
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15);
+}
+
+.node-step-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  width: fit-content;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.cluster-sim-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cluster-sim-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cluster-sim-btn.active {
+  background: #10b981;
+  color: #000000;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.35);
 }
 
 .node-header {
@@ -1447,6 +1504,236 @@ code, kbd, pre, .mono {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--text-subtle);
+}
+
+/* Sparkline Wave on Node Cards */
+.node-sparkline-box {
+  width: 100%;
+  height: 28px;
+  margin: 0.2rem 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 229, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.node-sparkline-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.node-inspect-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-main);
+  color: #38bdf8;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+  margin-top: 0.25rem;
+}
+
+.node-inspect-btn:hover {
+  background: #38bdf8;
+  color: #000000;
+  border-color: #38bdf8;
+}
+
+/* Global Multi-Region Edge Latency Matrix */
+.global-ping-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-main);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+}
+
+.region-ping-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+}
+
+.region-ping-val {
+  font-weight: 700;
+  color: #10b981;
+}
+
+/* Architecture Topology Map */
+.topology-map-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-main);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.arch-flow-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.arch-step-tag {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  width: fit-content;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.arch-node-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  position: relative;
+  transition: all 0.25s ease;
+  flex: 1;
+  min-width: 170px;
+}
+
+.arch-node-box:hover {
+  border-color: #00e5ff;
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.arch-node-icon {
+  font-size: 1.5rem;
+}
+
+.arch-node-title {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.arch-node-spec {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.arch-connector-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-width: 90px;
+}
+
+.arch-connector-badge {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.arch-flow-line {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.arch-data-packet {
+  width: 32px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #00e5ff, #10b981, transparent);
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+  left: -40px;
+  animation: packetFlow 1.6s ease-in-out infinite;
+  box-shadow: 0 0 8px #00e5ff;
+}
+
+@keyframes packetFlow {
+  0% { left: -40px; }
+  100% { left: 100%; }
+}
+
+@media (max-width: 900px) {
+  .arch-connector-cell {
+    display: none;
+  }
+}
+
+/* Interactive Ansible Playbook Runner */
+.ansible-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-main);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ansible-selector-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.ansible-tab-pill {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-main);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ansible-tab-pill.active {
+  background: #ee0000;
+  color: #ffffff;
+  border-color: #ee0000;
+  font-weight: 700;
 }
 
 /* CI/CD Pipeline Simulator */
@@ -1641,6 +1928,34 @@ code, kbd, pre, .mono {
   background: var(--text-primary);
   color: var(--bg-main);
   border-color: var(--text-primary);
+}
+
+.domain-resume-pill {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-main);
+  color: var(--text-muted);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.domain-resume-pill:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.domain-resume-pill.active {
+  background: var(--text-primary);
+  color: var(--bg-main);
+  border-color: var(--text-primary);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
 }
 
 .p2p-topology-box {

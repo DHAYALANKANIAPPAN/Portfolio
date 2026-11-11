@@ -523,9 +523,260 @@ function initModals() {
 
   const resumeModal = document.getElementById("resume-full-modal");
   const openResumeBtns = document.querySelectorAll(".open-resume-modal-btn");
+  const dynamicResumeBody = document.getElementById("dynamic-resume-body");
+  const domainPills = document.querySelectorAll(".domain-resume-pill");
+  const modalCopyBtn = document.getElementById("modal-copy-domain-resume-btn");
+
+  const domainResumes = {
+    fullstack: {
+      title: "Full-Stack Software Engineer · React, Node, Python & Java",
+      summary: "Versatile Full-Stack Engineer with strong competencies spanning modern frontend systems (React, JavaScript ES6+, Tailwind CSS), backend API architectures (Node.js, Express, Java OOP, Python), and database engineering (MongoDB, MySQL). Proven track record of shipping end-to-end applications including interactive e-commerce storefronts with local persistence, modular frontend extensions for community platforms, and high-performance socket/protocol tools. Combines deep computer science foundations (92% Merit in Java + MongoDB) with hands-on containerized deployment experience.",
+      skills: [
+        { label: "Frontend", val: "React, JavaScript (ES6+), TypeScript, Next.js, Tailwind CSS, HTML5, CSS3, DOM Telemetry, Mithril.js" },
+        { label: "Backend & APIs", val: "Node.js, Express.js, Java (OOP, Collections), Python, RESTful API Design, JWT, Middleware" },
+        { label: "Databases & Storage", val: "MongoDB (Mongoose, Aggregations, Indexing), MySQL, LocalStorage State, In-Memory Caching" },
+        { label: "Tools & Deployment", val: "Git, GitHub Actions, Docker, Linux (Ubuntu/Debian), Postman, Nginx, Vite" }
+      ],
+      projects: [
+        { name: "Shahihennaholic E-Commerce Platform", stack: "HTML5, CSS3, JavaScript, LocalStorage", desc: "Engineered responsive e-commerce catalog with client-side shopping cart calculation and persistence without external backend friction. Designed dynamic product views and automated WhatsApp order generation." },
+        { name: "Flarum Community Platform & FLARUM1 Extension", stack: "PHP, JavaScript, Mithril.js, MySQL", desc: "Deployed and customized discussion platform with decoupled version control. Engineered FLARUM1 companion extension hooking into Mithril.js component lifecycles for theme styling without core edits. Tuned MySQL index queries." },
+        { name: "ATM Banking & Account Management System", stack: "Java OOP, Design Patterns, CLI", desc: "Developed object-oriented banking engine applying strict encapsulation. Integrated PIN verification, atomic transaction ledgers preventing overdrafts, and structured receipt generators." },
+        { name: "Browser Telemetry & Event Monitoring Tool", stack: "Python, DOM Telemetry, JSON Buffering", desc: "Real-time session monitoring daemon capturing DOM mutations and event queues. Built fault-tolerant local buffer queue to ensure zero data loss during network disruptions." }
+      ],
+      certs: [
+        "Certificate of Merit: Java + MongoDB (92% Score) — Hazhtech / IACT",
+        "Amazon ECS Knowledge Badge Assessment — Amazon Web Services (AWS) · Credly Official",
+        "Deploying a CI/CD Pipeline with AWS CDK — AWS Skill Builder Official Lab",
+        "AWS CloudFormation for Automation — AWS Skill Builder Official Lab",
+        "Competitor in 24h CTFs: Tamil Nadu Police Yukthi CTF 2.0, Amrita L3m0n CTF, REC HackTiVate"
+      ]
+    },
+    mern: {
+      title: "MERN Stack Developer · MongoDB, Express.js, React & Node.js",
+      summary: "Specialized MERN Stack Developer with end-to-end expertise in constructing scalable single-page applications and high-throughput REST APIs. Skilled in designing decoupled React architectures with modern hooks and state management, building asynchronous Express/Node.js backends with robust middleware security, and modeling performant NoSQL data structures in MongoDB (certified with 92% merit). Experienced in building real-world consumer web applications, integrating client storage mechanics, and running containerized Node applications with Docker.",
+      skills: [
+        { label: "Frontend (React Ecosystem)", val: "React (v18+), Hooks, Context API, Tailwind CSS, Responsive Design, Next.js (App Router), HTML5 Semantic UI" },
+        { label: "Backend (Node.js & Express)", val: "Node.js Runtime, Express.js Framework, RESTful Routing, Middleware Pipeline, JWT Authentication, CORS, Asynchronous Programming" },
+        { label: "Database (MongoDB)", val: "MongoDB Atlas, Mongoose ODM, Schema Validation, Aggregation Pipelines, Compound Indexing, Performance Optimization (92% Score)" },
+        { label: "Tooling & Environments", val: "Git/GitHub, Postman, Vite, NPM/Yarn, Docker, Linux (Ubuntu), Nginx" }
+      ],
+      projects: [
+        { name: "Shahihennaholic Storefront & Cart Engine", stack: "JavaScript (ES6+), React/DOM Principles, LocalStorage", desc: "Architected client-side e-commerce platform for organic henna brand. Implemented state-driven cart logic with persistent LocalStorage synchronizer and mobile-first checkout payload generation." },
+        { name: "FLARUM1 — Modular Community UI Extension", stack: "JavaScript, Single-Page App Architecture, Component Extensions", desc: "Engineered independent JavaScript UI extension package hooking into single-page application lifecycles. Intercepted core route transitions and DOM rendering pipelines to inject custom design themes." },
+        { name: "Browser Telemetry & Event Interceptor Pipeline", stack: "Python, JSON Data Pipelines, Buffer Queuing", desc: "Built event stream extraction tool that captures DOM mutations, event listeners, and unsent analytics queues in real-time, serializing UI interactions for document store ingestion." },
+        { name: "Dockerized Node/Express Microservices & MongoDB", stack: "Node.js, Docker, MongoDB", desc: "Containerized Node.js REST services and MongoDB replica sets using Docker and Docker Compose for reproducible local and cloud staging environments." }
+      ],
+      certs: [
+        "Certificate of Merit: Java + MongoDB (92% Score) — Hazhtech / IACT (Schema modeling & NoSQL architecture)",
+        "Amazon ECS Knowledge Badge — Amazon Web Services (AWS) · Credly Verified",
+        "Deploying a CI/CD Pipeline using AWS CDK — AWS Skill Builder Official Lab",
+        "AWS CloudFormation for Automation — AWS Skill Builder Official Lab",
+        "National 24h Hackathons: Tamil Nadu Police Yukthi CTF 2.0, Amrita L3m0n CTF, HackTiVate 2026"
+      ]
+    },
+    devops: {
+      title: "DevOps Engineer · Cloud, Linux, Ansible, Docker & AWS",
+      summary: "DevOps & Cloud Systems Engineer with practical experience in Infrastructure as Code (IaC), multi-node Linux server automation, container orchestration, and continuous delivery pipelines. Hands-on expertise managing production deployments using Ansible playbooks, Docker container runtimes, AWS ECS Fargate, AWS CloudFormation, and AWS CDK. Combines software engineering rigor in Python and Bash with deep Linux kernel/networking knowledge, having built custom remote access clients (ONey) and socket-level protocols (Z-Protocol).",
+      skills: [
+        { label: "IaC & Automation", val: "Ansible (Playbooks, Roles, Inventory, Handlers), AWS CloudFormation, AWS CDK, Bash Scripting, Cron Daemons" },
+        { label: "Containers & Orchestration", val: "Docker, Docker Compose, Amazon ECS (Task Definitions, Fargate, Cluster Scaling, Service Discovery), Containerd" },
+        { label: "Cloud (AWS)", val: "Amazon ECS, AWS CDK, CloudFormation, EC2, S3, IAM, VPC, CloudWatch, ALB" },
+        { label: "Linux Admin & Networking", val: "Ubuntu/Debian, Systemd Unit Configuration, UFW Firewall Security, SSH Hardening, Raw Sockets, TCP/UDP, DNS, Caddy/Nginx" },
+        { label: "CI/CD & Observability", val: "GitHub Actions, Automated Testing/Linting Pipelines, Prometheus/Node Exporter, Telemetry Streaming, Zero-Downtime Deployments" }
+      ],
+      projects: [
+        { name: "Ansible Fleet Provisioning & Linux Server Hardening", stack: "Ansible, YAML, Linux, UFW, Bash", desc: "Built modular Ansible automation suite for rapid, idempotent multi-node server provisioning. Automated UFW firewall default-deny policies, specific port allowances (22, 80, 443), and disabled root SSH login across target hosts." },
+        { name: "ONey Remote Systems Daemon & P2P Tunneling", stack: "Python, UDP Sockets, Systemd, Cryptography", desc: "Developed low-latency remote system management client and daemon for direct encrypted administration without relays. Implemented UDP hole punching for NAT traversal and packaged agent into supervised Linux systemd unit." },
+        { name: "Automated CI/CD Delivery Pipeline with AWS CDK", stack: "AWS CDK, CloudFormation, GitHub Actions", desc: "Implemented automated IaC continuous delivery pipeline with managed deployment stages using AWS CDK. Automated stack synthesis and testing, eliminating manual console drift." },
+        { name: "Python File System Classifier & Maintenance Daemon", stack: "Python, Linux Filesystem, Shutil, Cron", desc: "Engineered automated directory organizer daemon categorizing downloads by MIME type and metadata, preventing file collisions in continuous execution environments." }
+      ],
+      certs: [
+        "Amazon ECS Knowledge Badge Assessment — Amazon Web Services (AWS) · Credly Official Badge",
+        "Deploying a CI/CD Pipeline with a Managed Deployment Stage using AWS CDK — AWS Skill Builder Lab",
+        "Using AWS CloudFormation for Automation — AWS Skill Builder Official Lab",
+        "Cloud Game Development Knowledge Badge — Amazon Web Services (AWS) · Credly Official Badge",
+        "10+ AWS Skill Builder Deep-Dive Modules: ECS Security, Networking, Observability, Auto Scaling, Deployments"
+      ]
+    },
+    cyber: {
+      title: "Cybersecurity & Systems Security Engineer · Protocol Security, CTF Competitor & Defense",
+      summary: "Cybersecurity & Systems Security specialist with competitive hands-on experience in 24-hour Capture The Flag (CTF) challenges (Tamil Nadu Police Yukthi CTF 2.0, Amrita Lemon CTF, REC HackTiVate), low-level network protocol analysis, and Linux host defense. Experienced in raw socket reverse engineering, cryptographic handshake validation, encrypted traffic pattern analysis, and automated Linux server hardening (UFW, SSH, iptables) via Ansible. Driven by a deep understanding of transport layers, binary frame parsing, and defensive systems engineering.",
+      skills: [
+        { label: "Security & Network Analysis", val: "Wireshark, Nmap, TCPDump, Raw Sockets (AF_INET/SOCK_RAW), Traffic Fingerprinting, Packet Metadata Analysis, Protocol Reverse Engineering" },
+        { label: "Host Hardening & Defense", val: "Linux Security (Ubuntu/Debian), UFW Firewall Automation, SSH Hardening (Disable root login, key-only auth), Systemd Sandboxing, File Permissions" },
+        { label: "Programming & Scripting", val: "Python (Security Tools, Socket Programming), Java (Secure OOP, Encapsulation), Bash Scripting, C/Assembly basics" },
+        { label: "Protocols & Cryptography", val: "TCP/IP State Machines, UDP Hole Punching, CRC32 Checksums, Symmetric/Asymmetric Key Concepts, Binary Framing, TLS/SSL" },
+        { label: "CTF Domains", val: "Network Forensics, Web Security (OWASP Top 10), Cryptography Challenges, Linux Privilege Escalation, Binary Inspection" }
+      ],
+      projects: [
+        { name: "Cross-Protocol Traffic Fingerprinting Research", stack: "Python, Packet Metadata, Statistical Analysis", desc: "Conducted cybersecurity research into side-channel metadata leakage, packet burst intervals, and traffic signatures across protocol boundaries. Engineered Python scripts classifying encrypted traffic patterns without decrypting payload." },
+        { name: "Z-Protocol Wire Transport & Handshake State Machine", stack: "Python, Raw Sockets, Binary Framing, CRC32", desc: "Designed experimental Layer-4 binary transport protocol on raw Python sockets. Specified 16-byte binary header with bitmask flags (SYN, ACK, FIN, RST, PSH) and implemented strict state machines and CRC32 verification." },
+        { name: "ONey Secure Remote Access & Encrypted P2P Tunneling", stack: "Python, Cryptography, UDP Sockets", desc: "Developed encrypted peer-to-peer remote administration client bypassing centralized relay vulnerabilities. Integrated host identity verification and cryptographic handshake mechanisms." },
+        { name: "Automated Linux Host Security Hardening Suite", stack: "Ansible, UFW, SSH, Linux", desc: "Created automated playbooks eliminating common server misconfigurations across distributed Linux hosts. Enforced default-deny ingress firewall policies and restricted SSH attack surfaces." }
+      ],
+      certs: [
+        "Yukthi CTF 2.0 (National-Level CTF) — Tamil Nadu Police Cyber Crime Wing & Selfmade Ninja Academy",
+        "0xTi - HackTiVate 24-Hour CTF (Titanium 2026) — Rajalakshmi Engineering College, Chennai",
+        "L3m0n CTF 2025 (24-Hour CTF) — Amrita Vishwa Vidyapeetham",
+        "Amazon ECS Knowledge Badge Assessment — AWS Credly Verified (Container isolation & IAM task roles)",
+        "Certificate of Merit: Java + MongoDB (92% Score) — Hazhtech / IACT"
+      ]
+    },
+    frontend: {
+      title: "Frontend Engineer · React, JavaScript ES6+, UI/UX & Responsive Web Applications",
+      summary: "Detail-driven Frontend Engineer focused on building responsive, performant, and accessible user interfaces. Skilled in React (v18+), modern JavaScript (ES6+), Tailwind CSS, and single-page application lifecycles. Experienced in engineering real-world e-commerce experiences with client-side state persistence (LocalStorage), authoring modular UI extension packages hooking into modern component runtimes, and building real-time browser event telemetry tools. Passionate about clean design systems, responsive typography, micro-interactions, and fast load speeds.",
+      skills: [
+        { label: "Core Frontend", val: "JavaScript (ES6+ / ESNext), HTML5 Semantic Architecture, CSS3 / Modern Flexbox & CSS Grid, TypeScript, DOM API" },
+        { label: "Frameworks & UI Libraries", val: "React (Functional Components, Custom Hooks, Context), Next.js, Tailwind CSS, Mithril.js, Responsive Mobile-First Design" },
+        { label: "State & Storage", val: "React State/Reducer, Context API, Browser LocalStorage, SessionStorage, Event Queues" },
+        { label: "Performance & Tooling", val: "Web Vitals, Responsive Images, Vite, Webpack, PostCSS, Git/GitHub, Chrome DevTools, Postman" }
+      ],
+      projects: [
+        { name: "Shahihennaholic Bridal E-Commerce Storefront", stack: "HTML5, CSS3, JavaScript, LocalStorage", desc: "Engineered responsive web catalog and ordering interface for organic bridal henna brand. Designed interactive cart with instant price computation and browser LocalStorage state persistence. Automated WhatsApp order payload builder." },
+        { name: "FLARUM1 — Modular UI Component Extension", stack: "JavaScript, Mithril.js, DOM Extensions", desc: "Developed frontend extension extending Flarum community platform with customized user interface styling, themes, and interactive hooks. Programmed lifecycle hooks into single-page application router events." },
+        { name: "Browser DOM Telemetry & Interaction Monitor", stack: "Python, JavaScript DOM Events, Real-Time Streams", desc: "Created monitoring utility instrumenting client browser sessions to capture active DOM mutations, click paths, and scroll interactions in real-time with zero-jank JSON buffer batching." },
+        { name: "Interactive DevOps Command Center (Personal Portfolio)", stack: "Modern CSS, Vanilla JS, HTML5 Canvas", desc: "Built interactive dark/light theme systems dashboard featuring responsive multi-node telemetry grids, particle background animations, and dynamic wire protocol bitmask toggles." }
+      ],
+      certs: [
+        "Certificate of Merit: Java + MongoDB (92% Score) — Hazhtech / IACT (Programming & data structures)",
+        "Amazon ECS Knowledge Badge Assessment — Amazon Web Services (AWS) · Credly Official",
+        "Cloud Game Development Knowledge Badge — Amazon Web Services (AWS) · Credly Official",
+        "Deploying a CI/CD Pipeline using AWS CDK — AWS Skill Builder Official Lab",
+        "24-Hour Hackathons: Tamil Nadu Police Yukthi CTF 2.0, Amrita L3m0n CTF, HackTiVate 2026"
+      ]
+    }
+  };
+
+  let currentDomainKey = "fullstack";
+
+  function renderResumeBody(domainKey) {
+    currentDomainKey = domainKey;
+    const r = domainResumes[domainKey] || domainResumes.fullstack;
+    if (!dynamicResumeBody) return;
+
+    const skillsHtml = r.skills.map(s => `
+      <div style="margin-bottom: 0.35rem; font-size: 0.85rem;">
+        <b style="color: var(--text-primary);">${s.label}:</b> <span style="color: var(--text-muted);">${s.val}</span>
+      </div>
+    `).join("");
+
+    const projectsHtml = r.projects.map(p => `
+      <div style="margin-bottom: 0.85rem;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+          <h4 style="font-size: 0.95rem; font-weight: 800; color: var(--text-primary); margin: 0;">${p.name}</h4>
+          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #10b981; font-weight: 700;">${p.stack}</span>
+        </div>
+        <p style="font-size: 0.84rem; line-height: 1.5; margin-top: 0.25rem; color: var(--text-muted);">${p.desc}</p>
+      </div>
+    `).join("");
+
+    const certsHtml = r.certs.map(c => `
+      <li style="font-size: 0.84rem; margin-bottom: 0.3rem; color: var(--text-muted);">${c}</li>
+    `).join("");
+
+    dynamicResumeBody.innerHTML = `
+      <div>
+        <h1 style="font-size: 2rem; font-weight: 900; letter-spacing: -0.02em; color: var(--text-primary);">Dhayalan Kaniappan</h1>
+        <p style="font-family: var(--font-mono); font-size: 0.95rem; font-weight: 700; margin-top: 0.2rem; color: #10b981;">
+          ${r.title}
+        </p>
+        <p style="font-size: 0.82rem; color: var(--text-subtle); margin-top: 0.4rem;">
+          Email: dhaya3486@gmail.com · Location: Coimbatore, Tamil Nadu, India · GitHub: github.com/DHAYALANKANIAPPAN · LinkedIn: linkedin.com/in/dhaya05
+        </p>
+
+        <hr style="margin: 1.25rem 0; border: none; border-top: 1px solid var(--border-main);" />
+
+        <h3 style="font-size: 0.92rem; text-transform: uppercase; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-primary); letter-spacing: 0.05em;">Professional Summary</h3>
+        <p style="font-size: 0.86rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 1.25rem;">
+          ${r.summary}
+        </p>
+
+        <h3 style="font-size: 0.92rem; text-transform: uppercase; font-weight: 800; margin-bottom: 0.5rem; color: var(--text-primary); letter-spacing: 0.05em;">Technical Skills</h3>
+        <div style="background: rgba(255,255,255,0.02); padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); margin-bottom: 1.25rem;">
+          ${skillsHtml}
+        </div>
+
+        <h3 style="font-size: 0.92rem; text-transform: uppercase; font-weight: 800; margin-bottom: 0.6rem; color: var(--text-primary); letter-spacing: 0.05em;">Key Projects &amp; Systems</h3>
+        <div style="margin-bottom: 1.25rem;">
+          ${projectsHtml}
+        </div>
+
+        <h3 style="font-size: 0.92rem; text-transform: uppercase; font-weight: 800; margin-bottom: 0.5rem; color: var(--text-primary); letter-spacing: 0.05em;">Verified Certifications &amp; Accreditations</h3>
+        <ul style="padding-left: 1.2rem; margin-bottom: 1.25rem; line-height: 1.6;">
+          ${certsHtml}
+        </ul>
+
+        <h3 style="font-size: 0.92rem; text-transform: uppercase; font-weight: 800; margin-bottom: 0.35rem; color: var(--text-primary); letter-spacing: 0.05em;">Education</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">
+          <b style="color: var(--text-primary);">Bachelor of Engineering (B.E.)</b> — Sri Shakthi Institute of Engineering and Technology, Coimbatore (2023 — 2027)
+        </p>
+      </div>
+    `;
+  }
+
+  // Domain pill switching
+  domainPills.forEach(pill => {
+    pill.addEventListener("click", () => {
+      domainPills.forEach(p => p.classList.remove("active"));
+      pill.classList.add("active");
+      const key = pill.getAttribute("data-domain") || "fullstack";
+      renderResumeBody(key);
+      showToast(`Loaded ${pill.textContent.trim()} Resume`, "info");
+    });
+  });
+
+  // Modal Copy Button
+  if (modalCopyBtn) {
+    modalCopyBtn.addEventListener("click", () => {
+      copyResumeMarkdown(currentDomainKey);
+    });
+  }
+
+  function copyResumeMarkdown(key) {
+    const r = domainResumes[key] || domainResumes.fullstack;
+    const skillsText = r.skills.map(s => `* **${s.label}:** ${s.val}`).join("\n");
+    const projText = r.projects.map(p => `### ${p.name} | ${p.stack}\n* ${p.desc}`).join("\n\n");
+    const certText = r.certs.map(c => `* ${c}`).join("\n");
+
+    const md = `
+# DHAYALAN KANIAPPAN
+**${r.title}**
+Email: dhaya3486@gmail.com | Location: Coimbatore, Tamil Nadu, India
+GitHub: https://github.com/DHAYALANKANIAPPAN | LinkedIn: https://www.linkedin.com/in/dhaya05/
+
+---
+
+## PROFESSIONAL SUMMARY
+${r.summary}
+
+---
+
+## TECHNICAL SKILLS
+${skillsText}
+
+---
+
+## KEY PROJECTS
+${projText}
+
+---
+
+## CERTIFICATIONS & HONORS
+${certText}
+
+---
+
+## EDUCATION
+**Bachelor of Engineering (B.E.)** — Sri Shakthi Institute of Engineering and Technology, Coimbatore (2023 — 2027)
+`.trim();
+
+    navigator.clipboard.writeText(md);
+    showToast(`Copied ${r.title} resume in Markdown format!`, "success");
+  }
 
   openResumeBtns.forEach(btn => {
     btn.addEventListener("click", () => {
+      renderResumeBody(currentDomainKey);
       resumeModal?.classList.add("open");
     });
   });
@@ -549,39 +800,7 @@ function initModals() {
   const copyResumeBtn = document.getElementById("copy-resume-text-btn");
   if (copyResumeBtn) {
     copyResumeBtn.addEventListener("click", () => {
-      const text = `
-DHAYALAN KANIAPPAN
-The Code Whisperer · DevOps Specialist · Python & MERN Stack
-Email: dhaya3486@gmail.com | Location: Coimbatore, TN, India
-GitHub: https://github.com/DHAYALANKANIAPPAN | LinkedIn: https://www.linkedin.com/in/dhaya05/
-
-SUMMARY:
-Engineering student, DevOps specialist, and Python/MERN developer with experience in Linux server automation (Ansible, Docker), AWS container orchestration (Amazon ECS Knowledge Badge), remote system access (ONey), Java OOP architectures, and Python telemetry tooling. Competed in national 24-hour CTFs (Tamil Nadu Police Yukthi CTF, Amrita, REC).
-
-EDUCATION:
-* Bachelor of Engineering (B.E.) — Sri Shakthi Institute of Engineering and Technology, Coimbatore
-
-KEY PROJECTS:
-* ONey Remote System Control — Encrypted P2P UDP tunnel, remote control client
-* Ansible Fleet Automation — Modular Linux provisioning & UFW firewall setup
-* Browser Monitoring Tool — Python telemetry & event stream inspector
-* ATM Banking System — Java OOP encapsulated account transactions
-* Shahihennaholic Storefront — Web catalog & cart interface
-* Z-Protocol — Layer-4 binary networking protocol on raw Python sockets
-
-CORE CERTIFICATIONS & CREDLY BADGES:
-* Amazon ECS Knowledge Badge — AWS Skill Builder / Credly Verified (Sep 05, 2026)
-* Lab: Deploying a CI/CD Pipeline with Managed Deployment Stage using AWS CDK (Sep 04, 2026)
-* Lab: Using AWS CloudFormation for Automation (Sep 04, 2026)
-* Cloud Game Development Knowledge Badge — AWS Skill Builder / Credly (Sep 09, 2026)
-* Certificate of Merit: Java + MongoDB (92% Score) — Hazhtech / IACT (Aug 2025)
-* Yukthi CTF 2.0 — Tamil Nadu Police & Selfmade Ninja Academy (Dec 2025)
-* HackTiVate 24h CTF — Rajalakshmi Engineering College (Jan 2026)
-* L3m0n CTF 2025 — Amrita Vishwa Vidyapeetham (2025)
-* (+10 Additional AWS Technical Modules in ECS Security, Networking, Observability, Auto Scaling)
-`.trim();
-      navigator.clipboard.writeText(text);
-      showToast("Full resume copied as text!", "success");
+      copyResumeMarkdown("fullstack");
     });
   }
 }
@@ -630,21 +849,67 @@ function initParticles() {
     height = canvas.height = window.innerHeight;
   });
 
-  const particles = Array.from({ length: 30 }, () => ({
+  let mouse = { x: -1000, y: -1000 };
+  window.addEventListener("mousemove", (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+  window.addEventListener("mouseleave", () => {
+    mouse.x = -1000;
+    mouse.y = -1000;
+  });
+
+  const particleCount = window.innerWidth < 768 ? 28 : 55;
+  const particles = Array.from({ length: particleCount }, () => ({
     x: Math.random() * width,
     y: Math.random() * height,
-    radius: Math.random() * 1.5 + 0.5,
-    vx: (Math.random() - 0.5) * 0.3,
-    vy: (Math.random() - 0.5) * 0.3,
-    alpha: Math.random() * 0.25 + 0.1
+    radius: Math.random() * 1.8 + 0.8,
+    vx: (Math.random() - 0.5) * 0.45,
+    vy: (Math.random() - 0.5) * 0.45,
+    alpha: Math.random() * 0.35 + 0.2
   }));
 
   function draw() {
     ctx.clearRect(0, 0, width, height);
 
     const isLight = document.documentElement.getAttribute("data-theme") === "light";
-    const baseColor = isLight ? "0, 0, 0" : "255, 255, 255";
+    const dotColor = isLight ? "16, 185, 129" : "56, 189, 248";
+    const lineColor = isLight ? "16, 185, 129" : "0, 229, 255";
 
+    // Draw connecting mesh lines between nearby nodes
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < 110) {
+          const lineAlpha = (1 - dist / 110) * 0.18;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(${lineColor}, ${lineAlpha})`;
+          ctx.lineWidth = 0.75;
+          ctx.stroke();
+        }
+      }
+
+      // Connect to mouse cursor
+      const mdx = particles[i].x - mouse.x;
+      const mdy = particles[i].y - mouse.y;
+      const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+      if (mdist < 140) {
+        const mAlpha = (1 - mdist / 140) * 0.35;
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.strokeStyle = `rgba(16, 185, 129, ${mAlpha})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
+
+    // Render nodes
     particles.forEach(p => {
       p.x += p.vx;
       p.y += p.vy;
@@ -656,7 +921,7 @@ function initParticles() {
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${baseColor}, ${p.alpha})`;
+      ctx.fillStyle = `rgba(${dotColor}, ${p.alpha})`;
       ctx.fill();
     });
 
@@ -674,9 +939,11 @@ function initDevOpsLab() {
   initClusterTelemetry();
   initCicdSimulator();
   initSystemsProtocolLab();
+  initAnsibleRunner();
+  initNodeInspector();
 }
 
-/* 1. Real-time Cluster Jitter & Health Monitor */
+/* 1. Real-time Cluster Jitter & Health Monitor with Interactive Simulation */
 function initClusterTelemetry() {
   const node1Ping = document.getElementById("node1-ping");
   const node2Ping = document.getElementById("node2-ping");
@@ -687,25 +954,126 @@ function initClusterTelemetry() {
   const node1CpuBar = document.getElementById("node1-cpu-bar");
   const node2Cpu = document.getElementById("node2-cpu");
   const node2CpuBar = document.getElementById("node2-cpu-bar");
+  const node3Cpu = document.getElementById("node3-cpu");
+  const node3CpuBar = document.getElementById("node3-cpu-bar");
+  const node4Cpu = document.getElementById("node4-cpu");
+  const node4CpuBar = document.getElementById("node4-cpu-bar");
 
-  if (!node1Ping) return;
+  const simBtns = document.querySelectorAll(".cluster-sim-btn");
+  let currentSimMode = "normal"; // 'normal', 'spike', 'failover'
 
-  setInterval(() => {
-    // Ping jitter
-    if (node1Ping) node1Ping.textContent = `Ping: ${13 + Math.floor(Math.random() * 4)}ms`;
-    if (node2Ping) node2Ping.textContent = `Ping: ${18 + Math.floor(Math.random() * 5)}ms`;
-    if (node3Ping) node3Ping.textContent = `Ping: ${10 + Math.floor(Math.random() * 3)}ms`;
-    if (node4Ping) node4Ping.textContent = `Ping: ${21 + Math.floor(Math.random() * 4)}ms`;
+  simBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      simBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentSimMode = btn.getAttribute("data-load") || "normal";
 
-    // CPU jitter
-    const cpu1 = 16 + Math.floor(Math.random() * 6);
-    if (node1Cpu) node1Cpu.textContent = `${cpu1}%`;
-    if (node1CpuBar) node1CpuBar.style.width = `${cpu1}%`;
+      if (currentSimMode === "spike") {
+        if (typeof showToast === "function") {
+          showToast("Simulating 10,000 req/sec Spike: Gateway & Workers auto-scaling!", "info");
+        }
+      } else if (currentSimMode === "failover") {
+        if (typeof showToast === "function") {
+          showToast("Simulating Ingress Failover: Traffic rerouted via Secondary TLS Gateway!", "info");
+        }
+      } else {
+        if (typeof showToast === "function") {
+          showToast("Cluster load normalized: 99.98% fleet stability", "success");
+        }
+      }
+      updateTelemetry();
+    });
+  });
 
-    const cpu2 = 31 + Math.floor(Math.random() * 8);
-    if (node2Cpu) node2Cpu.textContent = `${cpu2}%`;
-    if (node2CpuBar) node2CpuBar.style.width = `${cpu2}%`;
-  }, 3500);
+  function updateTelemetry() {
+    if (!node1Ping) return;
+
+    if (currentSimMode === "spike") {
+      // Traffic Spike: High CPU, slightly higher ping, auto-scaling runner active
+      if (node1Ping) node1Ping.textContent = `Ping: ${22 + Math.floor(Math.random() * 6)}ms`;
+      if (node2Ping) node2Ping.textContent = `Ping: ${29 + Math.floor(Math.random() * 8)}ms`;
+      if (node3Ping) node3Ping.textContent = `Ping: ${16 + Math.floor(Math.random() * 4)}ms`;
+      if (node4Ping) node4Ping.textContent = `Ping: ${32 + Math.floor(Math.random() * 9)}ms`;
+
+      const cpu1 = 78 + Math.floor(Math.random() * 12);
+      if (node1Cpu) node1Cpu.textContent = `${cpu1}% (Scaling)`;
+      if (node1CpuBar) {
+        node1CpuBar.style.width = `${cpu1}%`;
+        node1CpuBar.style.background = "#f59e0b";
+      }
+
+      const cpu2 = 84 + Math.floor(Math.random() * 8);
+      if (node2Cpu) node2Cpu.textContent = `${cpu2}% (Buffering)`;
+      if (node2CpuBar) {
+        node2CpuBar.style.width = `${cpu2}%`;
+        node2CpuBar.style.background = "#f59e0b";
+      }
+
+      const cpu4 = 62 + Math.floor(Math.random() * 10);
+      if (node4Cpu) node4Cpu.textContent = `${cpu4}% (+2 Fargate Tasks)`;
+      if (node4CpuBar) {
+        node4CpuBar.style.width = `${cpu4}%`;
+        node4CpuBar.style.background = "#f59e0b";
+      }
+    } else if (currentSimMode === "failover") {
+      // Failover mode: Node 1 simulated restart, Node 4 picking up ingress route
+      if (node1Ping) node1Ping.textContent = `Ping: 2ms (Internal Sync)`;
+      if (node2Ping) node2Ping.textContent = `Ping: 14ms (P2P Mesh)`;
+      if (node3Ping) node3Ping.textContent = `Ping: 9ms (Replica Read)`;
+      if (node4Ping) node4Ping.textContent = `Ping: 16ms (Hot-Standby)`;
+
+      if (node1Cpu) node1Cpu.textContent = `4% (Standby Reload)`;
+      if (node1CpuBar) {
+        node1CpuBar.style.width = `8%`;
+        node1CpuBar.style.background = "#38bdf8";
+      }
+
+      const cpu4 = 42 + Math.floor(Math.random() * 5);
+      if (node4Cpu) node4Cpu.textContent = `${cpu4}% (Active Proxy Route)`;
+      if (node4CpuBar) {
+        node4CpuBar.style.width = `${cpu4}%`;
+        node4CpuBar.style.background = "#10b981";
+      }
+    } else {
+      // Normal stable mode
+      if (node1Ping) node1Ping.textContent = `Ping: ${13 + Math.floor(Math.random() * 4)}ms`;
+      if (node2Ping) node2Ping.textContent = `Ping: ${18 + Math.floor(Math.random() * 5)}ms`;
+      if (node3Ping) node3Ping.textContent = `Ping: ${10 + Math.floor(Math.random() * 3)}ms`;
+      if (node4Ping) node4Ping.textContent = `Ping: ${21 + Math.floor(Math.random() * 4)}ms`;
+
+      const cpu1 = 16 + Math.floor(Math.random() * 6);
+      if (node1Cpu) node1Cpu.textContent = `${cpu1}%`;
+      if (node1CpuBar) {
+        node1CpuBar.style.width = `${cpu1}%`;
+        node1CpuBar.style.background = "#00e5ff";
+      }
+
+      const cpu2 = 31 + Math.floor(Math.random() * 8);
+      if (node2Cpu) node2Cpu.textContent = `${cpu2}%`;
+      if (node2CpuBar) {
+        node2CpuBar.style.width = `${cpu2}%`;
+        node2CpuBar.style.background = "#10b981";
+      }
+
+      const cpu3 = 12 + Math.floor(Math.random() * 4);
+      if (node3Cpu) node3Cpu.textContent = `${cpu3}%`;
+      if (node3CpuBar) {
+        node3CpuBar.style.width = `${cpu3}%`;
+        node3CpuBar.style.background = "#a855f7";
+      }
+
+      const cpu4 = 8 + Math.floor(Math.random() * 5);
+      if (node4Cpu) node4Cpu.textContent = `${cpu4}%`;
+      if (node4CpuBar) {
+        node4CpuBar.style.width = `${cpu4}%`;
+        node4CpuBar.style.background = "#f59e0b";
+      }
+    }
+  }
+
+  if (node1Ping) {
+    setInterval(updateTelemetry, 3500);
+  }
 }
 
 /* 2. Interactive CI/CD Pipeline Simulator */
@@ -961,4 +1329,418 @@ function initSystemsProtocolLab() {
     }
   }
 }
+
+/* 4. Interactive Ansible Playbook Automation Runner */
+function initAnsibleRunner() {
+  const tabs = document.querySelectorAll(".ansible-tab-pill");
+  const runBtn = document.getElementById("ansible-run-btn");
+  const fileLabel = document.getElementById("ansible-file-label");
+  const statusBadge = document.getElementById("ansible-status-badge");
+  const consoleEl = document.getElementById("ansible-console");
+
+  if (!runBtn || !consoleEl) return;
+
+  let activePlaybook = "hardening";
+  let isRunning = false;
+  let runnerTimers = [];
+
+  const playbooksData = {
+    hardening: {
+      file: "playbooks/security-hardening.yml",
+      yaml: [
+        { cls: "log-cmd", text: "$ cat playbooks/security-hardening.yml" },
+        { cls: "", text: "---", style: "color: #38bdf8;" },
+        { cls: "", text: "- name: Fleet Server Hardening & UFW Firewall Policy", style: "color: #38bdf8;" },
+        { cls: "", text: "  hosts: all" },
+        { cls: "", text: "  become: true" },
+        { cls: "", text: "  tasks:" },
+        { cls: "", text: "    - name: Ensure UFW firewall is active & default deny" },
+        { cls: "", text: "      community.general.ufw: state=enabled policy=deny direction=incoming" },
+        { cls: "", text: "    - name: Allow SSH on secure port & HTTP/HTTPS" },
+        { cls: "", text: "      community.general.ufw: rule=allow port={{ item }}" },
+        { cls: "", text: "      loop: ['22/tcp', '80/tcp', '443/tcp']" },
+        { cls: "", text: "    - name: Disable Root Password SSH Login" },
+        { cls: "", text: "      ansible.builtin.lineinfile: path=/etc/ssh/sshd_config regexp='^PermitRootLogin' line='PermitRootLogin prohibit-password'" },
+        { cls: "", text: "      notify: restart sshd" }
+      ],
+      runLogs: [
+        { delay: 100, cls: "log-cmd", text: "$ ansible-playbook -i inventories/production.ini playbooks/security-hardening.yml -v" },
+        { delay: 400, cls: "", text: "PLAY [Fleet Server Hardening & UFW Firewall Policy] *************************************" },
+        { delay: 800, cls: "log-info", text: "TASK [Gathering Facts] *****************************************************************" },
+        { delay: 1200, cls: "log-ok", text: "ok: [node-01.gateway.local]" },
+        { delay: 1400, cls: "log-ok", text: "ok: [node-02.telemetry.local]" },
+        { delay: 1600, cls: "log-ok", text: "ok: [node-03.database.local]" },
+        { delay: 2000, cls: "log-info", text: "TASK [Ensure UFW firewall is active & default deny] ************************************" },
+        { delay: 2400, cls: "log-ok", text: "ok: [node-01.gateway.local]" },
+        { delay: 2600, cls: "log-warn", text: "changed: [node-02.telemetry.local] => (ufw status: active; incoming: deny)" },
+        { delay: 2800, cls: "log-ok", text: "ok: [node-03.database.local]" },
+        { delay: 3200, cls: "log-info", text: "TASK [Allow SSH on secure port & HTTP/HTTPS] *******************************************" },
+        { delay: 3500, cls: "log-ok", text: "ok: [node-01.gateway.local] => (item=22/tcp, 80/tcp, 443/tcp)" },
+        { delay: 3700, cls: "log-ok", text: "ok: [node-02.telemetry.local] => (item=22/tcp, 80/tcp, 443/tcp)" },
+        { delay: 3900, cls: "log-ok", text: "ok: [node-03.database.local] => (item=22/tcp, 80/tcp, 443/tcp)" },
+        { delay: 4300, cls: "log-info", text: "TASK [Disable Root Password SSH Login] *************************************************" },
+        { delay: 4600, cls: "log-warn", text: "changed: [node-01.gateway.local] => (sshd_config updated)" },
+        { delay: 4800, cls: "log-ok", text: "ok: [node-02.telemetry.local]" },
+        { delay: 5000, cls: "log-warn", text: "changed: [node-03.database.local] => (sshd_config updated)" },
+        { delay: 5400, cls: "log-info", text: "RUNNING HANDLER [restart sshd] **********************************************************" },
+        { delay: 5700, cls: "log-warn", text: "changed: [node-01.gateway.local] & changed: [node-03.database.local]" },
+        { delay: 6100, cls: "", text: "PLAY RECAP *****************************************************************************" },
+        { delay: 6300, cls: "log-ok", text: "node-01.gateway.local   : ok=5    changed=2    unreachable=0    failed=0    skipped=0" },
+        { delay: 6450, cls: "log-ok", text: "node-02.telemetry.local : ok=5    changed=1    unreachable=0    failed=0    skipped=0" },
+        { delay: 6600, cls: "log-ok", text: "node-03.database.local  : ok=5    changed=2    unreachable=0    failed=0    skipped=0" },
+        { delay: 6800, cls: "log-ok", text: "[SUCCESS] 3/3 target nodes hardened and synchronized. Zero unreachable, zero failed." }
+      ]
+    },
+    docker: {
+      file: "playbooks/docker-engine-setup.yml",
+      yaml: [
+        { cls: "log-cmd", text: "$ cat playbooks/docker-engine-setup.yml" },
+        { cls: "", text: "---", style: "color: #38bdf8;" },
+        { cls: "", text: "- name: Provision Container Engine & Daemon Log Limits", style: "color: #38bdf8;" },
+        { cls: "", text: "  hosts: docker_swarm" },
+        { cls: "", text: "  become: true" },
+        { cls: "", text: "  tasks:" },
+        { cls: "", text: "    - name: Add Docker Official GPG APT Key" },
+        { cls: "", text: "      ansible.builtin.apt_key: url=https://download.docker.com/linux/ubuntu/gpg state=present" },
+        { cls: "", text: "    - name: Install Docker CE, CLI & Containerd Runtime" },
+        { cls: "", text: "      ansible.builtin.apt: name=['docker-ce', 'docker-ce-cli', 'containerd.io'] state=latest" },
+        { cls: "", text: "    - name: Deploy daemon.json with JSON log rotation (max-size=20m)" },
+        { cls: "", text: "      ansible.builtin.copy: dest=/etc/docker/daemon.json content='{\"log-driver\":\"json-file\",\"log-opts\":{\"max-size\":\"20m\",\"max-file\":\"3\"}}'" },
+        { cls: "", text: "      notify: restart docker" }
+      ],
+      runLogs: [
+        { delay: 100, cls: "log-cmd", text: "$ ansible-playbook -i inventories/production.ini playbooks/docker-engine-setup.yml" },
+        { delay: 400, cls: "", text: "PLAY [Provision Container Engine & Daemon Log Limits] **********************************" },
+        { delay: 800, cls: "log-info", text: "TASK [Gathering Facts] *****************************************************************" },
+        { delay: 1200, cls: "log-ok", text: "ok: [node-01.gateway.local]" },
+        { delay: 1400, cls: "log-ok", text: "ok: [node-04.aws-runner.cloud]" },
+        { delay: 1900, cls: "log-info", text: "TASK [Add Docker Official GPG APT Key] *************************************************" },
+        { delay: 2300, cls: "log-ok", text: "ok: [node-01.gateway.local]" },
+        { delay: 2500, cls: "log-ok", text: "ok: [node-04.aws-runner.cloud]" },
+        { delay: 2900, cls: "log-info", text: "TASK [Install Docker CE, CLI & Containerd Runtime] *************************************" },
+        { delay: 3400, cls: "log-ok", text: "ok: [node-01.gateway.local] (already latest 26.0.1)" },
+        { delay: 3700, cls: "log-ok", text: "ok: [node-04.aws-runner.cloud] (already latest 26.0.1)" },
+        { delay: 4100, cls: "log-info", text: "TASK [Deploy daemon.json with JSON log rotation] ***************************************" },
+        { delay: 4500, cls: "log-warn", text: "changed: [node-01.gateway.local] => (log rotation configured)" },
+        { delay: 4700, cls: "log-ok", text: "ok: [node-04.aws-runner.cloud]" },
+        { delay: 5100, cls: "log-info", text: "RUNNING HANDLER [restart docker] ********************************************************" },
+        { delay: 5500, cls: "log-warn", text: "changed: [node-01.gateway.local] => systemctl restart docker.service" },
+        { delay: 5900, cls: "", text: "PLAY RECAP *****************************************************************************" },
+        { delay: 6100, cls: "log-ok", text: "node-01.gateway.local    : ok=5    changed=2    unreachable=0    failed=0    skipped=0" },
+        { delay: 6250, cls: "log-ok", text: "node-04.aws-runner.cloud : ok=4    changed=0    unreachable=0    failed=0    skipped=0" },
+        { delay: 6400, cls: "log-ok", text: "[SUCCESS] Docker runtime verified & daemon telemetry synchronized." }
+      ]
+    },
+    oney: {
+      file: "playbooks/oney-remote-daemon.yml",
+      yaml: [
+        { cls: "log-cmd", text: "$ cat playbooks/oney-remote-daemon.yml" },
+        { cls: "", text: "---", style: "color: #38bdf8;" },
+        { cls: "", text: "- name: Deploy ONey Encrypted P2P Daemon & Systemd Unit", style: "color: #38bdf8;" },
+        { cls: "", text: "  hosts: edge_nodes" },
+        { cls: "", text: "  become: true" },
+        { cls: "", text: "  tasks:" },
+        { cls: "", text: "    - name: Deploy ONey Executable Binary to /usr/local/bin" },
+        { cls: "", text: "      ansible.builtin.copy: src=files/oney-agent dest=/usr/local/bin/oney-agent mode='0755'" },
+        { cls: "", text: "    - name: Deploy Systemd Unit Template" },
+        { cls: "", text: "      ansible.builtin.template: src=templates/oney-agent.service.j2 dest=/etc/systemd/system/oney-agent.service" },
+        { cls: "", text: "    - name: Reload Systemd Daemon & Enable Service" },
+        { cls: "", text: "      ansible.builtin.systemd: name=oney-agent state=started enabled=yes daemon_reload=yes" }
+      ],
+      runLogs: [
+        { delay: 100, cls: "log-cmd", text: "$ ansible-playbook -i inventories/production.ini playbooks/oney-remote-daemon.yml" },
+        { delay: 400, cls: "", text: "PLAY [Deploy ONey Encrypted P2P Daemon & Systemd Unit] **********************************" },
+        { delay: 800, cls: "log-info", text: "TASK [Gathering Facts] *****************************************************************" },
+        { delay: 1200, cls: "log-ok", text: "ok: [node-02.telemetry.local]" },
+        { delay: 1700, cls: "log-info", text: "TASK [Deploy ONey Executable Binary to /usr/local/bin] *********************************" },
+        { delay: 2100, cls: "log-ok", text: "ok: [node-02.telemetry.local] => (SHA256 matches build release)" },
+        { delay: 2500, cls: "log-info", text: "TASK [Deploy Systemd Unit Template] ****************************************************" },
+        { delay: 2900, cls: "log-warn", text: "changed: [node-02.telemetry.local] => (unit /etc/systemd/system/oney-agent.service)" },
+        { delay: 3300, cls: "log-info", text: "TASK [Reload Systemd Daemon & Enable Service] ******************************************" },
+        { delay: 3800, cls: "log-warn", text: "changed: [node-02.telemetry.local] => (daemon_reload: true, active: running)" },
+        { delay: 4200, cls: "", text: "PLAY RECAP *****************************************************************************" },
+        { delay: 4400, cls: "log-ok", text: "node-02.telemetry.local : ok=4    changed=2    unreachable=0    failed=0    skipped=0" },
+        { delay: 4600, cls: "log-ok", text: "[SUCCESS] ONey P2P daemon active on port UDP:9000 with systemd supervision." }
+      ]
+    }
+  };
+
+  function displayPlaybookYaml(pbKey) {
+    const pb = playbooksData[pbKey];
+    if (!pb) return;
+    if (fileLabel) fileLabel.textContent = `PLAYBOOK: ${pb.file}`;
+    if (statusBadge) {
+      statusBadge.textContent = "STATUS: READY";
+      statusBadge.style.color = "#10b981";
+    }
+    consoleEl.innerHTML = "";
+    pb.yaml.forEach(line => {
+      const lineDiv = document.createElement("div");
+      lineDiv.className = `cicd-log-line ${line.cls}`;
+      if (line.style) lineDiv.setAttribute("style", line.style);
+      lineDiv.textContent = line.text;
+      consoleEl.appendChild(lineDiv);
+    });
+    consoleEl.scrollTop = 0;
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      if (isRunning) return;
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      activePlaybook = tab.getAttribute("data-playbook") || "hardening";
+      displayPlaybookYaml(activePlaybook);
+    });
+  });
+
+  runBtn.addEventListener("click", () => {
+    if (isRunning) return;
+    const pb = playbooksData[activePlaybook];
+    if (!pb) return;
+
+    isRunning = true;
+    runBtn.disabled = true;
+    runBtn.style.opacity = "0.5";
+    if (statusBadge) {
+      statusBadge.textContent = "STATUS: EXECUTING TASKS...";
+      statusBadge.style.color = "#f59e0b";
+    }
+
+    consoleEl.innerHTML = "";
+    runnerTimers.forEach(t => clearTimeout(t));
+    runnerTimers = [];
+
+    pb.runLogs.forEach((log, index) => {
+      const timer = setTimeout(() => {
+        const lineDiv = document.createElement("div");
+        lineDiv.className = `cicd-log-line ${log.cls}`;
+        lineDiv.textContent = log.text;
+        consoleEl.appendChild(lineDiv);
+        consoleEl.scrollTop = consoleEl.scrollHeight;
+
+        if (index === pb.runLogs.length - 1) {
+          isRunning = false;
+          runBtn.disabled = false;
+          runBtn.style.opacity = "1";
+          if (statusBadge) {
+            statusBadge.textContent = "STATUS: PLAY RECAP OK (ALL PASS)";
+            statusBadge.style.color = "#10b981";
+          }
+          if (typeof showToast === "function") {
+            showToast(`Ansible execution completed for ${pb.file}`, "info");
+          }
+        }
+      }, log.delay);
+      runnerTimers.push(timer);
+    });
+  });
+}
+
+/* 5. Live Node Diagnostics & Systemd Daemon Inspector */
+function initNodeInspector() {
+  const modal = document.getElementById("node-inspect-modal");
+  const modalTitle = document.getElementById("node-modal-title");
+  const modalContent = document.getElementById("node-modal-content");
+  const restartBtn = document.getElementById("node-modal-restart-btn");
+  const inspectBtns = document.querySelectorAll(".node-inspect-btn");
+
+  if (!modal || !modalTitle || !modalContent) return;
+
+  let currentNodeId = "node1";
+
+  const nodeDiagnosticsData = {
+    node1: {
+      name: "node-01.gateway.local (Reverse Proxy & Ingress Gateway)",
+      ip: "10.0.1.14",
+      kernel: "Linux 6.8.0-45-generic x86_64 #45-Ubuntu SMP",
+      load: "0.18, 0.22, 0.15",
+      service: "caddy.service",
+      serviceDesc: "Caddy Reverse Proxy & Automatic TLS Termination",
+      systemdLogs: [
+        "● caddy.service - Caddy Reverse Proxy & Ingress Gateway",
+        "   Loaded: loaded (/lib/systemd/system/caddy.service; enabled; vendor preset: enabled)",
+        "   Active: active (running) since Thu 2026-10-23 04:12:10 UTC; 4 days ago",
+        "     Docs: https://caddyserver.com/docs/",
+        " Main PID: 1248 (caddy)",
+        "    Tasks: 14 (limit: 4915)",
+        "   Memory: 42.1M (peak: 68.3M)",
+        "      CPU: 18min 42.120s",
+        "   CGroup: /system.slice/caddy.service",
+        "           └─1248 /usr/bin/caddy run --environ --config /etc/caddy/Caddyfile"
+      ],
+      containers: [
+        { id: "a93b118c72e1", img: "envoyproxy/envoy:v1.28", status: "Up 4 days", ports: "0.0.0.0:80->80, 0.0.0.0:443->443", name: "ingress-envoy" },
+        { id: "5f1c99a41b20", img: "prom/node-exporter:v1.6", status: "Up 4 days", ports: "127.0.0.1:9100->9100", name: "node-exporter" }
+      ]
+    },
+    node2: {
+      name: "node-02.telemetry.local (Raw Packet Engine & WebSocket Broker)",
+      ip: "10.0.1.28",
+      kernel: "Linux 6.8.0-45-generic x86_64 #45-Ubuntu SMP",
+      load: "0.44, 0.38, 0.31",
+      service: "oney-agent.service",
+      serviceDesc: "ONey Encrypted P2P Systemd Unit & Raw Socket Monitor",
+      systemdLogs: [
+        "● oney-agent.service - ONey Encrypted P2P Tunnel Daemon",
+        "   Loaded: loaded (/etc/systemd/system/oney-agent.service; enabled)",
+        "   Active: active (running) since Sun 2026-10-25 11:20:04 UTC; 2 days ago",
+        " Main PID: 3892 (python3 -m oney.daemon)",
+        "    Tasks: 8 (limit: 4915)",
+        "   Memory: 84.6M",
+        "      CPU: 42min 11.080s",
+        "   CGroup: /system.slice/oney-agent.service",
+        "           └─3892 /usr/bin/python3 -m oney.daemon --listen 0.0.0.0:9000"
+      ],
+      containers: [
+        { id: "c720bb8e104d", img: "zprotocol-capture:latest", status: "Up 51 hours", ports: "UDP *:9000 (CRC32 Checksum)", name: "zproto-pcap-worker" },
+        { id: "b2110c48e89a", img: "prom/node-exporter:v1.6", status: "Up 2 days", ports: "127.0.0.1:9100->9100", name: "node-exporter" }
+      ]
+    },
+    node3: {
+      name: "node-03.database.local (Primary MongoDB & Redis Cache Replica)",
+      ip: "10.0.1.42",
+      kernel: "Linux 6.8.0-45-generic x86_64 #45-Ubuntu SMP",
+      load: "0.25, 0.28, 0.21",
+      service: "mongod.service",
+      serviceDesc: "MongoDB Database Server Engine with WiredTiger Engine",
+      systemdLogs: [
+        "● mongod.service - MongoDB Database Server Engine",
+        "   Loaded: loaded (/lib/systemd/system/mongod.service; enabled; vendor preset: enabled)",
+        "   Active: active (running) since Sun 2026-10-18 01:05:32 UTC; 9 days ago",
+        " Main PID: 890 (mongod)",
+        "    Tasks: 42 (limit: 4915)",
+        "   Memory: 412.8M (WiredTiger Cache Target: 256MB)",
+        "      CPU: 2h 14min 33.190s",
+        "   CGroup: /system.slice/mongod.service",
+        "           └─890 /usr/bin/mongod --config /etc/mongod.conf"
+      ],
+      containers: [
+        { id: "d410ae8921cf", img: "redis:7.2-alpine", status: "Up 9 days", ports: "127.0.0.1:6379->6379/tcp", name: "redis-cache-replica" },
+        { id: "3e8912bc4010", img: "prom/mongodb-exporter:v0.40", status: "Up 9 days", ports: "127.0.0.1:9216->9216", name: "mongo-exporter" }
+      ]
+    },
+    node4: {
+      name: "node-04.aws-runner.cloud (AWS ECS Fargate Task & CI Runner)",
+      ip: "172.31.44.19",
+      kernel: "Linux 5.10.217-205.860.amzn2.x86_64",
+      load: "0.10, 0.12, 0.09",
+      service: "amazon-ecs-agent.service",
+      serviceDesc: "AWS ECS Container Agent & Fargate Task Supervisor",
+      systemdLogs: [
+        "● ecs-fargate-task.service - AWS ECS Task Runner [ap-south-1]",
+        "   Task ARN: arn:aws:ecs:ap-south-1:718291029182:task/prod-cluster/9a81c03",
+        "   Task Def: prod-portfolio-service:4 (LaunchType: FARGATE)",
+        "   Status: RUNNING (Desired: 2, Running: 2)",
+        "   VPC: vpc-0a819bcf891 | Subnet: subnet-priv-c01 (ap-south-1a)",
+        "   HealthCheck: curl -f http://localhost:80/health (Interval: 15s, Healthy: true)",
+        "   SecurityGroup: sg-071a9b42 (Allows 80/443 from ALB)"
+      ],
+      containers: [
+        { id: "ecs-task-prod", img: "718291029182.dkr.ecr.ap-south-1.amazonaws.com/portfolio-gateway:v2.4", status: "Running (Healthy)", ports: "Port 80/TCP -> ALB TargetGroup", name: "portfolio-prod-svc" },
+        { id: "ecs-aws-xray", img: "amazon/aws-xray-daemon:latest", status: "Running", ports: "UDP 127.0.0.1:2000", name: "xray-daemon" }
+      ]
+    }
+  };
+
+  function renderNodeDetails(nodeKey) {
+    currentNodeId = nodeKey;
+    const data = nodeDiagnosticsData[nodeKey] || nodeDiagnosticsData.node1;
+
+    modalTitle.textContent = data.name;
+
+    let containerRows = data.containers.map(c => `
+      <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <td style="padding: 0.4rem 0.5rem; color: #38bdf8;">${c.id}</td>
+        <td style="padding: 0.4rem 0.5rem; color: #d4d4d8;">${c.img}</td>
+        <td style="padding: 0.4rem 0.5rem; color: #10b981;">● ${c.status}</td>
+        <td style="padding: 0.4rem 0.5rem; color: #a1a1aa;">${c.ports}</td>
+        <td style="padding: 0.4rem 0.5rem; color: #f59e0b;">${c.name}</td>
+      </tr>
+    `).join("");
+
+    let logsHtml = data.systemdLogs.map(l => {
+      let color = "#d4d4d8";
+      if (l.startsWith("●") || l.includes("Active: active")) color = "#10b981";
+      if (l.includes("Task ARN") || l.includes("Loaded:")) color = "#38bdf8";
+      return `<div style="color: ${color}; line-height: 1.45;">${l}</div>`;
+    }).join("");
+
+    modalContent.innerHTML = `
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; background: rgba(255,255,255,0.02); padding: 0.75rem 1rem; border: 1px solid var(--border-subtle); border-radius: 6px;">
+        <div>
+          <span style="color: var(--text-subtle); font-size: 0.68rem; text-transform: uppercase;">Internal IP</span>
+          <div style="color: #ffffff; font-weight: 700; margin-top: 0.15rem;">${data.ip}</div>
+        </div>
+        <div>
+          <span style="color: var(--text-subtle); font-size: 0.68rem; text-transform: uppercase;">Kernel Release</span>
+          <div style="color: #ffffff; font-weight: 700; margin-top: 0.15rem; font-size: 0.7rem;">${data.kernel}</div>
+        </div>
+        <div>
+          <span style="color: var(--text-subtle); font-size: 0.68rem; text-transform: uppercase;">Load Average</span>
+          <div style="color: #10b981; font-weight: 700; margin-top: 0.15rem;">${data.load}</div>
+        </div>
+        <div>
+          <span style="color: var(--text-subtle); font-size: 0.68rem; text-transform: uppercase;">Supervised Unit</span>
+          <div style="color: #f59e0b; font-weight: 700; margin-top: 0.15rem; font-size: 0.7rem;">${data.service}</div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-weight: 700; color: #ffffff; margin-bottom: 0.4rem; font-size: 0.75rem;">$ systemctl status ${data.service}</div>
+        <div style="background: #000000; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.72rem; overflow-x: auto;">
+          ${logsHtml}
+        </div>
+      </div>
+
+      <div>
+        <div style="font-weight: 700; color: #ffffff; margin-bottom: 0.4rem; font-size: 0.75rem;">$ docker ps --format "table {{.ID}}\\t{{.Image}}\\t{{.Status}}\\t{{.Ports}}\\t{{.Names}}"</div>
+        <div style="background: #000000; border: 1px solid var(--border-subtle); border-radius: 6px; overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.7rem;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--border-strong); background: rgba(255,255,255,0.03); color: var(--text-subtle);">
+                <th style="padding: 0.4rem 0.5rem;">ID</th>
+                <th style="padding: 0.4rem 0.5rem;">IMAGE</th>
+                <th style="padding: 0.4rem 0.5rem;">STATUS</th>
+                <th style="padding: 0.4rem 0.5rem;">PORTS</th>
+                <th style="padding: 0.4rem 0.5rem;">NAME</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${containerRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `;
+  }
+
+  inspectBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const nodeKey = btn.getAttribute("data-node") || "node1";
+      renderNodeDetails(nodeKey);
+      modal.classList.add("open");
+    });
+  });
+
+  if (restartBtn) {
+    restartBtn.addEventListener("click", () => {
+      const originalText = restartBtn.textContent;
+      restartBtn.disabled = true;
+      restartBtn.textContent = "⏳ Reloading...";
+      restartBtn.style.opacity = "0.7";
+
+      setTimeout(() => {
+        restartBtn.disabled = false;
+        restartBtn.textContent = originalText;
+        restartBtn.style.opacity = "1";
+        renderNodeDetails(currentNodeId);
+        if (typeof showToast === "function") {
+          showToast(`Service on ${currentNodeId} reloaded successfully! (Zero downtime)`, "success");
+        }
+      }, 700);
+    });
+  }
+}
+
 
