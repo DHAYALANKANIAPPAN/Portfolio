@@ -10,7 +10,6 @@
 </p>
 
 ---
-
 ## 🌐 Overview & Philosophy
 
 Welcome to my personal portfolio repository!
